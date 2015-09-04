@@ -1,6 +1,8 @@
 {
     "name": "petslane/php-bondora-api",
     "description": "PHP library for using Bondora API",
+    "version": "1.0",
+    "keywords": ["bondora", "api", "isepankur"],
     "type": "library",
     "license": "GPL-2.0",
     "authors": [
@@ -9,5 +11,13 @@
             "email": "peeter.normak@eesti.ee"
         }
     ],
-    "require": {}
+    "support": {
+        "issues": "https://github.com/petslane/php-bondora-api/issues"
+    },
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "files": ["bondoraApi.php"]
+    }
 }

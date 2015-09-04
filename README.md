@@ -21,6 +21,7 @@ require_once 'path/to/library/bondoraApi.php';
 ```
 
 ## Usage
+Documentation: http://petslane.github.io/php-bondora-api/doc/
 ```php
 
 use Petslane\Bondora;

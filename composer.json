@@ -1,0 +1,13 @@
+{
+    "name": "petslane/php-bondora-api",
+    "description": "PHP library for using Bondora API",
+    "type": "library",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Peeter Normak",
+            "email": "peeter.normak@eesti.ee"
+        }
+    ],
+    "require": {}
+}

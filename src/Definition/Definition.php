@@ -32,7 +32,7 @@ class Definition {
                 $this->{$field} = (int) $value;
             } else if ($type == 'float' && !$is_array) {
                 $this->{$field} = (float) $value;
-            } else if ($type == 'DateTime' && !$is_array) {
+            } else if ($type == '\DateTime' && !$is_array) {
                 $valueDate = \DateTime::createFromFormat('Y-m-d\TH:i:s', $value);
                 if (!$valueDate == !!$value) {
                     throw new \Exception('Unable to parse date: ' . $value);

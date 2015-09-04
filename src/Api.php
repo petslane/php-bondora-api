@@ -198,30 +198,30 @@ class Api {
      * Gets list of active Auctions
      *
      * $request array supported keys:
-     *     PageSize               int               Max returned results, default is 1000. Range: inclusive between 1 and 2000
-     *     PageNr                 int               Result page nr. Range: inclusive between 1 and 2147483647
-     *     Countries              string[]          Two letter iso code for country of origin: EE, ES, FI
-     *     Ratings                string[]          Bondora's rating: AA, A, B, C, D, E, F, HR
-     *     Gender                 int               Borrower's gender: Male 0, Female 1, Unknown 2
-     *     SumMin                 int               Minimal loan amount
-     *     SumMax                 int               Maximum loan amount
-     *     Terms                  int[]             Loan length: 3, 9, 12, 18, 24, 36, 48, 60 months
-     *     AgeMin                 int               Minimal age
-     *     AgeMax                 int               Maximum age
-     *     LoanNumber             int               Loan number
-     *     UserName               string            Username
-     *     ApplicationDateFrom    string|DateTime   Loan application started date from
-     *     ApplicationDateTo      string|DateTime   Loan application started date to
-     *     CreditScoreMin         int               Minimum credit score
-     *     CreditScoreMax         int               Maximum credit score
-     *     CreditGroups           string[]          Credit group
-     *     InterestMin            float             Minimum interest
-     *     InterestMax            float             Maximum interest
-     *     IncomeTotalMin         float             Minimal total income
-     *     IncomeTotalMax         float             Maximum total income
-     *     ModelVersion           int               Model version
-     *     ExpectedLossMin        float             Minimal expected loss
-     *     ExpectedLossMax        float             Maximum expected loss
+     *     pageSize               int               Max returned results, default is 1000. Range: inclusive between 1 and 2000
+     *     pageNr                 int               Result page nr. Range: inclusive between 1 and 2147483647
+     *     countries              string[]          Two letter iso code for country of origin: EE, ES, FI
+     *     ratings                string[]          Bondora's rating: AA, A, B, C, D, E, F, HR
+     *     gender                 int               Borrower's gender: Male 0, Female 1, Unknown 2
+     *     sumMin                 int               Minimal loan amount
+     *     sumMax                 int               Maximum loan amount
+     *     terms                  int[]             Loan length: 3, 9, 12, 18, 24, 36, 48, 60 months
+     *     ageMin                 int               Minimal age
+     *     ageMax                 int               Maximum age
+     *     loanNumber             int               Loan number
+     *     userName               string            Username
+     *     applicationDateFrom    string|DateTime   Loan application started date from
+     *     applicationDateTo      string|DateTime   Loan application started date to
+     *     creditScoreMin         int               Minimum credit score
+     *     creditScoreMax         int               Maximum credit score
+     *     creditGroups           string[]          Credit group
+     *     interestMin            float             Minimum interest
+     *     interestMax            float             Maximum interest
+     *     incomeTotalMin         float             Minimal total income
+     *     incomeTotalMax         float             Maximum total income
+     *     modelVersion           int               Model version
+     *     expectedLossMin        float             Minimal expected loss
+     *     expectedLossMax        float             Maximum expected loss
      *
      * @param array $request
      * @return Definition\Auction[]
@@ -234,34 +234,34 @@ class Api {
         $params = array();
 
         $array_fields = array(
-            'Countries',
-            'Ratings',
-            'Terms',
-            'CreditGroups',
+            'countries',
+            'ratings',
+            'terms',
+            'creditGroups',
         );
         $int_fields = array(
-            'PageSize',
-            'PageNr',
-            'Gender',
-            'SumMin',
-            'SumMax',
-            'AgeMin',
-            'AgeMax',
-            'LoanNumber',
-            'CreditScoreMin',
-            'CreditScoreMax',
-            'ModelVersion',
+            'pageSize',
+            'pageNr',
+            'gender',
+            'sumMin',
+            'sumMax',
+            'ageMin',
+            'ageMax',
+            'loanNumber',
+            'creditScoreMin',
+            'creditScoreMax',
+            'modelVersion',
         );
         $float_fields = array(
-            'InterestMin',
-            'InterestMax',
-            'IncomeTotalMin',
-            'IncomeTotalMax',
-            'ExpectedLossMin',
-            'ExpectedLossMax',
+            'interestMin',
+            'interestMax',
+            'incomeTotalMin',
+            'incomeTotalMax',
+            'expectedLossMin',
+            'expectedLossMax',
         );
         $string_fields = array(
-            'UserName'
+            'userName'
         );
 
         $all_fields = array_merge($int_fields, $float_fields, $string_fields);
@@ -271,12 +271,12 @@ class Api {
                 continue;
             }
             if (!in_array($fld_name, $array_fields)) {
-                if (isset($float_fields[$fld_name])) {
-                    $params[$fld_name] = (float) $request[$fld_name];
-                } else if (isset($string_fields[$fld_name])) {
-                    $params[$fld_name] = (string) $request[$fld_name];
-                } else if (isset($int_fields[$fld_name])) {
-                    $params[$fld_name] = (int) $request[$fld_name];
+                if (in_array($fld_name, $float_fields)) {
+                    $params['request.' . $fld_name] = (float) $request[$fld_name];
+                } else if (in_array($fld_name, $string_fields)) {
+                    $params['request.' . $fld_name] = (string) $request[$fld_name];
+                } else if (in_array($fld_name, $int_fields)) {
+                    $params['request.' . $fld_name] = (int) $request[$fld_name];
                 }
                 continue;
             }
@@ -284,23 +284,23 @@ class Api {
             if (!is_array($request[$fld_name])) {
                 $request[$fld_name] = array($request[$fld_name]);
             }
-            $params[$fld_name] = array();
+            $params['request.' . $fld_name] = array();
             foreach ($request[$fld_name] as $value) {
-                $params[$fld_name][] = (int) $value;
-                if (isset($float_fields[$fld_name])) {
-                    $params[$fld_name][] = (float) $value;
-                } else if (isset($string_fields[$fld_name])) {
-                    $params[$fld_name][] = (string) $value;
-                } else if (isset($int_fields[$fld_name])) {
-                    $params[$fld_name][] = (int) $value;
+                $params['request.' . $fld_name][] = (int) $value;
+                if (in_array($fld_name, $float_fields)) {
+                    $params['request.' . $fld_name][] = (float) $value;
+                } else if (in_array($fld_name, $string_fields)) {
+                    $params['request.' . $fld_name][] = (string) $value;
+                } else if (in_array($fld_name, $int_fields)) {
+                    $params['request.' . $fld_name][] = (int) $value;
                 }
             }
-            $params[$fld_name] = implode(',', $params[$fld_name]);
+            $params['request.' . $fld_name] = implode(',', $params[$fld_name]);
         }
 
         $date_fields = array(
-            'ApplicationDateFrom',
-            'ApplicationDateTo',
+            'applicationDateFrom',
+            'applicationDateTo',
         );
         foreach ($date_fields as $fld_name) {
             if (!isset($request[$fld_name])) {
@@ -308,9 +308,9 @@ class Api {
             }
             $request_value = $request[$fld_name];
             if (is_string($request_value)) {
-                $params[$fld_name] = (string) $request_value;
+                $params['request.' . $fld_name] = (string) $request_value;
             } else if ($request_value instanceof \DateTime) {
-                $params[$fld_name] = $request_value->format('d.m.Y');
+                $params['request.' . $fld_name] = $request_value->format('d.m.Y');
             }
         }
 

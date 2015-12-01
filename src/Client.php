@@ -33,8 +33,8 @@ class Client {
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
             ),
-            CURLOPT_CONNECTTIMEOUT => 5,
-            CURLOPT_TIMEOUT => 5,
+            CURLOPT_CONNECTTIMEOUT => 60,
+            CURLOPT_TIMEOUT => 60,
             CURLOPT_VERBOSE => false,
         );
         if ($method == self::METHOD_POST) {

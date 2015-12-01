@@ -2,15 +2,21 @@
 
 namespace Petslane\Bondora\Definition;
 
-/**
- * List of Represented Organizations for current user.
- */
-class ApiResultUserOrganizations extends Definition {
+class ApiResultMyInvestments extends Definition {
+
+    /**
+     * Total number of investments found
+     *
+     * @required
+     * @var int
+     */
+    public $TotalCount;
+
 
     /**
      * The payload of the response. Type depends on the API request.
      *
-     * @var UserOrganization[]
+     * @var MyInvestmentItem[]
      */
     public $Payload;
 

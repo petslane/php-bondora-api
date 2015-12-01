@@ -2,21 +2,12 @@
 
 namespace Petslane\Bondora\Definition;
 
-class ApiResultBids extends Definition {
-
-    /**
-     * Total number of Bids found
-     *
-     * @required
-     * @var int
-     */
-    public $TotalCount;
-
+class ApiResultExtendedAuction extends Definition {
 
     /**
      * The payload of the response. Type depends on the API request.
      *
-     * @var BidSummary[]
+     * @var AuctionExtended
      */
     public $Payload;
 

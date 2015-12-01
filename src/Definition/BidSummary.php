@@ -7,29 +7,16 @@ namespace Petslane\Bondora\Definition;
  */
 class BidSummary extends Definition {
 
-    const BidFailureReason_NotSet = 0;
-    const BidFailureReason_AvailableAmountLowerThanMinInvestmentLimit = 1;
-    const BidFailureReason_BiddingOnOwnAuction = 2;
-    const BidFailureReason_BiddingOnInactiveDuplicate = 3;
-    const BidFailureReason_BiddingAmountTooSmall = 4;
-    const BidFailureReason_NotEnoughBalance = 5;
-    const BidFailureReason_AuctionIsClosed = 6;
-    const BidFailureReason_AuctionStatusNotOpen = 7;
-    const BidFailureReason_NoRiskScoreForAuction = 8;
-    const BidFailureReason_AuctionAlreadyFullyBidded = 9;
-    const BidFailureReason_AuctionNotFound = 10;
-    const BidFailureReason_NotEnoughLoanAmountForBiddingAmount = 11;
-    const BidFailureReason_ApiUsageNotAllowed = 12;
-    const BidFailureReason_AuctionIsCancelled = 13;
-    const BidFailureReason_Unknown = 14;
+    /**
+     * Bid unique identifier
+     *
+     * @var string
+     */
+    public $Id;
 
-    const Status_Pending = 0;
-    const Status_Open = 1;
-    const Status_Successful = 2;
-    const Status_Failed = 3;
 
     /**
-     * Id of auction bidded
+     * Id of auction to bid into
      *
      * @var string
      */
@@ -37,7 +24,7 @@ class BidSummary extends Definition {
 
 
     /**
-     * amount that is requested to bid
+     * Amount that was requested to bid
      *
      * @var float
      */
@@ -45,7 +32,7 @@ class BidSummary extends Definition {
 
 
     /**
-     * amount that is bidded
+     * Amount that is bidded
      *
      * @var float
      */
@@ -53,7 +40,7 @@ class BidSummary extends Definition {
 
 
     /**
-     * minimum amount that can be bidded for this auction
+     * Minimum amount that was specified for auction
      *
      * @var float
      */
@@ -61,17 +48,7 @@ class BidSummary extends Definition {
 
 
     /**
-     * status of bid
-     *
-     * Enum: 0, 1, 2, 3
-     *
-     * @var int
-     */
-    public $Status;
-
-
-    /**
-     * when bid is requested via API
+     * When bid was requested
      *
      * @var \DateTime
      */
@@ -79,7 +56,7 @@ class BidSummary extends Definition {
 
 
     /**
-     * when bid is placed by autobidder
+     * When bid was processed
      *
      * @var \DateTime
      */
@@ -87,13 +64,32 @@ class BidSummary extends Definition {
 
 
     /**
-     * why bid failed
+     * Is request currently processed
+     *
+     * @var bool
+     */
+    public $IsRequestBeingProcessed;
+
+
+    /**
+     * Status of bid
+     * <para>0 Pending</para><para>1 Open</para><para>2 Successful</para><para>3 Failed</para><para>4 Cancelled</para>
+     *
+     * Enum: 0, 1, 2, 3, 4
+     *
+     * @var int
+     */
+    public $StatusCode;
+
+
+    /**
+     * Why bid failed
      *
      * Enum: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
      *
      * @var int
      */
-    public $BidFailureReason;
+    public $FailureReason;
 
 }
 

@@ -2,12 +2,21 @@
 
 namespace Petslane\Bondora\Definition;
 
-class ApiResultAuction extends Definition {
+class ApiResultSecondMarket extends Definition {
+
+    /**
+     * Total number of SecondaryMarket items found
+     *
+     * @required
+     * @var int
+     */
+    public $TotalCount;
+
 
     /**
      * The payload of the response. Type depends on the API request.
      *
-     * @var Auction
+     * @var SecondMarketItem[]
      */
     public $Payload;
 

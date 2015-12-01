@@ -3,9 +3,25 @@
 namespace Petslane\Bondora\Definition;
 
 /**
- * Auction related data
+ * Auction related data with debts and liabilities
  */
-class Auction extends Definition {
+class AuctionExtended extends Definition {
+
+    /**
+     * Borrower's liabilities
+     *
+     * @var Liability[]
+     */
+    public $Liabilities;
+
+
+    /**
+     * Borrower's debts
+     *
+     * @var Debt[]
+     */
+    public $Debts;
+
 
     /**
      * Unique loan identificator

@@ -8,28 +8,6 @@ namespace Petslane\Bondora\Definition;
 class AuctionRequest extends Definition {
 
     /**
-     * Max returned results, default is 1000
-     *
-     * Minimum value: 1
-     * Maximum value: 2000
-     *
-     * @var int
-     */
-    public $PageSize;
-
-
-    /**
-     * Result page nr
-     *
-     * Minimum value: 1
-     * Maximum value: 2147483647
-     *
-     * @var int
-     */
-    public $PageNr;
-
-
-    /**
      * Two letter iso code for country of origin: EE, ES, FI
      *
      * @var string[]
@@ -142,14 +120,6 @@ class AuctionRequest extends Definition {
 
 
     /**
-     * Credit group
-     *
-     * @var string[]
-     */
-    public $CreditGroups;
-
-
-    /**
      * Minimum interest
      *
      * @var float
@@ -203,6 +173,44 @@ class AuctionRequest extends Definition {
      * @var float
      */
     public $ExpectedLossMax;
+
+
+    /**
+     * Date when auction was published from
+     *
+     * @var \DateTime
+     */
+    public $ListedOnUTCFrom;
+
+
+    /**
+     * Date when auction was published to
+     *
+     * @var \DateTime
+     */
+    public $ListedOnUTCTo;
+
+
+    /**
+     * Max returned results, default is 1000
+     *
+     * Minimum value: 1
+     * Maximum value: 1000
+     *
+     * @var int
+     */
+    public $PageSize;
+
+
+    /**
+     * Result page nr
+     *
+     * Minimum value: 1
+     * Maximum value: 2147483647
+     *
+     * @var int
+     */
+    public $PageNr;
 
 }
 

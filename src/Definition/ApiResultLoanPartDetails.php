@@ -2,15 +2,12 @@
 
 namespace Petslane\Bondora\Definition;
 
-/**
- * Authorization result
- */
-class ApiResultAuthentication extends Definition {
+class ApiResultLoanPartDetails extends Definition {
 
     /**
      * The payload of the response. Type depends on the API request.
      *
-     * @var AuthTokenResult
+     * @var LoanPartDetails
      */
     public $Payload;
 

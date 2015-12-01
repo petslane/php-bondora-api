@@ -9,12 +9,6 @@ class Api {
     private $config = array();
     const API_VERSION = 1;
 
-    /**
-     * If set to true, then do auto-login and retry last api call on 401
-     * @var bool
-     */
-    private $autologin = false;
-
     private $token;
 
     private $http_codes = array(
@@ -24,53 +18,95 @@ class Api {
         401 => '(Unauthorized) The Authorization Token is not provided or the Token is not valid anymore',
         403 => '(Forbidden) User is not allowed to access or modify the resource',
         404 => '(Not Found) Data with specified parameters or the resource is not found',
-        405 => '(Method Not Allowed) Request method (POST, GET, etc.) is not allowed for the resource',
+        405 => '(Method Not Allowed) Request method (GET, POST, DELETE, PUT, etc.) is not allowed for the resource',
         409 => '(Conflict) There is conflict with the data provided',
         415 => '(Unsupported Media Type) Content-Type for request is not supported',
         429 => '(Too Many Requests) There are too many requests made in time frame. See Throttling section for more information.',
         500 => '(Internal Server Error) There was an unexpected error when processing the request',
     );
     private $error_codes = array(
-        'login' => array(
-            400 => 'Username or Password is not set',
-            401 => 'User\'s email and password do not match',
-            403 => 'API usage for the user is not allowed',
-            404 => 'No user with specified email found',
-            500 => 'Token creation for user failed or other error',
-            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
-        ),
-        'logout' => array(
-            401 => 'User is not Authorized',
-            404 => 'The provided token is not found',
-            409 => 'The provided token is already revoked or not valid anymore',
-            500 => 'If the revoke of the token failed or some other internal error happened',
-            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
-        ),
-        'auctions' => array(
+        'G/auctions' => array(
             401 => 'User is not Authorized',
             429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
-        'auction' => array(
+        'G/auction/?' => array(
             400 => 'Auction ID is not provided',
             401 => 'User is not Authorized',
             404 => 'Auction with the provided ID was not found',
             429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
-        'userorganizations' => array(
+        'G/bids' => array(
             401 => 'User is not Authorized',
             429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
-        'bids' => array(
+        'P/bid' => array(
+            400 => 'No bids specified',
             401 => 'User is not Authorized',
-            403 => 'User is not allowed to represent the specified organization',
+            404 => 'Auction with specified ID is not found',
             429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
-        'bid' => array(
+        'P/bid/?/cancel' => array(
+            400 => 'No Bid id specified',
+            401 => 'User is not Authorized',
+            403 => 'The user has no rights to cancel the Bid',
+            404 => 'Bid with specified ID is not found',
+            409 => 'Can not cancel Bid.',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
+        ),
+        'G/bid/?' => array(
             0 => 'tmp', // Bondora bug. Somehow all errorcodes from bid service have 0 value
             400 => 'No bids specified',
             401 => 'User is not Authorized',
             403 => 'User is not allowed to fully represent the specified organization',
             404 => 'Auction with specified ID is not found',
+            409 => 'Can not cancel Bid.',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
+        ),
+        'G/account/balance' => array(
+            401 => 'User is not Authorized',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
+        ),
+        'G/account/investments' => array(
+            401 => 'User is not Authorized',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
+        ),
+        'G/loanpart/?' => array(
+            400 => 'LoanPart ID is not provided',
+            401 => 'User is not Authorized',
+            404 => 'LoanPart with the provided ID was not found',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
+        ),
+        'G/secondarymarket/?' => array(
+            400 => 'No id specified',
+            401 => 'User is not Authorized',
+            404 => 'SecondaryMarket item with specified ID is not found',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
+        ),
+        'P/secondarymarket/?/cancel' => array(
+            400 => 'Not found',
+            401 => 'User is not Authorized',
+            403 => 'User has no rights',
+            409 => 'Cannot cancel item',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
+        ),
+        'G/secondarymarket' => array(
+            401 => 'User is not Authorized',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
+        ),
+        'P/secondarymarket/buy' => array(
+            400 => 'No items specified',
+            401 => 'User is not Authorized',
+            403 => 'User has no rights',
+            404 => 'Not found',
+            409 => 'Investment cannot be bought',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
+        ),
+        'P/secondarymarket/sell' => array(
+            400 => 'No items specified',
+            401 => 'User is not Authorized',
+            403 => 'User has no rights',
+            404 => 'Not found',
+            409 => 'Investment cannot be sold',
             429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
     );
@@ -79,33 +115,46 @@ class Api {
         if (empty($config['url'])) {
             throw new \InvalidArgumentException('Missing "url" in config');
         }
-        if (empty($config['username'])) {
-            throw new \InvalidArgumentException('Missing "username" in config');
+        if (empty($config['auth']['url_base'])) {
+            throw new \InvalidArgumentException('Missing base_url in auth config');
         }
-        if (empty($config['password'])) {
-            throw new \InvalidArgumentException('Missing "password" in config');
+        if (empty($config['auth']['client_id'])) {
+            throw new \InvalidArgumentException('Missing client_id in auth config');
+        }
+        if (empty($config['auth']['secret'])) {
+            throw new \InvalidArgumentException('Missing secret in auth config');
+        }
+        if (empty($config['api_base'])) {
+            throw new \InvalidArgumentException('Missing api_base in config');
+        }
+        if (empty($config['auth']['scope'])) {
+            $config['auth']['scope'] = 'BidsEdit BidsRead Investments SmBuy SmSell';
         }
 
         $this->config = $config;
+    }
 
-        $this->autologin = !empty($config['autologin']);
+    /**
+     * Set access token
+     *
+     * @param string $token
+     */
+    public function setToken($token) {
+        $this->token = $token;
     }
 
     /**
      * Get Api request url based on Api resource
      *
      * @param string $resource
-     * @param string $path Path to be appended to url
+     * @param string $id Placeholder "?" in resource will be replaced with this value
      * @return string
      * @throws ApiCriticalException
      */
-    private function getUrl($resource, $path=null) {
-        if (empty($this->error_codes[$resource])) {
-            throw new ApiCriticalException('Unknown api resource: "'.$resource.'"');
-        }
+    private function getUrl($resource, $id=null) {
         $url = $this->config['url'] . '/v' . self::API_VERSION . '/' . $resource;
-        if ($path) {
-            $url .= '/' . $path;
+        if ($id !== null) {
+            $url = str_replace('?', $id, $url);
         }
         return $url;
     }
@@ -115,15 +164,18 @@ class Api {
      *
      * @param string $resource
      * @param Client $client
+     * @param string $method
      * @throws ApiCriticalException
      */
-    private function validateResponseCode($resource, Client $client) {
-        if (empty($this->error_codes[$resource])) {
+    private function validateResponseCode($resource, Client $client, $method) {
+        $error_key = $method==Client::METHOD_POST?'P/':'G/';
+        $error_key .= $resource;
+        if (!isset($this->error_codes[$error_key])) {
             throw new ApiCriticalException('Unknown api method: "'.$resource.'"');
         }
         $http_code = $client->getHttpCode();
         if (!array_key_exists($http_code, $this->http_codes)) {
-            throw new ApiCriticalException('Unexpected api http code ('.$http_code.') for resource "'.$resource.'"');
+            throw new ApiCriticalException('Unexpected api http code ('.$http_code.') for resource "'.$method.'/'.$resource.'"');
         }
     }
 
@@ -132,73 +184,204 @@ class Api {
      *
      * @param string $resource
      * @param array $json
+     * @param string $method
      * @throws ApiCriticalException
      * @throws ApiException
      */
-    private function validateResponse($resource, $json) {
+    private function validateResponse($resource, $json, $method) {
         if (!$json) {
             throw new ApiCriticalException('Missing response');
         }
+        $error_key = $method==Client::METHOD_POST?'P/':'G/';
+        $error_key .= $resource;
         $result = new Definition\ApiResult($json);
 
         if (!$result->Success) {
             foreach ($result->Errors as $e) {
-                if (isset($this->error_codes[$resource][$e->Code])) {
+                if (isset($this->error_codes[$error_key][$e->Code])) {
                     continue;
                 }
-                throw new ApiCriticalException('Unexpected error code ('.$e->Code.') for resource "'.$resource.'": ' . json_encode($result->Errors));
+                throw new ApiCriticalException('Unexpected error code ('.$e->Code.') for resource "'.$method.'/'.$resource.'": ' . json_encode($result->Errors));
             }
             throw new ApiException($result->Errors);
         }
     }
 
     /**
-     * Authenticate user with provided user credentials (username and password).
+     * Get authorization url
      *
-     * @throws ApiCriticalException
-     * @throws ApiException
+     * @return string
      */
-    public function login() {
-        $resource = 'login';
+    public function getAuthUrl() {
 
-        $userCred = new Definition\UserCredentials();
-        $userCred->Username = $this->config['username'];
-        $userCred->Password = $this->config['password'];
+        $params = array(
+            'client_id' => $this->config['auth']['client_id'],
+            'scope' => $this->config['auth']['scope'],
+            'response_type' => 'code',
+        );
+        if (!empty($this->config['auth']['redirect_uri'])) {
+            $params['redirect_uri'] = $this->config['auth']['redirect_uri'];
+        }
 
-        $json = $this->query($resource, null, json_encode($userCred), Client::METHOD_POST);
-
-        $response = new Definition\ApiResultAuthentication($json);
-
-        $this->token = $response->Payload->Token;
+        return $this->config['auth']['url_base'] . '/oauth/authorize?' . http_build_query($params);
     }
 
     /**
-     * Revoke the current authorization token.
+     * Redeem access token for code
      *
+     * @param string $code Authorization code
+     * @return Definition\AccessTokenResult
      * @throws ApiCriticalException
      * @throws ApiException
      */
-    public function logout() {
-        $resource = 'logout';
+    public function getToken($code) {
+        $param = new Definition\AccessTokenRequest();
+        $param->grant_type = 'authorization_code';
+        $param->client_id = $this->config['auth']['client_id'];
+        $param->client_secret = $this->config['auth']['secret'];
+        $param->code = $code;
 
-        $client = new Client($this->getUrl($resource), null, Client::METHOD_POST, array(
-            'Authorization' => 'Token ' . $this->token,
-        ));
+        $client = new Client($this->config['api_base'] . '/oauth/access_token', json_encode($param), Client::METHOD_POST);
 
-        $this->validateResponseCode($resource, $client);
+        $json = json_decode($client->getBody(), true);
+        if (!empty($json['error'])) {
+            $err_msg = $json['error'];
+            if (!empty($json['error_description'])) {
+                $err_msg .= ': ' . $json['error_description'];
+            }
+            throw new ApiCriticalException($err_msg);
+        } else if (!empty($json['Errors'])) {
+            $errors = array();
+            foreach ($json['Errors'] as $e) {
+                $errors[] = new Definition\ApiError($e);
+            }
+            throw new ApiException($errors);
+        }
 
-        $body = $client->getBody();
-        $json = json_decode($body, true);
-        $this->validateResponse($resource, $json);
+        $result = new Definition\AccessTokenResult($json);
 
-        $this->token = null;
+        if (!$result->access_token) {
+            throw new ApiCriticalException('access_token not found');
+        }
+        $this->token = $result->access_token;
+
+        return $result;
+    }
+
+    /**
+     * Gets your account balance information
+     *
+     * @return Definition\MyAccountBalance
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function accountBalance() {
+        $resource = 'account/balance';
+
+        $json = $this->query($resource);
+
+        $response = new Definition\ApiResultMyAccountBalance($json);
+
+        return $response->Payload;
+    }
+
+    /**
+     * Gets list of your investments
+     *
+     * $request array supported keys:
+     *     loanIssuedDateFrom                  string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss)
+     *     loanIssuedDateTo                    string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss)
+     *     principalMin                        float               Remaining principal amount min
+     *     principalMax                        float               Remaining principal amount max
+     *     interestMin                         float               Interest rate min
+     *     interestMax                         float               Interest rate max
+     *     lengthMax                           int                 Loan lenght min
+     *     lengthMin                           int                 Loan lenght max
+     *     latePrincipalAmountMin              float               Principal debt amount min
+     *     latePrincipalAmountMax              float               Principal debt amount max
+     *     nextPaymentDateFrom                 string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss)
+     *     nextPaymentDateTo                   string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss)
+     *     countries                           string[]            Two letter iso code for country of origin: EE, ES, FI
+     *     ratings                             string[]            Bondora's rating: AA, A, B, C, D, E, F, HR
+     *     creditScoreMin                      int                 Minimum credit score
+     *     creditScoreMax                      int                 Maximum credit score
+     *     userName                            string              Borrower's username
+     *     loanStatusCode                      int[]               Loan status code 2 Current, 100 Overdue, 5 60+ days overdue, 4 Repaid, 8 Released
+     *     incomeVerificationStatus            int                 Income verification type @see Enum\AuctionIncomeVerificationStatus
+     *     loanDebtManagementStage             int                 Latest debt management stage @see Enum\LoanDebtManagementEventType
+     *     loanDebtManagementDateActiveFrom    string|\DateTime    Latest debt management date active from (string format YYYY-MM-DD hh:mm:ss)
+     *     loanDebtManagementDateActiveTo      string|\DateTime    Latest debt management date active to (string format YYYY-MM-DD hh:mm:ss)
+     *     salesStatus                         int                 Second market sale status NULL All, 0 Bought investments, 1 Sold investments
+     *     isInRepayment                       bool                Search only active in repayment loans, StatusCodes (2, 5, 100)
+     *     pageSize                            int                 Max returned results, default is 1000
+     *     pageNr                              int                 Result page nr
+     *
+     *
+     * @param array $request
+     * @return Definition\MyInvestmentItem[]
+     * @throws ApiCriticalException
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function accountInvestments($request=array()) {
+        $resource = 'account/investments';
+
+        $array_fields = array(
+            'countries',
+            'ratings',
+            'loanStatusCode',
+        );
+        $int_fields = array(
+            'lengthMax',
+            'lengthMin',
+            'creditScoreMin',
+            'creditScoreMax',
+            'loanStatusCode',
+            'incomeVerificationStatus',
+            'loanDebtManagementStage',
+            'salesStatus',
+            'pageSize',
+            'pageNr',
+        );
+        $float_fields = array(
+            'principalMin',
+            'principalMax',
+            'interestMin',
+            'interestMax',
+            'latePrincipalAmountMin',
+            'latePrincipalAmountMax',
+        );
+        $date_fields = array(
+            'loanIssuedDateFrom',
+            'loanIssuedDateTo',
+            'nextPaymentDateFrom',
+            'nextPaymentDateTo',
+            'loanDebtManagementDateActiveFrom',
+            'loanDebtManagementDateActiveTo',
+        );
+        $string_fields = array(
+            'countries',
+            'ratings',
+            'userName',
+        );
+        $bool_fields = array(
+            'isInRepayment',
+        );
+
+        $params = $this->prepareRequestArray($request, $array_fields, $int_fields, $float_fields, $string_fields, $date_fields, $bool_fields);
+
+        $json = $this->query($resource, null, $params);
+
+        $response = new Definition\ApiResultMyInvestments($json);
+
+        return $response->Payload;
     }
 
     /**
      * Gets list of active Auctions
      *
      * $request array supported keys:
-     *     pageSize               int               Max returned results, default is 1000. Range: inclusive between 1 and 2000
+     *     pageSize               int               Max returned results, default is 1000. Range: inclusive between 1 and 1000
      *     pageNr                 int               Result page nr. Range: inclusive between 1 and 2147483647
      *     countries              string[]          Two letter iso code for country of origin: EE, ES, FI
      *     ratings                string[]          Bondora's rating: AA, A, B, C, D, E, F, HR
@@ -210,11 +393,10 @@ class Api {
      *     ageMax                 int               Maximum age
      *     loanNumber             int               Loan number
      *     userName               string            Username
-     *     applicationDateFrom    string|DateTime   Loan application started date from
-     *     applicationDateTo      string|DateTime   Loan application started date to
+     *     applicationDateFrom    string|DateTime   Loan application started date from. (string format YYYY-MM-DD hh:mm:ss)
+     *     applicationDateTo      string|DateTime   Loan application started date to. (string format YYYY-MM-DD hh:mm:ss)
      *     creditScoreMin         int               Minimum credit score
      *     creditScoreMax         int               Maximum credit score
-     *     creditGroups           string[]          Credit group
      *     interestMin            float             Minimum interest
      *     interestMax            float             Maximum interest
      *     incomeTotalMin         float             Minimal total income
@@ -222,6 +404,8 @@ class Api {
      *     modelVersion           int               Model version
      *     expectedLossMin        float             Minimal expected loss
      *     expectedLossMax        float             Maximum expected loss
+     *     listedOnUTCFrom        string|DateTime   Date when auction was published from. (string format YYYY-MM-DD hh:mm:ss)
+     *     listedOnUTCTo          string|DateTime   Date when auction was published to. (string format YYYY-MM-DD hh:mm:ss)
      *
      * @param array $request
      * @return Definition\Auction[]
@@ -231,13 +415,10 @@ class Api {
     public function auctions($request=array()) {
         $resource = 'auctions';
 
-        $params = array();
-
         $array_fields = array(
             'countries',
             'ratings',
             'terms',
-            'creditGroups',
         );
         $int_fields = array(
             'pageSize',
@@ -261,58 +442,19 @@ class Api {
             'expectedLossMax',
         );
         $string_fields = array(
-            'userName'
+            'countries',
+            'ratings',
+            'terms',
+            'userName',
         );
-
-        $all_fields = array_merge($int_fields, $float_fields, $string_fields);
-        $all_fields = array_unique($all_fields);
-        foreach ($all_fields as $fld_name) {
-            if (!isset($request[$fld_name])) {
-                continue;
-            }
-            if (!in_array($fld_name, $array_fields)) {
-                if (in_array($fld_name, $float_fields)) {
-                    $params['request.' . $fld_name] = (float) $request[$fld_name];
-                } else if (in_array($fld_name, $string_fields)) {
-                    $params['request.' . $fld_name] = (string) $request[$fld_name];
-                } else if (in_array($fld_name, $int_fields)) {
-                    $params['request.' . $fld_name] = (int) $request[$fld_name];
-                }
-                continue;
-            }
-
-            if (!is_array($request[$fld_name])) {
-                $request[$fld_name] = array($request[$fld_name]);
-            }
-            $params['request.' . $fld_name] = array();
-            foreach ($request[$fld_name] as $value) {
-                $params['request.' . $fld_name][] = (int) $value;
-                if (in_array($fld_name, $float_fields)) {
-                    $params['request.' . $fld_name][] = (float) $value;
-                } else if (in_array($fld_name, $string_fields)) {
-                    $params['request.' . $fld_name][] = (string) $value;
-                } else if (in_array($fld_name, $int_fields)) {
-                    $params['request.' . $fld_name][] = (int) $value;
-                }
-            }
-            $params['request.' . $fld_name] = implode(',', $params[$fld_name]);
-        }
-
         $date_fields = array(
             'applicationDateFrom',
             'applicationDateTo',
+            'listedOnUTCFrom',
+            'listedOnUTCTo',
         );
-        foreach ($date_fields as $fld_name) {
-            if (!isset($request[$fld_name])) {
-                continue;
-            }
-            $request_value = $request[$fld_name];
-            if (is_string($request_value)) {
-                $params['request.' . $fld_name] = (string) $request_value;
-            } else if ($request_value instanceof \DateTime) {
-                $params['request.' . $fld_name] = $request_value->format('d.m.Y');
-            }
-        }
+
+        $params = $this->prepareRequestArray($request, $array_fields, $int_fields, $float_fields, $string_fields, $date_fields, array());
 
         $json = $this->query($resource, null, $params);
 
@@ -324,68 +466,296 @@ class Api {
     /**
      * Gets Auction info by auction identifier
      *
-     * @param $auction_id
-     * @return Definition\Auction
+     * @param string $id Auction's identifier
+     * @return Definition\AuctionExtended
      * @throws ApiCriticalException
      * @throws ApiException
+     * @throws \Exception
      */
-    public function auction($auction_id) {
-        $resource = 'auction';
+    public function auction($id) {
+        $resource = 'auction/?';
 
-        $json = $this->query($resource, $auction_id);
+        $json = $this->query($resource, $id);
 
-        $response = new Definition\ApiResultAuction($json);
+
+        $response = new Definition\ApiResultExtendedAuction($json);
+        return $response->Payload;
+    }
+
+    /**
+     * Gets list of active secondary market items
+     *
+     * $request array supported keys:
+     *     loanIssuedDateFrom           date        Loan issued start date from
+     *     loanIssuedDateTo             date        Loan issued start date to
+     *     principalMin                 float       Remaining principal amount min
+     *     principalMax                 float       Remaining principal amount max
+     *     interestMin                  float       Interest rate min
+     *     interestMax                  float       Interest rate max
+     *     lengthMax                    int         Loan lenght min
+     *     lengthMin                    int         Loan lenght max
+     *     hasDebt                      bool        Is overdue
+     *     latePrincipalAmountMin       float       Principal debt amount min
+     *     latePrincipalAmountMax       float       Principal debt amount max
+     *     useOfLoan                    int         Use of loan. @see Enum\AuctionPurpose
+     *     hasNewSchedule               bool        Has been rescheduled
+     *     countries                    string[]    Two letter iso code for country of origin: EE, ES, FI
+     *     ratings                      string[]    Bondora's rating: AA, A, B, C, D, E, F, HR
+     *     creditScoreMin               int         Minimum credit score
+     *     creditScoreMax               int         Maximum credit score
+     *     userName                     string      Borrower's username
+     *     gender                       int         Borrower's gender: Male 0, Female 1, Unknown 2
+     *     ageMin                       int         Minimal age
+     *     ageMax                       int         Maximum age
+     *     incomeVerificationStatus     int         Income verification type. @see Enum\AuctionIncomeVerificationStatus
+     *     showMyItems                  bool        Can find your own items from market: Value Null = ALL, True = only your items, False = other user items
+     *     listedOnDateFrom             date        Date when item was published from
+     *     listedOnDateTo               date        Date when item was published to
+     *     desiredDiscountRateMin       float       Minimal DesiredDiscountRate
+     *     desiredDiscountRateMax       float       Maximal DesiredDiscountRate
+     *     xirrMin                      float       Minimal Xirr
+     *     xirrMax                      float       Maximal Xirr
+     *     pageSize                     int         Max returned results, default is 1000. Range: inclusive between 1 and 1000
+     *     pageNr                       int         Result page nr. Range: inclusive between 1 and 2147483647
+     *
+     * @param array $request
+     * @return Definition\SecondMarketItem[]
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function secondaryMarket($request=array()) {
+        $resource = 'secondarymarket';
+
+        $array_fields = array(
+            'countries',
+            'ratings',
+        );
+        $int_fields = array(
+            'lengthMax',
+            'lengthMin',
+            'useOfLoan',
+            'creditScoreMin',
+            'creditScoreMax',
+            'gender',
+            'ageMin',
+            'ageMax',
+            'incomeVerificationStatus',
+            'pageSize',
+            'pageNr',
+        );
+        $float_fields = array(
+            'principalMin',
+            'principalMax',
+            'interestMin',
+            'interestMax',
+            'latePrincipalAmountMin',
+            'latePrincipalAmountMax',
+            'desiredDiscountRateMin',
+            'desiredDiscountRateMax',
+            'xirrMin',
+            'xirrMax',
+        );
+        $string_fields = array(
+            'countries',
+            'ratings',
+            'userName',
+        );
+        $date_fields = array(
+            'loanIssuedDateFrom',
+            'loanIssuedDateTo',
+            'listedOnDateFrom',
+            'listedOnDateTo',
+        );
+        $bool_fields = array(
+            'hasDebt',
+            'hasNewSchedule',
+            'showMyItems',
+        );
+
+        $params = $this->prepareRequestArray($request, $array_fields, $int_fields, $float_fields, $string_fields, $date_fields, $bool_fields);
+
+        $json = $this->query($resource, null, $params);
+
+        $response = new Definition\ApiResultSecondMarket($json);
 
         return $response->Payload;
     }
 
     /**
-     * Get user's represented Organizations.
+     * Gets LoanPartDetails info by identifier
      *
-     * @return Definition\UserOrganization[]
-     * @throws ApiCriticalException
-     * @throws ApiException
+     * @param string $id
+     * @return Definition\LoanPartDetails
      */
-    public function userorganizations() {
-        $resource = 'userorganizations';
+    public function loanpart($id) {
+        $resource = 'loanpart/?';
 
-        $json = $this->query($resource);
+        $json = $this->query($resource, $id);
 
-        $response = new Definition\ApiResultUserOrganizations($json);
+        $response = new Definition\ApiResultLoanPartDetails($json);
 
         return $response->Payload;
+    }
+
+    /**
+     * Get the secondary market item summary
+     *
+     * @param string $id
+     * @return Definition\SecondMarketItemSummary
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function secondaryMarketById($id) {
+        $resource = 'secondarymarket/?';
+
+        $json = $this->query($resource, $id);
+
+        $response = new Definition\ApiResultSecondMarketItemSummary($json);
+
+        return $response->Payload;
+    }
+
+    /**
+     * Buy loans from secondary market
+     *
+     * @param string[] $ids Secondary market item ids to buy
+     * @return bool
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function secondaryMarketBuy($ids) {
+        $resource = 'secondarymarket/buy';
+
+        $param = new Definition\SecondMarketBuyRequest();
+        if (!is_array($ids)) {
+            $ids = array($ids);
+        }
+        $param->ItemIds = $ids;
+
+        $json = $this->query($resource, null, json_encode($param), Client::METHOD_POST);
+
+        $response = new Definition\ApiResult($json);
+
+        return $response->Success;
+    }
+
+    /**
+     * Sell your loans to secondary market
+     *
+     * @param Definition\SecondMarketSell[] $sellParts LoanParts to sell
+     * @return Definition\SecondMarketSaleResponse[]
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function secondaryMarketSell($sellParts) {
+        $resource = 'secondarymarket/sell';
+
+        $param = new Definition\SecondMarketSaleRequest();
+        if (!is_array($sellParts)) {
+            $sellParts = array($sellParts);
+        }
+        $param->Items = $sellParts;
+
+        $json = $this->query($resource, null, json_encode($param), Client::METHOD_POST);
+
+        $response = new Definition\ApiResultSecondMarketSale($json);
+
+        return $response->Payload;
+    }
+
+    /**
+     * Remove your loans from secondary market.
+     *
+     * @param string $id
+     * @return bool
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function secondaryMarketCancel($id) {
+        $resource = 'secondarymarket/?/cancel';
+
+        $json = $this->query($resource, $id, null, Client::METHOD_POST);
+
+        $response = new Definition\ApiResult($json);
+
+        return $response->Success;
+    }
+
+    private function prepareRequestArray($request, $array_fields=array(), $int_fields=array(), $float_fields=array(), $string_fields=array(), $date_fields=array(), $bool_fields=array()) {
+        $params = array();
+
+        $all_fields = array_merge($int_fields, $float_fields, $string_fields, $date_fields, $bool_fields);
+        $all_fields = array_unique($all_fields);
+        foreach ($all_fields as $fld_name) {
+            if (!isset($request[$fld_name])) {
+                continue;
+            }
+
+            if (!is_array($request[$fld_name])) {
+                $request[$fld_name] = array($request[$fld_name]);
+            }
+            $params['request.' . $fld_name] = array();
+            foreach ($request[$fld_name] as $value) {
+                if (in_array($fld_name, $int_fields)) {
+                    $params['request.' . $fld_name][] = (int) $value;
+                } else if (in_array($fld_name, $float_fields)) {
+                    $params['request.' . $fld_name][] = (float) $value;
+                } else if (in_array($fld_name, $string_fields)) {
+                    $params['request.' . $fld_name][] = (string) $value;
+                } else if (in_array($fld_name, $date_fields)) {
+                    if (is_string($value)) {
+                        $params['request.' . $fld_name][] = (string) $value;
+                    } else if ($value instanceof \DateTime) {
+                        $params['request.' . $fld_name] = $value->format('Y-m-d H:i:s');
+                    }
+                } else if (in_array($fld_name, $bool_fields)) {
+                    $params['request.' . $fld_name][] = $value?'true':'false';
+                }
+            }
+
+            if (!in_array($fld_name, $array_fields)) {
+                $params['request.' . $fld_name] = $params['request.' . $fld_name][0];
+            }
+
+        }
+
+        return $params;
     }
 
     /**
      * Gets list of bids the investor has made.
      *
-     * @param int $bidStatus Bid status (pending, failed, succeeded)
-     * @param string|\DateTime $startDate Bids made from date. Format DD.MM.YYYY
-     * @param string|\DateTime $endDate Bids made to date. Format DD.MM.YYYY
-     * @param string $organizationId The represented organization id. Don't specify if getting list for current user. globally unique identifier.
+     * @param int $bidStatusCode Bid status code @see Enum\ApiAuctionBidRequestStatus
+     * @param string|\DateTime $startDate Bids made from date. (string format YYYY-MM-DD hh:mm:ss)
+     * @param string|\DateTime $endDate Bids made to date. (string format YYYY-MM-DD hh:mm:ss)
+     * @param int $pageSize Max returned results, default is 1000. Range: inclusive between 1 and 1000
+     * @param int $pageNr Result page nr. Range: inclusive between 1 and 2147483647
      * @return Definition\BidSummary[]
      * @throws ApiCriticalException
      * @throws ApiException
      */
-    public function bids($bidStatus=null, $startDate=null, $endDate=null, $organizationId=null) {
+    public function bids($bidStatusCode=null, $startDate=null, $endDate=null, $pageSize=null, $pageNr=null) {
         $resource = 'bids';
 
         $params = array();
-        if ($bidStatus) {
-            $params['bidStatus'] = (int) $bidStatus;
+        if ($bidStatusCode !== null) {
+            $params['bidStatusCode'] = (int) $bidStatusCode;
         }
         if (is_string($startDate)) {
             $params['startDate'] = $startDate;
         } else if ($startDate instanceof \DateTime) {
-            $params['startDate'] = $startDate->format('d.m.Y');
+            $params['startDate'] = $startDate->format('Y-m-d H:i:s');
         }
         if (is_string($endDate)) {
             $params['endDate'] = $endDate;
         } else if ($endDate instanceof \DateTime) {
-            $params['endDate'] = $endDate->format('d.m.Y');
+            $params['endDate'] = $endDate->format('Y-m-d H:i:s');
         }
-        if ($organizationId) {
-            $params['organizationId'] = $organizationId;
+        if ($pageSize !== null) {
+            $params['pageSize'] = (int) $pageSize;
+        }
+        if ($pageNr !== null) {
+            $params['pageNr'] = (int) $pageNr;
         }
 
         $json = $this->query($resource, null, $params);
@@ -398,30 +768,59 @@ class Api {
     /**
      * Makes bid(s) into specified auction(s).
      *
-     * @param Definition\Bid[] $Bids The bids to make.
-     * @param string $OrganizationId Organization to make bid for. Specify this if the Bid is made in behalf of the Organization. No need to specify if the bid is made for current user.
-     * @return bool
-     * @throws ApiCriticalException
+     * @param Definition\Bid[] $bids The bids to make.
+     * @return Definition\BidResponse[]
      * @throws ApiException
+     * @throws \Exception
      */
-    public function bid($Bids, $OrganizationId = null) {
+    public function bidPost($bids) {
         $resource = 'bid';
 
-        $bidReq = new Definition\BidRequest();
-        if ($OrganizationId) {
-            $bidReq->OrganizationId = $OrganizationId;
+        $param = new Definition\BidRequest();
+        if (!is_array($bids)) {
+            $bids = array($bids);
         }
-        if (!$Bids) {
-            return false;
-        }
-        if (!is_array($Bids)) {
-            $Bids = array($Bids);
-        }
-        $bidReq->Bids = $Bids;
+        $param->Bids = $bids;
 
-        $this->query($resource, null, json_encode($bidReq), Client::METHOD_POST);
+        $json = $this->query($resource, null, json_encode($param), Client::METHOD_POST);
 
-        return true;
+        $response = new Definition\ApiResultMakeBids($json);
+
+        return $response->Payload;
+    }
+
+    /**
+     * Get the Bid
+     *
+     * @param string $id
+     * @return Definition\BidSummary
+     */
+    public function bid($id) {
+        $resource = 'bid/?';
+
+        $json = $this->query($resource, $id);
+
+        $response = new Definition\ApiResultBid($json);
+
+        return $response->Payload;
+    }
+
+    /**
+     * Cancel the Bid
+     *
+     * @param string $id
+     * @return bool
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function bidCancel($id) {
+        $resource = 'bid/?/cancel';
+
+        $json = $this->query($resource, $id, null, Client::METHOD_POST);
+
+        $response = new Definition\ApiResult($json);
+
+        return $response->Success;
     }
 
     /**
@@ -430,7 +829,7 @@ class Api {
      * If getting session error and auto-login is enabled, then does new login and retries.
      *
      * @param string $resource
-     * @param string $path
+     * @param string $id
      * @param array|string $params
      * @param string $method
      * @return array
@@ -438,50 +837,43 @@ class Api {
      * @throws ApiException
      * @throws \Exception
      */
-    private function query($resource, $path=null, $params=null, $method=Client::METHOD_GET) {
+    private function query($resource, $id=null, $params=null, $method=Client::METHOD_GET) {
         // set token, except for login query
         $headers = array();
         if ($resource != 'login') {
-            $headers['Authorization'] = 'Token ' . $this->token;
+            $headers['Authorization'] = 'Bearer ' . $this->token;
+        }
+        if (empty($this->error_codes[($method==Client::METHOD_GET?'G/':'P/') . $resource])) {
+            throw new ApiCriticalException('Unknown api resource: "'.$resource.'"');
         }
         // get query url
-        $url = $this->getUrl($resource, $path);
+        $url = $this->getUrl($resource, $id);
         // query
         $client = new Client($url, $params, $method, $headers);
         $last_run_time = microtime(true);
 
         // check http code
-        $this->validateResponseCode($resource, $client);
+        $this->validateResponseCode($resource, $client, $method);
 
         // get response data
         $body = $client->getBody();
         $json = json_decode($body, true);
         try {
-            $this->validateResponse($resource, $json);
+            $this->validateResponse($resource, $json, $method);
         } catch (ApiException $e) {
             // response was not successful
             $do_retry = false;
-            $has_session_problem = false;
             $has_throttling_problem = false;
 
             // was there any errors we can handle automatically
             $errors = $e->getErrors();
             foreach ($errors as $error) {
                 if (in_array($error->Code, array(401, 403))) {
-                    $has_session_problem = true;
+                    throw $e;
                 }
                 if ($error->Code == 429) {
                     $has_throttling_problem = true;
                 }
-            }
-
-            // has session problem and auto-login is enabled
-            if ($has_session_problem && $this->autologin && $resource != 'login' && $resource != 'logout') {
-                usleep(1000000 - (microtime(true) - $last_run_time)); // avoid throttling limit
-                $this->login();
-                $last_run_time = microtime(true);
-                $do_retry = true;
-                $this->autologin = false;
             }
 
             // has throttling problem, lets wait a second and retry again
@@ -497,10 +889,10 @@ class Api {
                     $headers['Authorization'] = 'Token ' . $this->token;
                 }
                 $client = new Client($url, $params, $method, $headers);
-                $this->validateResponseCode($resource, $client);
+                $this->validateResponseCode($resource, $client, $method);
                 $body = $client->getBody();
                 $json = json_decode($body, true);
-                $this->validateResponse($resource, $json);
+                $this->validateResponse($resource, $json, $method);
             } else {
                 // contains errors we can't handle automatically, throw this
                 throw $e;

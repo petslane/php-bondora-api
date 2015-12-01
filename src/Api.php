@@ -54,7 +54,6 @@ class Api {
             429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
         'G/bid/?' => array(
-            0 => 'tmp', // Bondora bug. Somehow all errorcodes from bid service have 0 value
             400 => 'No bids specified',
             401 => 'User is not Authorized',
             403 => 'User is not allowed to fully represent the specified organization',

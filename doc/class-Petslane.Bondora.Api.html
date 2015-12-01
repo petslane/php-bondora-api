@@ -35,6 +35,11 @@
 						Definition					</a>
 
 						</li>
+				<li>
+					<a href="namespace-Petslane.Bondora.Enum.html">
+						Enum					</a>
+
+						</li>
 							</ul></li></ul></li>
 			</ul>
 		</div>
@@ -109,7 +114,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Api.html#7-512" title="Go to source code">Api.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Api.html#7-904" title="Go to source code">Api.php</a>
 		<br>
 	</div>
 
@@ -129,7 +134,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#78-92" title="Go to source code">__construct</a>( <span> <var>$config</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#114-135" title="Go to source code">__construct</a>( <span> <var>$config</var></span> )</code>
 
 		<div class="description short">
 			
@@ -147,7 +152,7 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="login" id="_login">
+	<tr data-order="setToken" id="_setToken">
 
 		<td class="attributes"><code>
 			 public 
@@ -158,18 +163,96 @@
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_login">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#155-173" title="Go to source code">login</a>( )</code>
+		<a class="anchor" href="#_setToken">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#137-144" title="Go to source code">setToken</a>( <span>string <var>$token</var></span> )</code>
 
 		<div class="description short">
-			<p>Authenticate user with provided user credentials (username and password).</p>
+			<p>Set access token</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Authenticate user with provided user credentials (username and password).</p>
+			<p>Set access token</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$token</var></dt>
+					<dd></dd>
+				</dl></div>
 
 
 
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getAuthUrl" id="_getAuthUrl">
+
+		<td class="attributes"><code>
+			 public 
+
+			string
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getAuthUrl">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#210-227" title="Go to source code">getAuthUrl</a>( )</code>
+
+		<div class="description short">
+			<p>Get authorization url</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get authorization url</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					string
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getToken" id="_getToken">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Petslane.Bondora.Definition.AccessTokenResult.html">Petslane\Bondora\Definition\AccessTokenResult</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getToken">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#229-269" title="Go to source code">getToken</a>( <span>string <var>$code</var></span> )</code>
+
+		<div class="description short">
+			<p>Redeem access token for code</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Redeem access token for code</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$code</var></dt>
+					<dd>Authorization code</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.Definition.AccessTokenResult.html">Petslane\Bondora\Definition\AccessTokenResult</a></code>
+				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
@@ -182,34 +265,85 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="logout" id="_logout">
+	<tr data-order="accountBalance" id="_accountBalance">
 
 		<td class="attributes"><code>
 			 public 
 
-			
+			<code><a href="class-Petslane.Bondora.Definition.MyAccountBalance.html">Petslane\Bondora\Definition\MyAccountBalance</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_logout">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#175-195" title="Go to source code">logout</a>( )</code>
+		<a class="anchor" href="#_accountBalance">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#271-286" title="Go to source code">accountBalance</a>( )</code>
 
 		<div class="description short">
-			<p>Revoke the current authorization token.</p>
+			<p>Gets your account balance information</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Revoke the current authorization token.</p>
+			<p>Gets your account balance information</p>
 
 
 
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.Definition.MyAccountBalance.html">Petslane\Bondora\Definition\MyAccountBalance</a></code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code><br>
+					Exception
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="accountInvestments" id="_accountInvestments">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Petslane.Bondora.Definition.MyInvestmentItem.html">Petslane\Bondora\Definition\MyInvestmentItem</a>[]</code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_accountInvestments">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#288-378" title="Go to source code">accountInvestments</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
+
+		<div class="description short">
+			<p>Gets list of your investments</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets list of your investments</p>
+
+<p>$request array supported keys: loanIssuedDateFrom                  string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss) loanIssuedDateTo                    string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss) principalMin                        float               Remaining principal amount min principalMax                        float               Remaining principal amount max interestMin                         float               Interest rate min interestMax                         float               Interest rate max lengthMax                           int                 Loan lenght min lengthMin                           int                 Loan lenght max latePrincipalAmountMin              float               Principal debt amount min latePrincipalAmountMax              float               Principal debt amount max nextPaymentDateFrom                 string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss) nextPaymentDateTo                   string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss) countries                           string[]            Two letter iso code for country of origin: EE, ES, FI ratings                             string[]            Bondora's rating: AA, A, B, C, D, E, F, HR creditScoreMin                      int                 Minimum credit score creditScoreMax                      int                 Maximum credit score userName                            string              Borrower's username loanStatusCode                      int[]               Loan status code 2 Current, 100 Overdue, 5 60+ days overdue, 4 Repaid, 8 Released incomeVerificationStatus            int                 Income verification type @see Enum\AuctionIncomeVerificationStatus loanDebtManagementStage             int                 Latest debt management stage @see Enum\LoanDebtManagementEventType loanDebtManagementDateActiveFrom    string|\DateTime    Latest debt management date active from (string format YYYY-MM-DD hh:mm:ss) loanDebtManagementDateActiveTo      string|\DateTime    Latest debt management date active to (string format YYYY-MM-DD hh:mm:ss) salesStatus                         int                 Second market sale status NULL All, 0 Bought investments, 1 Sold investments isInRepayment                       bool                Search only active in repayment loans, StatusCodes (2, 5, 100) pageSize                            int                 Max returned results, default is 1000 pageNr                              int                 Result page nr</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.Definition.MyInvestmentItem.html">Petslane\Bondora\Definition\MyInvestmentItem</a>[]</code>
+				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
 					<code><a href="class-Petslane.Bondora.ApiCriticalException.html">Petslane\Bondora\ApiCriticalException</a></code><br>
-					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code>
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code><br>
+					Exception
 				</div>
 
 
@@ -229,7 +363,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_auctions">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#197-322" title="Go to source code">auctions</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#380-464" title="Go to source code">auctions</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>Gets list of active Auctions</p>
@@ -238,7 +372,7 @@
 		<div class="description detailed hidden">
 			<p>Gets list of active Auctions</p>
 
-<p>$request array supported keys: pageSize               int               Max returned results, default is 1000. Range: inclusive between 1 and 2000 pageNr                 int               Result page nr. Range: inclusive between 1 and 2147483647 countries              string[]          Two letter iso code for country of origin: EE, ES, FI ratings                string[]          Bondora's rating: AA, A, B, C, D, E, F, HR gender                 int               Borrower's gender: Male 0, Female 1, Unknown 2 sumMin                 int               Minimal loan amount sumMax                 int               Maximum loan amount terms                  int[]             Loan length: 3, 9, 12, 18, 24, 36, 48, 60 months ageMin                 int               Minimal age ageMax                 int               Maximum age loanNumber             int               Loan number userName               string            Username applicationDateFrom    string|DateTime   Loan application started date from applicationDateTo      string|DateTime   Loan application started date to creditScoreMin         int               Minimum credit score creditScoreMax         int               Maximum credit score creditGroups           string[]          Credit group interestMin            float             Minimum interest interestMax            float             Maximum interest incomeTotalMin         float             Minimal total income incomeTotalMax         float             Maximum total income modelVersion           int               Model version expectedLossMin        float             Minimal expected loss expectedLossMax        float             Maximum expected loss</p>
+<p>$request array supported keys: pageSize               int               Max returned results, default is 1000. Range: inclusive between 1 and 1000 pageNr                 int               Result page nr. Range: inclusive between 1 and 2147483647 countries              string[]          Two letter iso code for country of origin: EE, ES, FI ratings                string[]          Bondora's rating: AA, A, B, C, D, E, F, HR gender                 int               Borrower's gender: Male 0, Female 1, Unknown 2 sumMin                 int               Minimal loan amount sumMax                 int               Maximum loan amount terms                  int[]             Loan length: 3, 9, 12, 18, 24, 36, 48, 60 months ageMin                 int               Minimal age ageMax                 int               Maximum age loanNumber             int               Loan number userName               string            Username applicationDateFrom    string|DateTime   Loan application started date from. (string format YYYY-MM-DD hh:mm:ss) applicationDateTo      string|DateTime   Loan application started date to. (string format YYYY-MM-DD hh:mm:ss) creditScoreMin         int               Minimum credit score creditScoreMax         int               Maximum credit score interestMin            float             Minimum interest interestMax            float             Maximum interest incomeTotalMin         float             Minimal total income incomeTotalMax         float             Maximum total income modelVersion           int               Model version expectedLossMin        float             Minimal expected loss expectedLossMax        float             Maximum expected loss listedOnUTCFrom        string|DateTime   Date when auction was published from. (string format YYYY-MM-DD hh:mm:ss) listedOnUTCTo          string|DateTime   Date when auction was published to. (string format YYYY-MM-DD hh:mm:ss)</p>
 
 
 				<h4>Parameters</h4>
@@ -268,14 +402,14 @@
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-Petslane.Bondora.Definition.Auction.html">Petslane\Bondora\Definition\Auction</a></code>
+			<code><a href="class-Petslane.Bondora.Definition.AuctionExtended.html">Petslane\Bondora\Definition\AuctionExtended</a></code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_auction">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#324-340" title="Go to source code">auction</a>( <span> <var>$auction_id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#466-483" title="Go to source code">auction</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets Auction info by auction identifier</p>
@@ -287,19 +421,20 @@
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$auction_id</var></dt>
-					<dd></dd>
+					<dt><var>$id</var></dt>
+					<dd>Auction's identifier</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Petslane.Bondora.Definition.Auction.html">Petslane\Bondora\Definition\Auction</a></code>
+					<code><a href="class-Petslane.Bondora.Definition.AuctionExtended.html">Petslane\Bondora\Definition\AuctionExtended</a></code>
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
 					<code><a href="class-Petslane.Bondora.ApiCriticalException.html">Petslane\Bondora\ApiCriticalException</a></code><br>
-					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code>
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code><br>
+					Exception
 				</div>
 
 
@@ -307,38 +442,260 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="userorganizations" id="_userorganizations">
+	<tr data-order="secondaryMarket" id="_secondaryMarket">
 
 		<td class="attributes"><code>
 			 public 
 
-			<code><a href="class-Petslane.Bondora.Definition.UserOrganization.html">Petslane\Bondora\Definition\UserOrganization</a>[]</code>
+			<code><a href="class-Petslane.Bondora.Definition.SecondMarketItem.html">Petslane\Bondora\Definition\SecondMarketItem</a>[]</code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_userorganizations">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#342-357" title="Go to source code">userorganizations</a>( )</code>
+		<a class="anchor" href="#_secondaryMarket">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#485-582" title="Go to source code">secondaryMarket</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
-			<p>Get user's represented Organizations.</p>
+			<p>Gets list of active secondary market items</p>
 		</div>
 
 		<div class="description detailed hidden">
-			<p>Get user's represented Organizations.</p>
+			<p>Gets list of active secondary market items</p>
+
+<p>$request array supported keys: loanIssuedDateFrom           date        Loan issued start date from loanIssuedDateTo             date        Loan issued start date to principalMin                 float       Remaining principal amount min principalMax                 float       Remaining principal amount max interestMin                  float       Interest rate min interestMax                  float       Interest rate max lengthMax                    int         Loan lenght min lengthMin                    int         Loan lenght max hasDebt                      bool        Is overdue latePrincipalAmountMin       float       Principal debt amount min latePrincipalAmountMax       float       Principal debt amount max useOfLoan                    int         Use of loan. @see Enum\AuctionPurpose hasNewSchedule               bool        Has been rescheduled countries                    string[]    Two letter iso code for country of origin: EE, ES, FI ratings                      string[]    Bondora's rating: AA, A, B, C, D, E, F, HR creditScoreMin               int         Minimum credit score creditScoreMax               int         Maximum credit score userName                     string      Borrower's username gender                       int         Borrower's gender: Male 0, Female 1, Unknown 2 ageMin                       int         Minimal age ageMax                       int         Maximum age incomeVerificationStatus     int         Income verification type. @see Enum\AuctionIncomeVerificationStatus showMyItems                  bool        Can find your own items from market: Value Null = ALL, True = only your items, False = other user items listedOnDateFrom             date        Date when item was published from listedOnDateTo               date        Date when item was published to desiredDiscountRateMin       float       Minimal DesiredDiscountRate desiredDiscountRateMax       float       Maximal DesiredDiscountRate xirrMin                      float       Minimal Xirr xirrMax                      float       Maximal Xirr pageSize                     int         Max returned results, default is 1000. Range: inclusive between 1 and 1000 pageNr                       int         Result page nr. Range: inclusive between 1 and 2147483647</p>
 
 
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$request</var></dt>
+					<dd></dd>
+				</dl></div>
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><a href="class-Petslane.Bondora.Definition.UserOrganization.html">Petslane\Bondora\Definition\UserOrganization</a>[]</code>
+					<code><a href="class-Petslane.Bondora.Definition.SecondMarketItem.html">Petslane\Bondora\Definition\SecondMarketItem</a>[]</code>
 				</div>
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-Petslane.Bondora.ApiCriticalException.html">Petslane\Bondora\ApiCriticalException</a></code><br>
-					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code>
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code><br>
+					Exception
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="loanpart" id="_loanpart">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Petslane.Bondora.Definition.LoanPartDetails.html">Petslane\Bondora\Definition\LoanPartDetails</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_loanpart">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#584-598" title="Go to source code">loanpart</a>( <span>string <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Gets LoanPartDetails info by identifier</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Gets LoanPartDetails info by identifier</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.Definition.LoanPartDetails.html">Petslane\Bondora\Definition\LoanPartDetails</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="secondaryMarketById" id="_secondaryMarketById">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Petslane.Bondora.Definition.SecondMarketItemSummary.html">Petslane\Bondora\Definition\SecondMarketItemSummary</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_secondaryMarketById">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#600-616" title="Go to source code">secondaryMarketById</a>( <span>string <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Get the secondary market item summary</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the secondary market item summary</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.Definition.SecondMarketItemSummary.html">Petslane\Bondora\Definition\SecondMarketItemSummary</a></code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code><br>
+					Exception
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="secondaryMarketBuy" id="_secondaryMarketBuy">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_secondaryMarketBuy">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#618-640" title="Go to source code">secondaryMarketBuy</a>( <span>string[] <var>$ids</var></span> )</code>
+
+		<div class="description short">
+			<p>Buy loans from secondary market</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Buy loans from secondary market</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ids</var></dt>
+					<dd>Secondary market item ids to buy</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code><br>
+					Exception
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="secondaryMarketSell" id="_secondaryMarketSell">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Petslane.Bondora.Definition.SecondMarketSaleResponse.html">Petslane\Bondora\Definition\SecondMarketSaleResponse</a>[]</code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_secondaryMarketSell">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#642-664" title="Go to source code">secondaryMarketSell</a>( <span><code><a href="class-Petslane.Bondora.Definition.SecondMarketSell.html">Petslane\Bondora\Definition\SecondMarketSell</a>[]</code> <var>$sellParts</var></span> )</code>
+
+		<div class="description short">
+			<p>Sell your loans to secondary market</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Sell your loans to secondary market</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$sellParts</var></dt>
+					<dd>LoanParts to sell</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.Definition.SecondMarketSaleResponse.html">Petslane\Bondora\Definition\SecondMarketSaleResponse</a>[]</code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code><br>
+					Exception
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="secondaryMarketCancel" id="_secondaryMarketCancel">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_secondaryMarketCancel">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#666-682" title="Go to source code">secondaryMarketCancel</a>( <span>string <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Remove your loans from secondary market.</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Remove your loans from secondary market.</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code><br>
+					Exception
 				</div>
 
 
@@ -358,7 +715,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bids">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#359-396" title="Go to source code">bids</a>( <span>integer <var>$bidStatus</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$startDate</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$endDate</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$organizationId</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#725-766" title="Go to source code">bids</a>( <span>integer <var>$bidStatusCode</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$startDate</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$endDate</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageSize</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageNr</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Gets list of bids the investor has made.</p>
@@ -370,14 +727,16 @@
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$bidStatus</var></dt>
-					<dd>Bid status (pending, failed, succeeded)</dd>
+					<dt><var>$bidStatusCode</var></dt>
+					<dd>Bid status code @see Enum\ApiAuctionBidRequestStatus</dd>
 					<dt><var>$startDate</var></dt>
-					<dd>Bids made from date. Format DD.MM.YYYY</dd>
+					<dd>Bids made from date. (string format YYYY-MM-DD hh:mm:ss)</dd>
 					<dt><var>$endDate</var></dt>
-					<dd>Bids made to date. Format DD.MM.YYYY</dd>
-					<dt><var>$organizationId</var></dt>
-					<dd>The represented organization id. Don't specify if getting list for current user. globally unique identifier.</dd>
+					<dd>Bids made to date. (string format YYYY-MM-DD hh:mm:ss)</dd>
+					<dt><var>$pageSize</var></dt>
+					<dd>Max returned results, default is 1000. Range: inclusive between 1 and 1000</dd>
+					<dt><var>$pageNr</var></dt>
+					<dd>Result page nr. Range: inclusive between 1 and 2147483647</dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -396,19 +755,19 @@
 		</div>
 		</div></td>
 	</tr>
-	<tr data-order="bid" id="_bid">
+	<tr data-order="bidPost" id="_bidPost">
 
 		<td class="attributes"><code>
 			 public 
 
-			boolean
+			<code><a href="class-Petslane.Bondora.Definition.BidResponse.html">Petslane\Bondora\Definition\BidResponse</a>[]</code>
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
-		<a class="anchor" href="#_bid">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#398-425" title="Go to source code">bid</a>( <span><code><a href="class-Petslane.Bondora.Definition.Bid.html">Petslane\Bondora\Definition\Bid</a>[]</code> <var>$Bids</var></span>, <span>string <var>$OrganizationId</var> = <span class="php-keyword1">null</span></span> )</code>
+		<a class="anchor" href="#_bidPost">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#768-790" title="Go to source code">bidPost</a>( <span><code><a href="class-Petslane.Bondora.Definition.Bid.html">Petslane\Bondora\Definition\Bid</a>[]</code> <var>$bids</var></span> )</code>
 
 		<div class="description short">
 			<p>Makes bid(s) into specified auction(s).</p>
@@ -420,10 +779,91 @@
 
 				<h4>Parameters</h4>
 				<div class="list"><dl>
-					<dt><var>$Bids</var></dt>
+					<dt><var>$bids</var></dt>
 					<dd>The bids to make.</dd>
-					<dt><var>$OrganizationId</var></dt>
-					<dd>Organization to make bid for. Specify this if the Bid is made in behalf of the Organization. No need to specify if the bid is made for current user.</dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.Definition.BidResponse.html">Petslane\Bondora\Definition\BidResponse</a>[]</code>
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code><br>
+					Exception
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="bid" id="_bid">
+
+		<td class="attributes"><code>
+			 public 
+
+			<code><a href="class-Petslane.Bondora.Definition.BidSummary.html">Petslane\Bondora\Definition\BidSummary</a></code>
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_bid">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#792-806" title="Go to source code">bid</a>( <span>string <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Get the Bid</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get the Bid</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.Definition.BidSummary.html">Petslane\Bondora\Definition\BidSummary</a></code>
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="bidCancel" id="_bidCancel">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_bidCancel">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#808-824" title="Go to source code">bidCancel</a>( <span>string <var>$id</var></span> )</code>
+
+		<div class="description short">
+			<p>Cancel the Bid</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Cancel the Bid</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$id</var></dt>
+					<dd></dd>
 				</dl></div>
 
 				<h4>Returns</h4>
@@ -433,8 +873,8 @@
 
 				<h4>Throws</h4>
 				<div class="list">
-					<code><a href="class-Petslane.Bondora.ApiCriticalException.html">Petslane\Bondora\ApiCriticalException</a></code><br>
-					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code>
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code><br>
+					Exception
 				</div>
 
 

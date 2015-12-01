@@ -112,9 +112,6 @@ class Api {
     );
 
     public function __construct($config) {
-        if (empty($config['url'])) {
-            throw new \InvalidArgumentException('Missing "url" in config');
-        }
         if (empty($config['auth']['url_base'])) {
             throw new \InvalidArgumentException('Missing base_url in auth config');
         }
@@ -152,7 +149,7 @@ class Api {
      * @throws ApiCriticalException
      */
     private function getUrl($resource, $id=null) {
-        $url = $this->config['url'] . '/v' . self::API_VERSION . '/' . $resource;
+        $url = $this->config['api_base'] . '/api/v' . self::API_VERSION . '/' . $resource;
         if ($id !== null) {
             $url = str_replace('?', $id, $url);
         }

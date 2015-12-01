@@ -27,17 +27,31 @@ Documentation: http://petslane.github.io/php-bondora-api/doc/
 use Petslane\Bondora;
 
 $config = array(
-  // Bondora API url with path up to version part
-  'url' => 'https://api-sandbox.bondora.com/api',
-  'username' => 'email@example.com',
-  'password' => 'secret',
-  // optional, does automatic login
-  'autologin' => true,
+    'auth' => array(
+        'url_base' => 'https://www-sandbox.bondora.com',
+        'client_id' => 'client_id_123',
+        'secret' => 'secret_123',
+        'scope' => 'BidsEdit BidsRead Investments SmBuy SmSell',
+    ),
+    'api_base' => 'https://api-sandbox.bondora.com',
 );
 $api = new Bondora\Api($config);
 
-// Log in and get token
-# $api->login(); // No need as 'autologin' is set to true
+// Get login url
+$url = $api->getAuthUrl();
+// redirect user to $url. After login, user will be redirected back with get parameter 'code'
+
+// get token from 'code' provided after user successful login
+$token = $api->getToken($code);
+
+// cache $token and later reuse it
+$api->setToken($cached_token);
+
+// get account balance
+$balance = $api->accountBalance();
+
+// get all investments
+$investments = $api->accountInvestments();
 
 // Get list of all auctions
 $auctions = $api->auctions(array(
@@ -58,24 +72,29 @@ $request = array(
   new Bondora\Definition\Bid(array(
     'AuctionId' => '88270e55-c2c3-431b-9870-a4fe00976b7d',
     'Amount' => 15,
-    'MinAmount' => 15,
   )),
 );
-$api->bid($request);
+$api->bidPost($request);
 
 // Get list of all bids placed
 $bids = $api->bids();
 
-// Logout, access token will be revoked
-$api->logout();
+// get secondary market listing
+$sm_deals = $api->secondaryMarket(array(
+    'countries' => array('EE', 'FI'),
+    'interestMin' => 12,
+    'incomeVerificationStatus' => Petslane\Bondora\Enum\AuctionIncomeVerificationStatus::VerifiedByPhone,
+));
 
 ```
 
 ## Current problems
-`auctions` query filter is not working. Looks like Bondora bug.
+Please, let me know!
 
-## Api version
-v1.0 - full support - https://api-sandbox.bondora.com/doc?v=1
+## Api version (https://api-sandbox.bondora.com/ChangeLog)
+v1.0.0.1 (18.11.2015) - full support - https://api-sandbox.bondora.com/doc?v=1  
+v1.0 (12.11.2015) - full support - https://api-sandbox.bondora.com/doc?v=1  
+v1.0 Beta (03.09.2015) - full support - https://api-sandbox.bondora.com/doc?v=1  
 
 
 

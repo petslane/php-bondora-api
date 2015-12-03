@@ -114,7 +114,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Api.html#7-904" title="Go to source code">Api.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Api.html#7-936" title="Go to source code">Api.php</a>
 		<br>
 	</div>
 
@@ -134,7 +134,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#114-135" title="Go to source code">__construct</a>( <span> <var>$config</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#113-131" title="Go to source code">__construct</a>( <span> <var>$config</var></span> )</code>
 
 		<div class="description short">
 			
@@ -164,7 +164,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_setToken">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#137-144" title="Go to source code">setToken</a>( <span>string <var>$token</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#133-140" title="Go to source code">setToken</a>( <span>string <var>$token</var></span> )</code>
 
 		<div class="description short">
 			<p>Set access token</p>
@@ -199,7 +199,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getAuthUrl">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#210-227" title="Go to source code">getAuthUrl</a>( )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#206-223" title="Go to source code">getAuthUrl</a>( )</code>
 
 		<div class="description short">
 			<p>Get authorization url</p>
@@ -233,7 +233,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getToken">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#229-269" title="Go to source code">getToken</a>( <span>string <var>$code</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#225-265" title="Go to source code">getToken</a>( <span>string <var>$code</var></span> )</code>
 
 		<div class="description short">
 			<p>Redeem access token for code</p>
@@ -265,6 +265,45 @@
 		</div>
 		</div></td>
 	</tr>
+	<tr data-order="revokeToken" id="_revokeToken">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_revokeToken">#</a>
+		<code><a href="source-class-Petslane.Bondora.Api.html#267-301" title="Go to source code">revokeToken</a>( )</code>
+
+		<div class="description short">
+			<p>Revoke authorization token. Call to the endpoint revokes the same Token that the request is using</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Revoke authorization token. Call to the endpoint revokes the same Token that the request is using</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean<br>Indicates if the request was successfull or not
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					<code><a href="class-Petslane.Bondora.ApiCriticalException.html">Petslane\Bondora\ApiCriticalException</a></code><br>
+					<code><a href="class-Petslane.Bondora.ApiException.html">Petslane\Bondora\ApiException</a></code>
+				</div>
+
+
+
+		</div>
+		</div></td>
+	</tr>
 	<tr data-order="accountBalance" id="_accountBalance">
 
 		<td class="attributes"><code>
@@ -277,7 +316,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_accountBalance">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#271-286" title="Go to source code">accountBalance</a>( )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#303-318" title="Go to source code">accountBalance</a>( )</code>
 
 		<div class="description short">
 			<p>Gets your account balance information</p>
@@ -316,7 +355,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_accountInvestments">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#288-378" title="Go to source code">accountInvestments</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#320-410" title="Go to source code">accountInvestments</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>Gets list of your investments</p>
@@ -363,7 +402,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_auctions">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#380-464" title="Go to source code">auctions</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#412-496" title="Go to source code">auctions</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>Gets list of active Auctions</p>
@@ -409,7 +448,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_auction">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#466-483" title="Go to source code">auction</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#498-515" title="Go to source code">auction</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets Auction info by auction identifier</p>
@@ -454,7 +493,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_secondaryMarket">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#485-582" title="Go to source code">secondaryMarket</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#517-614" title="Go to source code">secondaryMarket</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>Gets list of active secondary market items</p>
@@ -500,7 +539,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loanpart">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#584-598" title="Go to source code">loanpart</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#616-630" title="Go to source code">loanpart</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets LoanPartDetails info by identifier</p>
@@ -539,7 +578,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_secondaryMarketById">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#600-616" title="Go to source code">secondaryMarketById</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#632-648" title="Go to source code">secondaryMarketById</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Get the secondary market item summary</p>
@@ -583,7 +622,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_secondaryMarketBuy">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#618-640" title="Go to source code">secondaryMarketBuy</a>( <span>string[] <var>$ids</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#650-672" title="Go to source code">secondaryMarketBuy</a>( <span>string[] <var>$ids</var></span> )</code>
 
 		<div class="description short">
 			<p>Buy loans from secondary market</p>
@@ -627,7 +666,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_secondaryMarketSell">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#642-664" title="Go to source code">secondaryMarketSell</a>( <span><code><a href="class-Petslane.Bondora.Definition.SecondMarketSell.html">Petslane\Bondora\Definition\SecondMarketSell</a>[]</code> <var>$sellParts</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#674-696" title="Go to source code">secondaryMarketSell</a>( <span><code><a href="class-Petslane.Bondora.Definition.SecondMarketSell.html">Petslane\Bondora\Definition\SecondMarketSell</a>[]</code> <var>$sellParts</var></span> )</code>
 
 		<div class="description short">
 			<p>Sell your loans to secondary market</p>
@@ -671,7 +710,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_secondaryMarketCancel">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#666-682" title="Go to source code">secondaryMarketCancel</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#698-714" title="Go to source code">secondaryMarketCancel</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Remove your loans from secondary market.</p>
@@ -715,7 +754,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bids">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#725-766" title="Go to source code">bids</a>( <span>integer <var>$bidStatusCode</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$startDate</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$endDate</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageSize</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageNr</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#757-798" title="Go to source code">bids</a>( <span>integer <var>$bidStatusCode</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$startDate</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$endDate</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageSize</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageNr</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Gets list of bids the investor has made.</p>
@@ -767,7 +806,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bidPost">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#768-790" title="Go to source code">bidPost</a>( <span><code><a href="class-Petslane.Bondora.Definition.Bid.html">Petslane\Bondora\Definition\Bid</a>[]</code> <var>$bids</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#800-822" title="Go to source code">bidPost</a>( <span><code><a href="class-Petslane.Bondora.Definition.Bid.html">Petslane\Bondora\Definition\Bid</a>[]</code> <var>$bids</var></span> )</code>
 
 		<div class="description short">
 			<p>Makes bid(s) into specified auction(s).</p>
@@ -811,7 +850,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bid">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#792-806" title="Go to source code">bid</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#824-838" title="Go to source code">bid</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Get the Bid</p>
@@ -850,7 +889,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bidCancel">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#808-824" title="Go to source code">bidCancel</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#840-856" title="Go to source code">bidCancel</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Cancel the Bid</p>

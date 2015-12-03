@@ -36,6 +36,7 @@ class Client {
             CURLOPT_CONNECTTIMEOUT => 60,
             CURLOPT_TIMEOUT => 60,
             CURLOPT_VERBOSE => false,
+            CURLOPT_ENCODING => 'gzip, deflate',
         );
         if ($method == self::METHOD_POST) {
             $options[CURLOPT_POST] = true;

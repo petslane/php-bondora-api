@@ -265,6 +265,42 @@ class Api {
     }
 
     /**
+     * Revoke authorization token. Call to the endpoint revokes the same Token that the request is using
+     *
+     * @return bool Indicates if the request was successfull or not
+     * @throws ApiCriticalException
+     * @throws ApiException
+     */
+    public function revokeToken() {
+        $headers = array();
+        $headers['Authorization'] = 'Bearer ' . $this->token;
+        $client = new Client($this->config['api_base'] . '/oauth/access_token/revoke', array(), Client::METHOD_POST, $headers);
+
+        $json = json_decode($client->getBody(), true);
+        if (!empty($json['error'])) {
+            $err_msg = $json['error'];
+            if (!empty($json['error_description'])) {
+                $err_msg .= ': ' . $json['error_description'];
+            }
+            throw new ApiCriticalException($err_msg);
+        } else if (!empty($json['Errors'])) {
+            $errors = array();
+            foreach ($json['Errors'] as $e) {
+                $errors[] = new Definition\ApiError($e);
+            }
+            throw new ApiException($errors);
+        }
+
+        $result = new Definition\ApiResult($json);
+
+        if ($result->Success) {
+            $this->token = null;
+        }
+
+        return $result->Success;
+    }
+
+    /**
      * Gets your account balance information
      *
      * @return Definition\MyAccountBalance

@@ -81,8 +81,8 @@ class Api {
             404 => 'SecondaryMarket item with specified ID is not found',
             429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
-        'P/secondarymarket/?/cancel' => array(
-            400 => 'Not found',
+        'P/secondarymarket/cancel' => array(
+            400 => 'Not found/Too many items. Max items 100',
             401 => 'User is not Authorized',
             403 => 'User has no rights',
             409 => 'Cannot cancel item',
@@ -749,15 +749,18 @@ class Api {
     /**
      * Remove your loans from secondary market.
      *
-     * @param string $id
+     * @param string[]|string $id
      * @return bool
      * @throws ApiException
      * @throws \Exception
      */
     public function secondaryMarketCancel($id) {
-        $resource = 'secondarymarket/?/cancel';
+        $resource = 'secondarymarket/cancel';
 
-        $json = $this->query($resource, $id, null, Client::METHOD_POST);
+        $param = new Definition\SecondMarketCancelRequest();
+        $param->ItemIds = (array) $id;
+
+        $json = $this->query($resource, null, json_encode($param), Client::METHOD_POST);
 
         $response = new Definition\ApiResult($json);
 

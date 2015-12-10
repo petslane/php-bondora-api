@@ -80,6 +80,15 @@ class SecondMarketRequest extends Definition {
 
 
     /**
+     * Loan status code
+     * <para>2 Current</para><para>100 Overdue</para><para>5 60+ days overdue</para>
+     *
+     * @var int[]
+     */
+    public $LoanStatusCode;
+
+
+    /**
      * Principal debt amount min
      *
      * @var float
@@ -93,6 +102,22 @@ class SecondMarketRequest extends Definition {
      * @var float
      */
     public $LatePrincipalAmountMax;
+
+
+    /**
+     * Price amount min
+     *
+     * @var float
+     */
+    public $PriceMin;
+
+
+    /**
+     * Price amount max
+     *
+     * @var float
+     */
+    public $PriceMax;
 
 
     /**
@@ -193,6 +218,14 @@ class SecondMarketRequest extends Definition {
      * @var bool
      */
     public $ShowMyItems;
+
+
+    /**
+     * Can find specific auction from market
+     *
+     * @var string
+     */
+    public $AuctionId;
 
 
     /**

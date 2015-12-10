@@ -569,8 +569,11 @@ class Api {
      *     lengthMax                    int         Loan lenght min
      *     lengthMin                    int         Loan lenght max
      *     hasDebt                      bool        Is overdue
+     *     loanStatusCode               int[]       Loan status code: 2 - Current; 100 - Overdue; 5 - 60+ days overdue;
      *     latePrincipalAmountMin       float       Principal debt amount min
      *     latePrincipalAmountMax       float       Principal debt amount max
+     *     priceMin                     float       Price amount min
+     *     priceMax                     float       Price amount max
      *     useOfLoan                    int         Use of loan. @see Enum\AuctionPurpose
      *     hasNewSchedule               bool        Has been rescheduled
      *     countries                    string[]    Two letter iso code for country of origin: EE, ES, FI
@@ -583,6 +586,7 @@ class Api {
      *     ageMax                       int         Maximum age
      *     incomeVerificationStatus     int         Income verification type. @see Enum\AuctionIncomeVerificationStatus
      *     showMyItems                  bool        Can find your own items from market: Value Null = ALL, True = only your items, False = other user items
+     *     auctionId                    string      Can find specific auction from market
      *     listedOnDateFrom             date        Date when item was published from
      *     listedOnDateTo               date        Date when item was published to
      *     desiredDiscountRateMin       float       Minimal DesiredDiscountRate
@@ -603,6 +607,7 @@ class Api {
         $array_fields = array(
             'countries',
             'ratings',
+            'loanStatusCode',
         );
         $int_fields = array(
             'lengthMax',
@@ -616,6 +621,7 @@ class Api {
             'incomeVerificationStatus',
             'pageSize',
             'pageNr',
+            'loanStatusCode',
         );
         $float_fields = array(
             'principalMin',
@@ -628,11 +634,14 @@ class Api {
             'desiredDiscountRateMax',
             'xirrMin',
             'xirrMax',
+            'priceMin',
+            'priceMax',
         );
         $string_fields = array(
             'countries',
             'ratings',
             'userName',
+            'auctionId',
         );
         $date_fields = array(
             'loanIssuedDateFrom',

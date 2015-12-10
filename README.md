@@ -41,11 +41,14 @@ $api = new Bondora\Api($config);
 $url = $api->getAuthUrl();
 // redirect user to $url. After login, user will be redirected back with get parameter 'code'
 
-// get token from 'code' provided after user successful login
-$token = $api->getToken($code);
+// get token from 'code' provided after user successful login. Store access_token and refresh_token
+$token_object = $api->getToken($code);
 
-// cache $token and later reuse it
-$api->setToken($cached_token);
+// reuse access_token acquired before
+$api->setToken($access_token);
+
+// in case access_token is expired, get new access_token from refresh_token
+$token_object = $api->refreshToken($refresh_token);
 
 // get account balance
 $balance = $api->accountBalance();

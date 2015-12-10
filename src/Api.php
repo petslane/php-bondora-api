@@ -847,7 +847,7 @@ class Api {
                     if (is_string($value)) {
                         $params['request.' . $fld_name][] = (string) $value;
                     } else if ($value instanceof \DateTime) {
-                        $params['request.' . $fld_name] = $value->format('Y-m-d H:i:s');
+                        $params['request.' . $fld_name][] = $value->format('Y-m-d H:i:s');
                     }
                 } else if (in_array($fld_name, $bool_fields)) {
                     $params['request.' . $fld_name][] = $value?'true':'false';

@@ -8,7 +8,7 @@ namespace Petslane\Bondora\Definition;
 class SecondMarketSell extends Definition {
 
     /**
-     * Secondary market item unique identifier
+     * LoanPart unique identifier
      *
      * @var string
      */

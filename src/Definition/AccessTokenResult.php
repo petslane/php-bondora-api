@@ -9,14 +9,16 @@ class AccessTokenResult extends Definition {
 
     /**
      * Refresh token that can be used to request new access token if the old token is expired. If the token does not
-     * support refreshing or the access token lifetime is not set, this will be null.
+     * support refreshing or the access token lifetime is not set, this will be null. Returned only when request
+     * grant_type is authorization_code
      *
      * @var string
      */
     public $refresh_token;
 
     /**
-     * Scope(s) that the user has selected in the Authorization step.
+     * Scope(s) that the user has selected in the Authorization step. Returned only when request grant_type is
+     * authorization_code
      *
      * @var string
      */
@@ -45,6 +47,13 @@ class AccessTokenResult extends Definition {
      * @var int
      */
     public $expires_in;
+
+    /**
+     * Token Valid until in Unix Time Stamp (Number of seconds since Unix Epoch on January 1st, 1970 at UTC).
+     *
+     * @var int
+     */
+    public $valid_until;
 
 }
 

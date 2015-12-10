@@ -49,5 +49,14 @@ class AccessTokenRequest extends Definition {
      */
     public $client_secret;
 
+    /**
+     * Refresh token that was returned in token response for exchange of code. Used when requesting token for exchange
+     * of refresh token code. Set the grant_type to refresh_token.
+     *
+     * @required
+     * @var string
+     */
+    public $refresh_token;
+
 }
 

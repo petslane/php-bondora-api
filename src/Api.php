@@ -223,7 +223,7 @@ class Api {
     }
 
     /**
-     * Redeem access token for code
+     * Redeem access token from code
      *
      * @param string $code Authorization code
      * @return Definition\AccessTokenResult
@@ -236,6 +236,48 @@ class Api {
         $param->client_id = $this->config['auth']['client_id'];
         $param->client_secret = $this->config['auth']['secret'];
         $param->code = $code;
+
+        $client = new Client($this->config['api_base'] . '/oauth/access_token', json_encode($param), Client::METHOD_POST);
+
+        $json = json_decode($client->getBody(), true);
+        if (!empty($json['error'])) {
+            $err_msg = $json['error'];
+            if (!empty($json['error_description'])) {
+                $err_msg .= ': ' . $json['error_description'];
+            }
+            throw new ApiCriticalException($err_msg);
+        } else if (!empty($json['Errors'])) {
+            $errors = array();
+            foreach ($json['Errors'] as $e) {
+                $errors[] = new Definition\ApiError($e);
+            }
+            throw new ApiException($errors);
+        }
+
+        $result = new Definition\AccessTokenResult($json);
+
+        if (!$result->access_token) {
+            throw new ApiCriticalException('access_token not found');
+        }
+        $this->token = $result->access_token;
+
+        return $result;
+    }
+
+    /**
+     * Redeem access token from refresh_token
+     *
+     * @param string $refresh_token Refresh token
+     * @return Definition\AccessTokenResult
+     * @throws ApiCriticalException
+     * @throws ApiException
+     */
+    public function refreshToken($refresh_token) {
+        $param = new Definition\AccessTokenRequest();
+        $param->grant_type = 'refresh_token';
+        $param->client_id = $this->config['auth']['client_id'];
+        $param->client_secret = $this->config['auth']['secret'];
+        $param->refresh_token = $refresh_token;
 
         $client = new Client($this->config['api_base'] . '/oauth/access_token', json_encode($param), Client::METHOD_POST);
 

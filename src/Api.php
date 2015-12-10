@@ -367,14 +367,14 @@ class Api {
             if (is_string($eventDateFrom)) {
                 $param->EventDateFrom = (string) $eventDateFrom;
             } else if ($eventDateFrom instanceof \DateTime) {
-                $param->EventDateFrom = $eventDateFrom->format('Y-m-d H:i:s');
+                $param->EventDateFrom = $eventDateFrom->format('c');
             }
         }
         if ($eventDateTo) {
             if (is_string($eventDateTo)) {
                 $param->EventDateTo = (string) $eventDateTo;
             } else if ($eventDateTo instanceof \DateTime) {
-                $param->EventDateTo = $eventDateTo->format('Y-m-d H:i:s');
+                $param->EventDateTo = $eventDateTo->format('c');
             }
         }
         if ($eventType) {
@@ -847,7 +847,7 @@ class Api {
                     if (is_string($value)) {
                         $params['request.' . $fld_name][] = (string) $value;
                     } else if ($value instanceof \DateTime) {
-                        $params['request.' . $fld_name][] = $value->format('Y-m-d H:i:s');
+                        $params['request.' . $fld_name][] = $value->format('c');
                     }
                 } else if (in_array($fld_name, $bool_fields)) {
                     $params['request.' . $fld_name][] = $value?'true':'false';
@@ -885,12 +885,12 @@ class Api {
         if (is_string($startDate)) {
             $params['startDate'] = $startDate;
         } else if ($startDate instanceof \DateTime) {
-            $params['startDate'] = $startDate->format('Y-m-d H:i:s');
+            $params['startDate'] = $startDate->format('c');
         }
         if (is_string($endDate)) {
             $params['endDate'] = $endDate;
         } else if ($endDate instanceof \DateTime) {
-            $params['endDate'] = $endDate->format('Y-m-d H:i:s');
+            $params['endDate'] = $endDate->format('c');
         }
         if ($pageSize !== null) {
             $params['pageSize'] = (int) $pageSize;

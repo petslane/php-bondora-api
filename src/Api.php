@@ -108,6 +108,9 @@ class Api {
             409 => 'Investment cannot be sold',
             429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
+        'G/eventlog' => array(
+            401 => 'User is not Authorized',
+        ),
     );
 
     public function __construct($config) {
@@ -340,6 +343,58 @@ class Api {
         }
 
         return $result->Success;
+    }
+
+    /**
+     * Gets events that have been made with the application related to current access token
+     *
+     * @param null $eventDateFrom Start datetime
+     * @param null $eventDateTo end datetime
+     * @param int $eventType Event type. Value from Enum\ApiRequestLogEventType
+     * @param string $ipAddress IP address
+     * @param int $pageSize Max returned results, default is 1000
+     * @param int $pageNr Result page nr
+     * @return Definition\EventLogItem[]
+     * @throws ApiCriticalException
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function getEventlog($eventDateFrom=null, $eventDateTo=null, $eventType=null, $ipAddress=null, $pageSize=1000, $pageNr=0) {
+        $resource = 'eventlog';
+
+        $param = new Definition\EventLogRequest();
+        if ($eventDateFrom) {
+            if (is_string($eventDateFrom)) {
+                $param->EventDateFrom = (string) $eventDateFrom;
+            } else if ($eventDateFrom instanceof \DateTime) {
+                $param->EventDateFrom = $eventDateFrom->format('Y-m-d H:i:s');
+            }
+        }
+        if ($eventDateTo) {
+            if (is_string($eventDateTo)) {
+                $param->EventDateTo = (string) $eventDateTo;
+            } else if ($eventDateTo instanceof \DateTime) {
+                $param->EventDateTo = $eventDateTo->format('Y-m-d H:i:s');
+            }
+        }
+        if ($eventType) {
+            $param->EventType = $eventType;
+        }
+        if ($ipAddress) {
+            $param->IpAddress = $ipAddress;
+        }
+        if ($pageSize) {
+            $param->PageSize = $pageSize;
+        }
+        if ($pageNr) {
+            $param->PageNr = $pageNr;
+        }
+
+        $json = $this->query($resource, null, $param);
+
+        $response = new Definition\ApiResultEventLog($json);
+
+        return $response->Payload;
     }
 
     /**

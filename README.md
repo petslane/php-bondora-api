@@ -89,6 +89,9 @@ $sm_deals = $api->secondaryMarket(array(
     'incomeVerificationStatus' => Petslane\Bondora\Enum\AuctionIncomeVerificationStatus::VerifiedByPhone,
 ));
 
+// Gets events that have been made with current access token
+$events = $api->getEventlog();
+
 // revoke token
 $api->revokeToken();
 

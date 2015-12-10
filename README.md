@@ -103,6 +103,7 @@ Please, let me know!
 ## Bondora API support
 Bondora API changelog - https://api-sandbox.bondora.com/ChangeLog  
 ##### Supported versions:
+- v1.0.0.4 (10.12.2015)
 - v1.0.0.3 (01.12.2015)  
 - v1.0.0.2 (25.11.2015)  
 - v1.0.0.1 (18.11.2015)  

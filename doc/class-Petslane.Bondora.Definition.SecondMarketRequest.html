@@ -58,6 +58,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.ApiResultAuctions.html">ApiResultAuctions</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.ApiResultBid.html">ApiResultBid</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.ApiResultBids.html">ApiResultBids</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.ApiResultEventLog.html">ApiResultEventLog</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.ApiResultExtendedAuction.html">ApiResultExtendedAuction</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.ApiResultLoanPartDetails.html">ApiResultLoanPartDetails</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.ApiResultMakeBids.html">ApiResultMakeBids</a></li>
@@ -76,6 +77,8 @@
 				<li><a href="class-Petslane.Bondora.Definition.Debt.html">Debt</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.DebtManagementEvent.html">DebtManagementEvent</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Definition.html">Definition</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.EventLogItem.html">EventLogItem</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.EventLogRequest.html">EventLogRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Liability.html">Liability</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanPartDetails.html">LoanPartDetails</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanTransfer.html">LoanTransfer</a></li>
@@ -84,6 +87,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.MyInvestmentsRequest.html">MyInvestmentsRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.ScheduledPayment.html">ScheduledPayment</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.SecondMarketBuyRequest.html">SecondMarketBuyRequest</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.SecondMarketCancelRequest.html">SecondMarketCancelRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.SecondMarketItem.html">SecondMarketItem</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.SecondMarketItemSummary.html">SecondMarketItemSummary</a></li>
 				<li class="active"><a href="class-Petslane.Bondora.Definition.SecondMarketRequest.html">SecondMarketRequest</a></li>
@@ -163,7 +167,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a>\<a href="namespace-Petslane.Bondora.Definition.html">Definition</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#5-267" title="Go to source code">Definition/SecondMarketRequest.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#5-300" title="Go to source code">Definition/SecondMarketRequest.php</a>
 		<br>
 	</div>
 
@@ -417,6 +421,33 @@
 			</div>
 		</td>
 	</tr>
+	<tr data-order="LoanStatusCode" id="$LoanStatusCode">
+		<td class="attributes"><code>
+			public  
+			int[]
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#82-88" title="Go to source code"><var>$LoanStatusCode</var></a>
+
+			<div class="description short">
+				<p>Loan status code
+<para>2 Current</para><para>100 Overdue</para><para>5 60+ days overdue</para></p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Loan status code
+<para>2 Current</para><para>100 Overdue</para><para>5 60+ days overdue</para></p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$LoanStatusCode" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="LatePrincipalAmountMin" id="$LatePrincipalAmountMin">
 		<td class="attributes"><code>
 			public  
@@ -424,7 +455,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#82-87" title="Go to source code"><var>$LatePrincipalAmountMin</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#91-96" title="Go to source code"><var>$LatePrincipalAmountMin</var></a>
 
 			<div class="description short">
 				<p>Principal debt amount min</p>
@@ -449,7 +480,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#90-95" title="Go to source code"><var>$LatePrincipalAmountMax</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#99-104" title="Go to source code"><var>$LatePrincipalAmountMax</var></a>
 
 			<div class="description short">
 				<p>Principal debt amount max</p>
@@ -467,6 +498,56 @@
 			</div>
 		</td>
 	</tr>
+	<tr data-order="PriceMin" id="$PriceMin">
+		<td class="attributes"><code>
+			public  
+			float
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#107-112" title="Go to source code"><var>$PriceMin</var></a>
+
+			<div class="description short">
+				<p>Price amount min</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Price amount min</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$PriceMin" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="PriceMax" id="$PriceMax">
+		<td class="attributes"><code>
+			public  
+			float
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#115-120" title="Go to source code"><var>$PriceMax</var></a>
+
+			<div class="description short">
+				<p>Price amount max</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Price amount max</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$PriceMax" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="UseOfLoan" id="$UseOfLoan">
 		<td class="attributes"><code>
 			public  
@@ -474,7 +555,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#98-105" title="Go to source code"><var>$UseOfLoan</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#123-130" title="Go to source code"><var>$UseOfLoan</var></a>
 
 			<div class="description short">
 				<p>Use of loan</p>
@@ -501,7 +582,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#108-113" title="Go to source code"><var>$HasNewSchedule</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#133-138" title="Go to source code"><var>$HasNewSchedule</var></a>
 
 			<div class="description short">
 				<p>Has been rescheduled</p>
@@ -526,7 +607,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#116-121" title="Go to source code"><var>$Countries</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#141-146" title="Go to source code"><var>$Countries</var></a>
 
 			<div class="description short">
 				<p>Two letter iso code for country of origin: EE, ES, FI</p>
@@ -551,7 +632,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#124-129" title="Go to source code"><var>$Ratings</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#149-154" title="Go to source code"><var>$Ratings</var></a>
 
 			<div class="description short">
 				<p>Bondora's rating: AA, A, B, C, D, E, F, HR</p>
@@ -576,7 +657,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#132-137" title="Go to source code"><var>$CreditScoreMin</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#157-162" title="Go to source code"><var>$CreditScoreMin</var></a>
 
 			<div class="description short">
 				<p>Minimum credit score</p>
@@ -601,7 +682,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#140-145" title="Go to source code"><var>$CreditScoreMax</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#165-170" title="Go to source code"><var>$CreditScoreMax</var></a>
 
 			<div class="description short">
 				<p>Maximum credit score</p>
@@ -626,7 +707,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#148-153" title="Go to source code"><var>$UserName</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#173-178" title="Go to source code"><var>$UserName</var></a>
 
 			<div class="description short">
 				<p>Borrower's username</p>
@@ -651,7 +732,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#156-161" title="Go to source code"><var>$Gender</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#181-186" title="Go to source code"><var>$Gender</var></a>
 
 			<div class="description short">
 				<p>Borrower's gender: Male 0, Female 1, Unknown 2</p>
@@ -676,7 +757,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#164-169" title="Go to source code"><var>$AgeMin</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#189-194" title="Go to source code"><var>$AgeMin</var></a>
 
 			<div class="description short">
 				<p>Minimal age</p>
@@ -701,7 +782,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#172-177" title="Go to source code"><var>$AgeMax</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#197-202" title="Go to source code"><var>$AgeMax</var></a>
 
 			<div class="description short">
 				<p>Maximum age</p>
@@ -726,7 +807,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#180-187" title="Go to source code"><var>$IncomeVerificationStatus</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#205-212" title="Go to source code"><var>$IncomeVerificationStatus</var></a>
 
 			<div class="description short">
 				<p>Income verification type</p>
@@ -753,7 +834,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#190-195" title="Go to source code"><var>$ShowMyItems</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#215-220" title="Go to source code"><var>$ShowMyItems</var></a>
 
 			<div class="description short">
 				<p>Can find your own items from market: Value Null = ALL, True = only your items, False = other user items</p>
@@ -771,6 +852,31 @@
 			</div>
 		</td>
 	</tr>
+	<tr data-order="AuctionId" id="$AuctionId">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#223-228" title="Go to source code"><var>$AuctionId</var></a>
+
+			<div class="description short">
+				<p>Can find specific auction from market</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Can find specific auction from market</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$AuctionId" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="ListedOnDateFrom" id="$ListedOnDateFrom">
 		<td class="attributes"><code>
 			public  
@@ -778,7 +884,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#198-203" title="Go to source code"><var>$ListedOnDateFrom</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#231-236" title="Go to source code"><var>$ListedOnDateFrom</var></a>
 
 			<div class="description short">
 				<p>Date when item was published from</p>
@@ -803,7 +909,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#206-211" title="Go to source code"><var>$ListedOnDateTo</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#239-244" title="Go to source code"><var>$ListedOnDateTo</var></a>
 
 			<div class="description short">
 				<p>Date when item was published to</p>
@@ -828,7 +934,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#214-219" title="Go to source code"><var>$DesiredDiscountRateMin</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#247-252" title="Go to source code"><var>$DesiredDiscountRateMin</var></a>
 
 			<div class="description short">
 				<p>Minimal DesiredDiscountRate</p>
@@ -853,7 +959,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#222-227" title="Go to source code"><var>$DesiredDiscountRateMax</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#255-260" title="Go to source code"><var>$DesiredDiscountRateMax</var></a>
 
 			<div class="description short">
 				<p>Maximal DesiredDiscountRate</p>
@@ -878,7 +984,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#230-235" title="Go to source code"><var>$XirrMin</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#263-268" title="Go to source code"><var>$XirrMin</var></a>
 
 			<div class="description short">
 				<p>Minimal Xirr</p>
@@ -903,7 +1009,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#238-243" title="Go to source code"><var>$XirrMax</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#271-276" title="Go to source code"><var>$XirrMax</var></a>
 
 			<div class="description short">
 				<p>Maximal Xirr</p>
@@ -928,7 +1034,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#246-254" title="Go to source code"><var>$PageSize</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#279-287" title="Go to source code"><var>$PageSize</var></a>
 
 			<div class="description short">
 				<p>Max returned results, default is 1000</p>
@@ -956,7 +1062,7 @@ Maximum value: 1000</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#257-265" title="Go to source code"><var>$PageNr</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.SecondMarketRequest.html#290-298" title="Go to source code"><var>$PageNr</var></a>
 
 			<div class="description short">
 				<p>Result page nr</p>

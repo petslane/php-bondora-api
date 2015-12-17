@@ -15,12 +15,14 @@ class ApiException extends \Exception {
      */
     public function __construct($errors) {
         $this->errors = $errors;
+        $message = '';
         if ($errors) {
-            $this->message = 'Api responded with errors:';
+            $message = 'Api responded with errors:';
             foreach ($errors as $error) {
-                $this->message .= ' ' . $error->Code . ' - ' . $error->Message . ' - ' . $error->Details . ';';
+                $message .= ' ' . $error->Code . ' - ' . $error->Message . ' - ' . $error->Details . ';';
             }
         }
+        parent::__construct($message);
     }
 
     /**

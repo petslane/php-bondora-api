@@ -440,7 +440,7 @@ class Api {
      *     loanDebtManagementStage             int                 Latest debt management stage @see Enum\LoanDebtManagementEventType
      *     loanDebtManagementDateActiveFrom    string|\DateTime    Latest debt management date active from (string format YYYY-MM-DD hh:mm:ss)
      *     loanDebtManagementDateActiveTo      string|\DateTime    Latest debt management date active to (string format YYYY-MM-DD hh:mm:ss)
-     *     salesStatus                         int                 Second market sale status NULL All, 0 Bought investments, 1 Sold investments
+     *     salesStatus                         int                 Second market sale status NULL All, 0 Sold investments, 1 Bought investments
      *     isInRepayment                       bool                Search only active in repayment loans, StatusCodes (2, 5, 100)
      *     pageSize                            int                 Max returned results, default is 1000
      *     pageNr                              int                 Result page nr

@@ -520,14 +520,14 @@
 </span><span id="367" class="l"><a href="#367"> 367: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$eventDateFrom</span>)) {
 </span><span id="368" class="l"><a href="#368"> 368: </a>                <span class="php-var">$param</span>-&gt;EventDateFrom = (string) <span class="php-var">$eventDateFrom</span>;
 </span><span id="369" class="l"><a href="#369"> 369: </a>            } <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-var">$eventDateFrom</span> <span class="php-keyword1">instanceof</span> \DateTime) {
-</span><span id="370" class="l"><a href="#370"> 370: </a>                <span class="php-var">$param</span>-&gt;EventDateFrom = <span class="php-var">$eventDateFrom</span>-&gt;format(<span class="php-quote">'Y-m-d H:i:s'</span>);
+</span><span id="370" class="l"><a href="#370"> 370: </a>                <span class="php-var">$param</span>-&gt;EventDateFrom = <span class="php-var">$eventDateFrom</span>-&gt;format(<span class="php-quote">'c'</span>);
 </span><span id="371" class="l"><a href="#371"> 371: </a>            }
 </span><span id="372" class="l"><a href="#372"> 372: </a>        }
 </span><span id="373" class="l"><a href="#373"> 373: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$eventDateTo</span>) {
 </span><span id="374" class="l"><a href="#374"> 374: </a>            <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$eventDateTo</span>)) {
 </span><span id="375" class="l"><a href="#375"> 375: </a>                <span class="php-var">$param</span>-&gt;EventDateTo = (string) <span class="php-var">$eventDateTo</span>;
 </span><span id="376" class="l"><a href="#376"> 376: </a>            } <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-var">$eventDateTo</span> <span class="php-keyword1">instanceof</span> \DateTime) {
-</span><span id="377" class="l"><a href="#377"> 377: </a>                <span class="php-var">$param</span>-&gt;EventDateTo = <span class="php-var">$eventDateTo</span>-&gt;format(<span class="php-quote">'Y-m-d H:i:s'</span>);
+</span><span id="377" class="l"><a href="#377"> 377: </a>                <span class="php-var">$param</span>-&gt;EventDateTo = <span class="php-var">$eventDateTo</span>-&gt;format(<span class="php-quote">'c'</span>);
 </span><span id="378" class="l"><a href="#378"> 378: </a>            }
 </span><span id="379" class="l"><a href="#379"> 379: </a>        }
 </span><span id="380" class="l"><a href="#380"> 380: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$eventType</span>) {
@@ -593,7 +593,7 @@
 </span></span><span id="440" class="l"><a href="#440"> 440: </a><span class="php-comment">     *     loanDebtManagementStage             int                 Latest debt management stage @see Enum\LoanDebtManagementEventType
 </span></span><span id="441" class="l"><a href="#441"> 441: </a><span class="php-comment">     *     loanDebtManagementDateActiveFrom    string|\DateTime    Latest debt management date active from (string format YYYY-MM-DD hh:mm:ss)
 </span></span><span id="442" class="l"><a href="#442"> 442: </a><span class="php-comment">     *     loanDebtManagementDateActiveTo      string|\DateTime    Latest debt management date active to (string format YYYY-MM-DD hh:mm:ss)
-</span></span><span id="443" class="l"><a href="#443"> 443: </a><span class="php-comment">     *     salesStatus                         int                 Second market sale status NULL All, 0 Bought investments, 1 Sold investments
+</span></span><span id="443" class="l"><a href="#443"> 443: </a><span class="php-comment">     *     salesStatus                         int                 Second market sale status NULL All, 0 Sold investments, 1 Bought investments
 </span></span><span id="444" class="l"><a href="#444"> 444: </a><span class="php-comment">     *     isInRepayment                       bool                Search only active in repayment loans, StatusCodes (2, 5, 100)
 </span></span><span id="445" class="l"><a href="#445"> 445: </a><span class="php-comment">     *     pageSize                            int                 Max returned results, default is 1000
 </span></span><span id="446" class="l"><a href="#446"> 446: </a><span class="php-comment">     *     pageNr                              int                 Result page nr
@@ -1000,7 +1000,7 @@
 </span><span id="847" class="l"><a href="#847"> 847: </a>                    <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$value</span>)) {
 </span><span id="848" class="l"><a href="#848"> 848: </a>                        <span class="php-var">$params</span>[<span class="php-quote">'request.'</span> . <span class="php-var">$fld_name</span>][] = (string) <span class="php-var">$value</span>;
 </span><span id="849" class="l"><a href="#849"> 849: </a>                    } <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-var">$value</span> <span class="php-keyword1">instanceof</span> \DateTime) {
-</span><span id="850" class="l"><a href="#850"> 850: </a>                        <span class="php-var">$params</span>[<span class="php-quote">'request.'</span> . <span class="php-var">$fld_name</span>] = <span class="php-var">$value</span>-&gt;format(<span class="php-quote">'Y-m-d H:i:s'</span>);
+</span><span id="850" class="l"><a href="#850"> 850: </a>                        <span class="php-var">$params</span>[<span class="php-quote">'request.'</span> . <span class="php-var">$fld_name</span>][] = <span class="php-var">$value</span>-&gt;format(<span class="php-quote">'c'</span>);
 </span><span id="851" class="l"><a href="#851"> 851: </a>                    }
 </span><span id="852" class="l"><a href="#852"> 852: </a>                } <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-keyword2">in_array</span>(<span class="php-var">$fld_name</span>, <span class="php-var">$bool_fields</span>)) {
 </span><span id="853" class="l"><a href="#853"> 853: </a>                    <span class="php-var">$params</span>[<span class="php-quote">'request.'</span> . <span class="php-var">$fld_name</span>][] = <span class="php-var">$value</span>?<span class="php-quote">'true'</span>:<span class="php-quote">'false'</span>;
@@ -1038,12 +1038,12 @@
 </span><span id="885" class="l"><a href="#885"> 885: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$startDate</span>)) {
 </span><span id="886" class="l"><a href="#886"> 886: </a>            <span class="php-var">$params</span>[<span class="php-quote">'startDate'</span>] = <span class="php-var">$startDate</span>;
 </span><span id="887" class="l"><a href="#887"> 887: </a>        } <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-var">$startDate</span> <span class="php-keyword1">instanceof</span> \DateTime) {
-</span><span id="888" class="l"><a href="#888"> 888: </a>            <span class="php-var">$params</span>[<span class="php-quote">'startDate'</span>] = <span class="php-var">$startDate</span>-&gt;format(<span class="php-quote">'Y-m-d H:i:s'</span>);
+</span><span id="888" class="l"><a href="#888"> 888: </a>            <span class="php-var">$params</span>[<span class="php-quote">'startDate'</span>] = <span class="php-var">$startDate</span>-&gt;format(<span class="php-quote">'c'</span>);
 </span><span id="889" class="l"><a href="#889"> 889: </a>        }
 </span><span id="890" class="l"><a href="#890"> 890: </a>        <span class="php-keyword1">if</span> (<span class="php-keyword2">is_string</span>(<span class="php-var">$endDate</span>)) {
 </span><span id="891" class="l"><a href="#891"> 891: </a>            <span class="php-var">$params</span>[<span class="php-quote">'endDate'</span>] = <span class="php-var">$endDate</span>;
 </span><span id="892" class="l"><a href="#892"> 892: </a>        } <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-var">$endDate</span> <span class="php-keyword1">instanceof</span> \DateTime) {
-</span><span id="893" class="l"><a href="#893"> 893: </a>            <span class="php-var">$params</span>[<span class="php-quote">'endDate'</span>] = <span class="php-var">$endDate</span>-&gt;format(<span class="php-quote">'Y-m-d H:i:s'</span>);
+</span><span id="893" class="l"><a href="#893"> 893: </a>            <span class="php-var">$params</span>[<span class="php-quote">'endDate'</span>] = <span class="php-var">$endDate</span>-&gt;format(<span class="php-quote">'c'</span>);
 </span><span id="894" class="l"><a href="#894"> 894: </a>        }
 </span><span id="895" class="l"><a href="#895"> 895: </a>        <span class="php-keyword1">if</span> (<span class="php-var">$pageSize</span> !== <span class="php-keyword1">null</span>) {
 </span><span id="896" class="l"><a href="#896"> 896: </a>            <span class="php-var">$params</span>[<span class="php-quote">'pageSize'</span>] = (int) <span class="php-var">$pageSize</span>;

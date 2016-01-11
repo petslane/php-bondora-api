@@ -1019,7 +1019,6 @@ class Api {
 
             // has throttling problem, lets wait a second and retry again
             if ($has_throttling_problem) {
-                sleep(1);
                 $do_retry = true;
             }
 

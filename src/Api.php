@@ -1027,7 +1027,7 @@ class Api {
                 // retry query
                 usleep(1000000 - (microtime(true) - $last_run_time));
                 if ($resource != 'login') { // update token in case we did new login
-                    $headers['Authorization'] = 'Token ' . $this->token;
+                    $headers['Authorization'] = 'Bearer ' . $this->token;
                 }
                 $client = new Client($url, $params, $method, $headers);
                 $this->validateResponseCode($resource, $client, $method);

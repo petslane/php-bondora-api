@@ -189,6 +189,17 @@ class MyInvestmentsRequest extends Definition {
 
 
     /**
+     * Auction bid type
+     *
+     * Enum: 0, 1, 2
+     * @see \Petslane\Bondora\Enum\BidType
+     *
+     * @var int
+     */
+    public $AuctionBidType;
+
+
+    /**
      * Second market sale status
      * <para>NULL All</para><para>0 Bought investments</para><para>1 Sold investments</para>
      *

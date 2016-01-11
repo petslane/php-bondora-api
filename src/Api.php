@@ -438,10 +438,11 @@ class Api {
      *     creditScoreMax                      int                 Maximum credit score
      *     userName                            string              Borrower's username
      *     loanStatusCode                      int[]               Loan status code 2 Current, 100 Overdue, 5 60+ days overdue, 4 Repaid, 8 Released
-     *     incomeVerificationStatus            int                 Income verification type @see Enum\AuctionIncomeVerificationStatus
-     *     loanDebtManagementStage             int                 Latest debt management stage @see Enum\LoanDebtManagementEventType
+     *     incomeVerificationStatus            int                 Income verification type @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus
+     *     loanDebtManagementStage             int                 Latest debt management stage @see Petslane\Bondora\Enum\LoanDebtManagementEventType
      *     loanDebtManagementDateActiveFrom    string|\DateTime    Latest debt management date active from (string format YYYY-MM-DD hh:mm:ss)
      *     loanDebtManagementDateActiveTo      string|\DateTime    Latest debt management date active to (string format YYYY-MM-DD hh:mm:ss)
+     *     auctionBidType                      int                 Auction bid type @see Petslane\Bondora\Enum\BidType
      *     salesStatus                         int                 Second market sale status NULL All, 0 Sold investments, 1 Bought investments
      *     isInRepayment                       bool                Search only active in repayment loans, StatusCodes (2, 5, 100)
      *     pageSize                            int                 Max returned results, default is 1000
@@ -470,6 +471,7 @@ class Api {
             'loanStatusCode',
             'incomeVerificationStatus',
             'loanDebtManagementStage',
+            'auctionBidType',
             'salesStatus',
             'pageSize',
             'pageNr',
@@ -631,7 +633,7 @@ class Api {
      *     latePrincipalAmountMax       float       Principal debt amount max
      *     priceMin                     float       Price amount min
      *     priceMax                     float       Price amount max
-     *     useOfLoan                    int         Use of loan. @see Enum\AuctionPurpose
+     *     useOfLoan                    int         Use of loan. @see Petslane\Bondora\Enum\AuctionPurpose
      *     hasNewSchedule               bool        Has been rescheduled
      *     countries                    string[]    Two letter iso code for country of origin: EE, ES, FI
      *     ratings                      string[]    Bondora's rating: AA, A, B, C, D, E, F, HR
@@ -641,7 +643,7 @@ class Api {
      *     gender                       int         Borrower's gender: Male 0, Female 1, Unknown 2
      *     ageMin                       int         Minimal age
      *     ageMax                       int         Maximum age
-     *     incomeVerificationStatus     int         Income verification type. @see Enum\AuctionIncomeVerificationStatus
+     *     incomeVerificationStatus     int         Income verification type. @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus
      *     showMyItems                  bool        Can find your own items from market: Value Null = ALL, True = only your items, False = other user items
      *     auctionId                    string      Can find specific auction from market
      *     listedOnDateFrom             date        Date when item was published from
@@ -868,7 +870,7 @@ class Api {
     /**
      * Gets list of bids the investor has made.
      *
-     * @param int $bidStatusCode Bid status code @see Enum\ApiAuctionBidRequestStatus
+     * @param int $bidStatusCode Bid status code @see Petslane\Bondora\Enum\ApiAuctionBidRequestStatus
      * @param string|\DateTime $startDate Bids made from date. (string format YYYY-MM-DD hh:mm:ss)
      * @param string|\DateTime $endDate Bids made to date. (string format YYYY-MM-DD hh:mm:ss)
      * @param int $pageSize Max returned results, default is 1000. Range: inclusive between 1 and 1000

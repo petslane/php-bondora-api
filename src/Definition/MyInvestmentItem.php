@@ -56,6 +56,17 @@ class MyInvestmentItem extends Definition {
 
 
     /**
+     * Auction bid type
+     *
+     * Enum: 0, 1, 2
+     * @see \Petslane\Bondora\Enum\BidType
+     *
+     * @var int
+     */
+    public $AuctionBidType;
+
+
+    /**
      * Residency of the borrower
      *
      * @var string
@@ -178,7 +189,7 @@ class MyInvestmentItem extends Definition {
 
 
     /**
-     * Debt occured on date
+     * Date and time when the principal part of the payment is overdue (PrincipalLateAmount is greater than zero).
      *
      * @var \DateTime
      */
@@ -186,7 +197,7 @@ class MyInvestmentItem extends Definition {
 
 
     /**
-     * Debt occured on date
+     * Date and time when loan part payment is overdue (principal, interest or penalty) aka when the dept occured for the loan part (LateAmountTotal is greater than zero).
      *
      * @var \DateTime
      */

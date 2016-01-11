@@ -1003,15 +1003,11 @@ class Api {
             $this->validateResponse($resource, $json, $method);
         } catch (ApiException $e) {
             // response was not successful
-            $do_retry = false;
             $has_throttling_problem = false;
 
             // was there any errors we can handle automatically
             $errors = $e->getErrors();
             foreach ($errors as $error) {
-                if (in_array($error->Code, array(401, 403))) {
-                    throw $e;
-                }
                 if ($error->Code == 429) {
                     $has_throttling_problem = true;
                 }
@@ -1019,10 +1015,6 @@ class Api {
 
             // has throttling problem, lets wait a second and retry again
             if ($has_throttling_problem) {
-                $do_retry = true;
-            }
-
-            if ($do_retry) {
                 // retry query
                 usleep(1000000 - (microtime(true) - $last_run_time));
                 if ($resource != 'login') { // update token in case we did new login

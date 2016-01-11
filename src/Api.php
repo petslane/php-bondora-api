@@ -9,6 +9,8 @@ class Api {
     private $config = array();
     const API_VERSION = 1;
 
+    const THROTTLING_RETRIES = 2;
+
     private $token;
 
     private $http_codes = array(
@@ -989,49 +991,36 @@ class Api {
         }
         // get query url
         $url = $this->getUrl($resource, $id);
-        // query
-        $client = new Client($url, $params, $method, $headers);
-        $last_run_time = microtime(true);
 
-        // check http code
-        $this->validateResponseCode($resource, $client, $method);
+        $json = null;
+        for ($i=0; $i < self::THROTTLING_RETRIES; $i++) {
+            // query
+            $client = new Client($url, $params, $method, $headers);
+            $last_run_time = microtime(true);
 
-        // get response data
-        $body = $client->getBody();
-        $json = json_decode($body, true);
-        try {
-            $this->validateResponse($resource, $json, $method);
-        } catch (ApiException $e) {
-            // response was not successful
-            $has_throttling_problem = false;
+            // check http code
+            $this->validateResponseCode($resource, $client, $method);
 
-            // was there any errors we can handle automatically
-            $errors = $e->getErrors();
-            foreach ($errors as $error) {
-                if ($error->Code == 429) {
-                    $has_throttling_problem = true;
-                }
-            }
-
-            // has throttling problem, lets wait a second and retry again
-            if ($has_throttling_problem) {
-                // retry query
-                usleep(1000000 - (microtime(true) - $last_run_time));
-                if ($resource != 'login') { // update token in case we did new login
-                    $headers['Authorization'] = 'Bearer ' . $this->token;
-                }
-                $client = new Client($url, $params, $method, $headers);
-                $this->validateResponseCode($resource, $client, $method);
-                $body = $client->getBody();
-                $json = json_decode($body, true);
+            // get response data
+            $body = $client->getBody();
+            $json = json_decode($body, true);
+            try {
                 $this->validateResponse($resource, $json, $method);
-            } else {
-                // contains errors we can't handle automatically, throw this
+                return $json;
+            } catch (ApiException $e) {
+                $errors = $e->getErrors();
+                foreach ($errors as $error) {
+                    if ($error->Code == 429) {
+                        // got throttling error, sleep and retry
+                        usleep(1000000 - (microtime(true) - $last_run_time));
+                        continue 2;
+                    }
+                }
+
+                // no throttling error, throw whatever error we got
                 throw $e;
             }
         }
-
-        return $json;
     }
 }
 

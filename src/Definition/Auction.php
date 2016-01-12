@@ -76,6 +76,7 @@ class Auction extends Definition {
      * Verification type
      *
      * Enum: 1, 2, 3, 4
+     * @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus
      *
      * @var int
      */
@@ -86,6 +87,7 @@ class Auction extends Definition {
      * Two letter language code
      *
      * Enum: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
+     * @see Petslane\Bondora\Enum\LanguageCode
      *
      * @var int
      */
@@ -104,6 +106,7 @@ class Auction extends Definition {
      * Gender
      *
      * Enum: 0, 1, 2
+     * @see Petslane\Bondora\Enum\Sex
      *
      * @var int
      */
@@ -181,6 +184,7 @@ class Auction extends Definition {
      * Use of loan
      *
      * Enum: 0, 1, 2, 3, 4, 5, 6, 7, 8, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, -1
+     * @see Petslane\Bondora\Enum\AuctionPurpose
      *
      * @var int
      */
@@ -191,6 +195,7 @@ class Auction extends Definition {
      * Education
      *
      * Enum: 1, 2, 3, 4, 5, -1
+     * @see Petslane\Bondora\Enum\AuctionQuestionEducation
      *
      * @var int
      */
@@ -201,6 +206,7 @@ class Auction extends Definition {
      * Marital status
      *
      * Enum: 1, 2, 3, 4, 5, -1
+     * @see Petslane\Bondora\Enum\AuctionQuestionMaritalStatus
      *
      * @var int
      */
@@ -219,6 +225,7 @@ class Auction extends Definition {
      * Employment status
      *
      * Enum: 1, 2, 3, 4, 5, 6, -1
+     * @see Petslane\Bondora\Enum\AuctionQuestionEmploymentStatus
      *
      * @var int
      */
@@ -234,6 +241,14 @@ class Auction extends Definition {
 
 
     /**
+     * Employment position
+     *
+     * @var string
+     */
+    public $EmploymentPosition;
+
+
+    /**
      * Work experience in total
      *
      * @var string
@@ -245,6 +260,7 @@ class Auction extends Definition {
      * Occupation area
      *
      * Enum: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1
+     * @see Petslane\Bondora\Enum\AuctionQuestionOccupationArea
      *
      * @var int
      */
@@ -255,6 +271,7 @@ class Auction extends Definition {
      * Type of home ownership
      *
      * Enum: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1
+     * @see Petslane\Bondora\Enum\AuctionQuestionHomeOwnershipType
      *
      * @var int
      */
@@ -323,6 +340,30 @@ class Auction extends Definition {
      * @var float
      */
     public $IncomeTotal;
+
+
+    /**
+     * Discretionary Income
+     *
+     * @var float
+     */
+    public $FreeCash;
+
+
+    /**
+     * Debt to income ratio
+     *
+     * @var float
+     */
+    public $DebtToIncome;
+
+
+    /**
+     * Loan monthly payment amount.
+     *
+     * @var float
+     */
+    public $MonthlyPayment;
 
 
     /**

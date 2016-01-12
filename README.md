@@ -92,6 +92,11 @@ $sm_deals = $api->secondaryMarket(array(
 // Gets events that have been made with current access token
 $events = $api->getEventlog();
 
+// DataExport - get daily dataset of all loan data that is not covered by the data protection laws
+$dataset = $api->loandataset(array(
+    'countries' => 'EE',
+));
+
 // revoke token
 $api->revokeToken();
 
@@ -101,9 +106,12 @@ $api->revokeToken();
 Please, let me know!
 
 ## Bondora API support
-Bondora API changelog - https://api-sandbox.bondora.com/ChangeLog  
+~~Bondora API changelog - https://api-sandbox.bondora.com/ChangeLog (may be not updated!)~~  
+Bondora API changelog - https://api.bondora.com/ChangeLog  
 ##### Supported versions:
-- v1.0.0.4 (10.12.2015)
+- v1.0.0.6 (07.01.2016)  
+- v1.0.0.5 (21.12.2015)  
+- v1.0.0.4 (10.12.2015)  
 - v1.0.0.3 (01.12.2015)  
 - v1.0.0.2 (25.11.2015)  
 - v1.0.0.1 (18.11.2015)  

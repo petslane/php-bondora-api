@@ -113,6 +113,9 @@ class Api {
         'G/eventlog' => array(
             401 => 'User is not Authorized',
         ),
+        'G/loandataset' => array(
+            401 => 'User is not Authorized',
+        ),
     );
 
     public function __construct($config) {
@@ -966,6 +969,59 @@ class Api {
         $response = new Definition\ApiResult($json);
 
         return $response->Success;
+    }
+
+    /**
+     * Provides daily dataset of all loan data that is not covered by the data protection laws.
+     *
+     * $request array supported keys:
+     *     loanIds        string[]     Specific loans to search
+     *     countries      string[]     Two letter iso code for country of origin: EE, ES, FI
+     *     ratings        string[]     Bondora's rating: AA, A, B, C, D, E, F, HR
+     *     wasFunded      bool         Loan was funded
+     *     loanDateFrom   date         Loan start date from
+     *     loanDateTo     date         Loan start date to
+     *     pageSize       int          Max returned results, default is 1000. Range: inclusive between 1 and 1000
+     *     pageNr         int          Result page nr. Range: inclusive between 1 and 2147483647
+     *
+     * @param array $request
+     * @return Definition\LoanDatasetItem[]
+     * @throws ApiException
+     * @throws \Exception
+     */
+    public function loandataset($request=array()) {
+        $resource = 'loandataset';
+
+        $array_fields = array(
+            'loanIds',
+            'countries',
+            'ratings',
+        );
+        $int_fields = array(
+            'pageSize',
+            'pageNr',
+        );
+        $float_fields = array();
+        $string_fields = array(
+            'loanIds',
+            'countries',
+            'ratings',
+        );
+        $date_fields = array(
+            'loanDateFrom',
+            'loanDateTo',
+        );
+        $bool_fields = array(
+            'wasFunded',
+        );
+
+        $params = $this->prepareRequestArray($request, $array_fields, $int_fields, $float_fields, $string_fields, $date_fields, $bool_fields);
+
+        $json = $this->query($resource, null, $params);
+
+        $response = new Definition\ApiResultLoanDataset($json);
+
+        return $response->Payload;
     }
 
     /**

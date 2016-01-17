@@ -97,6 +97,15 @@ $dataset = $api->loandataset(array(
     'countries' => 'EE',
 ));
 
+// List of all reports
+$reports = $api->reports();
+
+// Get report data by report id
+$report = $api->report($reports[0]->ReportId);
+
+// Generate report
+$reportResponse = $api->createReport(ReportType::Investments);
+
 // revoke token
 $api->revokeToken();
 
@@ -109,6 +118,7 @@ Please, let me know!
 ~~Bondora API changelog - https://api-sandbox.bondora.com/ChangeLog (may be not updated!)~~  
 Bondora API changelog - https://api.bondora.com/ChangeLog  
 ##### Supported versions:
+- v1.0.1.0 (14.01.2016)  
 - v1.0.0.6 (07.01.2016)  
 - v1.0.0.5 (21.12.2015)  
 - v1.0.0.4 (10.12.2015)  

@@ -116,6 +116,9 @@ class Api {
         'G/loandataset' => array(
             401 => 'User is not Authorized',
         ),
+        'G/reports' => array(
+            401 => 'User is not Authorized',
+        ),
     );
 
     public function __construct($config) {
@@ -1020,6 +1023,23 @@ class Api {
         $json = $this->query($resource, null, $params);
 
         $response = new Definition\ApiResultLoanDataset($json);
+
+        return $response->Payload;
+    }
+
+    /**
+     * List of all reports
+     *
+     * @return Definition\ReportItem[]
+     * @throws ApiCriticalException
+     * @throws ApiException
+     */
+    public function reports() {
+        $resource = 'reports';
+
+        $json = $this->query($resource);
+
+        $response = new Definition\ApiResultReportList($json);
 
         return $response->Payload;
     }

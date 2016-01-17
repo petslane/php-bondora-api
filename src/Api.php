@@ -125,6 +125,10 @@ class Api {
             404 => 'Report with specified identificator was not found',
             409 => 'Report type is not supported',
         ),
+        'P/report' => array(
+            400 => 'Report type is not supported',
+            401 => 'User is not Authorized',
+        ),
     );
 
     public function __construct($config) {
@@ -1064,6 +1068,39 @@ class Api {
         $json = $this->query($resource, $id);
 
         $response = new Definition\ApiResultReport($json);
+
+        return $response->Payload;
+    }
+
+    /**
+     * Request to generate specified report type for set period.
+     *
+     * @param int $reportType @see ReportType
+     * @param \DateTime $periodStart
+     * @param \DateTime $periodEnd
+     * @return Definition\ReportResponse
+     * @throws ApiCriticalException
+     * @throws ApiException
+     */
+    public function createReport($reportType, $periodStart=null, $periodEnd=null) {
+        $resource = 'report';
+
+        $param = new Definition\ReportCreateRequest();
+        $param->ReportType = $reportType;
+        if ($periodStart) {
+            $param->PeriodStart = $periodStart->format('c');
+        }
+        if ($periodEnd) {
+            $param->PeriodEnd = $periodEnd->format('c');
+        }
+
+        $json = $this->query($resource, null, json_encode($param), Client::METHOD_POST);
+
+        $response = new Definition\ApiResultCreateReport($json);
+
+        if (!$response->Success) {
+            return $response->Success;
+        }
 
         return $response->Payload;
     }

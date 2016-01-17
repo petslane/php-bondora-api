@@ -5,12 +5,46 @@ namespace Petslane\Bondora\Definition;
 class ApiResultLoanDataset extends Definition {
 
     /**
-     * Total number of SecondaryMarket items found
+     * Requested Max items in result
+     *
+     * Maximum value: 2147483647
+     *
+     * @var int
+     */
+    public $PageSize;
+
+
+    /**
+     * Requested page nr
+     *
+     * Minimum value: 1
+     * Maximum value: 2147483647
+     *
+     * @var int
+     */
+    public $PageNr;
+
+
+    /**
+     * Total number of items found
+     *
+     * Maximum value: 2147483647
      *
      * @required
      * @var int
      */
     public $TotalCount;
+
+
+    /**
+     * Number of items returned
+     *
+     * Maximum value: 2147483647
+     *
+     * @required
+     * @var int
+     */
+    public $Count;
 
 
     /**

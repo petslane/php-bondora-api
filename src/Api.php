@@ -119,6 +119,12 @@ class Api {
         'G/reports' => array(
             401 => 'User is not Authorized',
         ),
+        'G/report/?' => array(
+            401 => 'User is not Authorized',
+            403 => 'Not allowed to get the Report, because the Report is not owned by current user',
+            404 => 'Report with specified identificator was not found',
+            409 => 'Report type is not supported',
+        ),
     );
 
     public function __construct($config) {
@@ -1040,6 +1046,24 @@ class Api {
         $json = $this->query($resource);
 
         $response = new Definition\ApiResultReportList($json);
+
+        return $response->Payload;
+    }
+
+    /**
+     * Get report data for specified report identificator.
+     *
+     * @param string $id ReportId
+     * @return Definition\Report
+     * @throws ApiCriticalException
+     * @throws ApiException
+     */
+    public function report($id) {
+        $resource = 'report/?';
+
+        $json = $this->query($resource, $id);
+
+        $response = new Definition\ApiResultReport($json);
 
         return $response->Payload;
     }

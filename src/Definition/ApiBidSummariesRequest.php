@@ -34,7 +34,7 @@ class ApiBidSummariesRequest extends Definition {
 
 
     /**
-     * Max returned results, default is 1000
+     * Max items in result, default is 1000
      *
      * Minimum value: 1
      * Maximum value: 1000

@@ -367,30 +367,40 @@ class MyInvestmentItem extends Definition {
 
 
     /**
+     * Note owner received loan transfers principal amount
+     *
      * @var float
      */
     public $NoteLoanTransfersMainAmount;
 
 
     /**
+     * Note owner received loan transfers interest amount
+     *
      * @var float
      */
     public $NoteLoanTransfersInterestAmount;
 
 
     /**
+     * Note owner received loan transfers penalties amount
+     *
      * @var float
      */
     public $NoteLoanLateChargesPaid;
 
 
     /**
+     * Note owner received loan transfers earned interest, penalties total amount
+     *
      * @var float
      */
     public $NoteLoanTransfersEarningsAmount;
 
 
     /**
+     * Note owner received loan transfers total amount
+     *
      * @var float
      */
     public $NoteLoanTransfersTotalRepaimentsAmount;

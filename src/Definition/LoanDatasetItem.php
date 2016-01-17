@@ -29,10 +29,13 @@ class LoanDatasetItem extends Definition {
 
 
     /**
-     * Credit decision taken by Bondora
-     * false Application rejected
-     * true MediaTypeNames.Application approved
-     * EMPTY No approval process
+     * <para>Credit decision taken by Bondora</para>
+     * <para>
+     * false Application rejected</para>
+     * <para>
+     * true Application approved</para>
+     * <para>
+     * null No approval process</para>
      *
      * @var bool
      */
@@ -92,9 +95,11 @@ class LoanDatasetItem extends Definition {
 
 
     /**
-     * Did the customer have prior credit history in Bondora
-     * false Customer had at least 3 months of credit history in Bondora
-     * true No prior credit history in Bondora
+     * <para>Did the customer have prior credit history in Bondora</para>
+     * <para>
+     * false Customer had at least 3 months of credit history in Bondora</para>
+     * <para>
+     * true No prior credit history in Bondora</para>
      *
      * @var bool
      */
@@ -260,18 +265,20 @@ class LoanDatasetItem extends Definition {
 
 
     /**
-     * <para>
-     * 1000 No previous payments problems</para>
-     * <para>
-     * 900 Payments problems finished 24-36 months ago</para>
-     * <para>
-     * 800 Payments problems finished 12-24 months ago</para>
-     * <para>
-     * 700 Payments problems finished 6-12 months ago</para>
-     * <para>
-     * 600 Payment problems finished &lt;6 months ago</para>
-     * <para>
-     * 500 Active payment problems</para>
+     * <list type="bullet">
+     * <item>
+     * 1000 No previous payments problems</item>
+     * <item>
+     * 900 Payments problems finished 24-36 months ago</item>
+     * <item>
+     * 800 Payments problems finished 12-24 months ago</item>
+     * <item>
+     * 700 Payments problems finished 6-12 months ago</item>
+     * <item>
+     * 600 Payment problems finished &lt;6 months ago</item>
+     * <item>
+     * 500 Active payment problems</item>
+     * </list>
      *
      * @var int
      */
@@ -763,10 +770,21 @@ class LoanDatasetItem extends Definition {
 
 
     /**
-     * A categorical variable with three values:
-     * “No credit history” The applicant is a new credit customer for Bondora or a customer with less than 3 months of credit history in Bondora
-     * “Good credit history” The applicant is an existing credit customer for Bondora and has not had Bondora loans past due
-     * “Bad credit history” The applicant is an existing credit customer for Bondora and has had Bondora loans at least 14 days overdue
+     * <para>A categorical variable with three values:</para>
+     * <list type="bullet">
+     * <item>
+     * <term>No credit history</term>
+     * <description>The applicant is a new credit customer for Bondora or a customer with less than 3 months of credit history in Bondora</description>
+     * </item>
+     * <item>
+     * <term>Good credit history</term>
+     * <description>The applicant is an existing credit customer for Bondora and has not had Bondora loans past due</description>
+     * </item>
+     * <item>
+     * <term>Bad credit history</term>
+     * <description>The applicant is an existing credit customer for Bondora and has had Bondora loans at least 14 days overdue</description>
+     * </item>
+     * </list>
      *
      * @var string
      */

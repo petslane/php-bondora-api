@@ -201,7 +201,7 @@ class MyInvestmentsRequest extends Definition {
 
     /**
      * Second market sale status
-     * <para>NULL All</para><para>0 Bought investments</para><para>1 Sold investments</para>
+     * <para>NULL All</para><para>0 Bought investments</para><para>1 Sold investments</para><para>2 Investment is on sale</para><para>3 Investment is not on sale</para>
      *
      * @var int
      */
@@ -217,7 +217,7 @@ class MyInvestmentsRequest extends Definition {
 
 
     /**
-     * Max returned results, default is 1000
+     * Max items in result, default is 1000
      *
      * Minimum value: 1
      * Maximum value: 1000

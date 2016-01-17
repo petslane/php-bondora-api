@@ -18,11 +18,7 @@ class Definition {
             }
 
             $type = $this->getType('var', $modal, $field);
-            $is_array = false;
-            if (substr($type, -2) == '[]') {
-                $is_array = true;
-                $type = substr($type, 0, -2);
-            }
+            $type = $this->detectTypeByValue($value, $type, $is_array);
 
             if ($type == 'bool' && !$is_array) {
                 $this->{$field} = (bool) $value;
@@ -61,6 +57,44 @@ class Definition {
                 throw new \Exception('Unexpected property type (' . $type . ') for ' . $class . '::' . $field);
             }
         }
+    }
+
+    private function detectTypeByValue($value, $typeOptions=array(), &$is_array) {
+        if (count($typeOptions) == 1 || !$value) {
+            $is_array = false;
+            if (substr($typeOptions[0], -2) == '[]') {
+                $is_array = true;
+                $typeOptions[0] = substr($typeOptions[0], 0, -2);
+            }
+            return $typeOptions[0];
+        }
+
+        foreach ($typeOptions as $type) {
+            $is_array = false;
+            if (substr($type, -2) == '[]') {
+                $is_array = true;
+                $type = substr($type, 0, -2);
+            }
+            if ($type == 'Definition' || !file_exists(__DIR__ . '/' . $type . '.php')) {
+                throw new \Exception('Multiple types is supported only if all types are customer classes. Unsupported tpye: ' . $type);
+            }
+            if ($is_array !== array_key_exists(0, $value)) {
+                continue;
+            }
+            $value_properties = array_keys($is_array?$value[0]:$value);
+            $ns_class = '\\' . __NAMESPACE__ . '\\' . $type;
+            $reflect = new \ReflectionClass($ns_class);
+            $class_properties = array();
+            foreach ($reflect->getProperties() as $rp) {
+                $class_properties[] = $rp->name;
+            }
+            if (array_diff($class_properties, $value_properties) || array_diff($value_properties, $class_properties)) {
+                continue;
+            }
+            return $type;
+        }
+
+        throw new \Exception();
     }
 
     private function getType($tag, $class, $method=null) {
@@ -106,13 +140,9 @@ class Definition {
                 continue;
             }
 
-
             $type = array_shift($tokens);
-            if (count(explode('|', $type)) > 1) {
-                throw new \Exception('Only one type option allowed in "@'.$name.'"');
-            }
 
-            return $type;
+            return explode('|', $type);
         }
 
         return null;

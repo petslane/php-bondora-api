@@ -112,22 +112,27 @@ class Api {
         ),
         'G/eventlog' => array(
             401 => 'User is not Authorized',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
         'G/loandataset' => array(
             401 => 'User is not Authorized',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
         'G/reports' => array(
             401 => 'User is not Authorized',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
         'G/report/?' => array(
             401 => 'User is not Authorized',
             403 => 'Not allowed to get the Report, because the Report is not owned by current user',
             404 => 'Report with specified identificator was not found',
             409 => 'Report type is not supported',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
         'P/report' => array(
             400 => 'Report type is not supported',
             401 => 'User is not Authorized',
+            429 => 'API calls quota exceeded! maximum admitted 1 per Second.',
         ),
     );
 

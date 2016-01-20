@@ -263,7 +263,7 @@ class Api {
         $param->client_secret = $this->config['auth']['secret'];
         $param->code = $code;
 
-        $client = new Client($this->config['api_base'] . '/oauth/access_token', json_encode($param), Client::METHOD_POST);
+        $client = $this->getClient($this->config['api_base'] . '/oauth/access_token', json_encode($param), Client::METHOD_POST);
 
         $json = json_decode($client->getBody(), true);
         if (!empty($json['error'])) {
@@ -290,6 +290,10 @@ class Api {
         return $result;
     }
 
+    private function getClient($url, $params, $method, $headers=array()) {
+        return new Client($url, $params, $method, $headers);
+    }
+
     /**
      * Redeem access token from refresh_token
      *
@@ -305,7 +309,7 @@ class Api {
         $param->client_secret = $this->config['auth']['secret'];
         $param->refresh_token = $refresh_token;
 
-        $client = new Client($this->config['api_base'] . '/oauth/access_token', json_encode($param), Client::METHOD_POST);
+        $client = $this->getClient($this->config['api_base'] . '/oauth/access_token', json_encode($param), Client::METHOD_POST);
 
         $json = json_decode($client->getBody(), true);
         if (!empty($json['error'])) {
@@ -342,7 +346,7 @@ class Api {
     public function revokeToken() {
         $headers = array();
         $headers['Authorization'] = 'Bearer ' . $this->token;
-        $client = new Client($this->config['api_base'] . '/oauth/access_token/revoke', array(), Client::METHOD_POST, $headers);
+        $client = $this->getClient($this->config['api_base'] . '/oauth/access_token/revoke', array(), Client::METHOD_POST, $headers);
 
         $json = json_decode($client->getBody(), true);
         if (!empty($json['error'])) {
@@ -1139,7 +1143,7 @@ class Api {
         $json = null;
         for ($i=0; $i < self::THROTTLING_RETRIES; $i++) {
             // query
-            $client = new Client($url, $params, $method, $headers);
+            $client = $this->getClient($url, $params, $method, $headers);
             $last_run_time = microtime(true);
 
             // check http code

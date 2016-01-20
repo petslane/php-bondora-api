@@ -883,6 +883,11 @@ class Api {
                 }
             }
 
+            if (empty($params['request.' . $fld_name])) {
+                unset($params['request.' . $fld_name]);
+                continue;
+            }
+
             if (!in_array($fld_name, $array_fields)) {
                 $params['request.' . $fld_name] = $params['request.' . $fld_name][0];
             }

@@ -245,6 +245,86 @@ class SecondMarketRequest extends Definition {
 
 
     /**
+     * Principal debt started date from
+     *
+     * @var \DateTime
+     */
+    public $DebtOccuredOnFrom;
+
+
+    /**
+     * Principal debt started date to
+     *
+     * @var \DateTime
+     */
+    public $DebtOccuredOnTo;
+
+
+    /**
+     * Interest debt started date from
+     *
+     * @var \DateTime
+     */
+    public $DebtOccuredOnForSecondaryFrom;
+
+
+    /**
+     * Interest debt started date to
+     *
+     * @var \DateTime
+     */
+    public $DebtOccuredOnForSecondaryTo;
+
+
+    /**
+     * Defaulted date from
+     *
+     * @var \DateTime
+     */
+    public $DefaultedDateFrom;
+
+
+    /**
+     * Defaulted date to
+     *
+     * @var \DateTime
+     */
+    public $DefaultedDateTo;
+
+
+    /**
+     * Rescheduled date from
+     *
+     * @var \DateTime
+     */
+    public $RescheduledFrom;
+
+
+    /**
+     * Rescheduled date to
+     *
+     * @var \DateTime
+     */
+    public $RescheduledTo;
+
+
+    /**
+     * Last payment date from
+     *
+     * @var \DateTime
+     */
+    public $LastPaymentDateFrom;
+
+
+    /**
+     * Last payment date to
+     *
+     * @var \DateTime
+     */
+    public $LastPaymentDateTo;
+
+
+    /**
      * Minimal DesiredDiscountRate
      *
      * @var float

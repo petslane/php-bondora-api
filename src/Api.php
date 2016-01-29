@@ -455,8 +455,18 @@ class Api {
      *     lengthMin                           int                 Loan lenght max
      *     latePrincipalAmountMin              float               Principal debt amount min
      *     latePrincipalAmountMax              float               Principal debt amount max
+     *     debtOccuredOnFrom                   date                Principal debt started date from
+     *     debtOccuredOnTo                     date                Principal debt started date to
+     *     debtOccuredOnForSecondaryFrom       date                Interest debt started date from
+     *     debtOccuredOnForSecondaryTo         date                Interest debt started date to
+     *     defaultedDateFrom                   date                Defaulted date from
+     *     defaultedDateTo                     date                Defaulted date to
+     *     rescheduledFrom                     date                Defaulted date from
+     *     rescheduledTo                       date                Defaulted date to
      *     nextPaymentDateFrom                 string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss)
      *     nextPaymentDateTo                   string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss)
+     *     lastPaymentDateFrom                 date                Last payment date from
+     *     lastPaymentDateTo                   date                Last payment date to
      *     countries                           string[]            Two letter iso code for country of origin: EE, ES, FI
      *     ratings                             string[]            Bondora's rating: AA, A, B, C, D, E, F, HR
      *     creditScoreMin                      int                 Minimum credit score
@@ -516,6 +526,16 @@ class Api {
             'nextPaymentDateTo',
             'loanDebtManagementDateActiveFrom',
             'loanDebtManagementDateActiveTo',
+            'debtOccuredOnFrom',
+            'debtOccuredOnTo',
+            'debtOccuredOnForSecondaryFrom',
+            'debtOccuredOnForSecondaryTo',
+            'defaultedDateFrom',
+            'defaultedDateTo',
+            'rescheduledFrom',
+            'rescheduledTo',
+            'lastPaymentDateFrom',
+            'lastPaymentDateTo',
         );
         $string_fields = array(
             'countries',
@@ -673,6 +693,16 @@ class Api {
      *     auctionId                    string      Can find specific auction from market
      *     listedOnDateFrom             date        Date when item was published from
      *     listedOnDateTo               date        Date when item was published to
+     *     debtOccuredOnFrom            date        Principal debt started date from
+     *     debtOccuredOnTo              date        Principal debt started date to
+     *     debtOccuredOnForSecondaryFrom date       Interest debt started date from
+     *     debtOccuredOnForSecondaryTo  date        Interest debt started date to
+     *     defaultedDateFrom            date        Defaulted date from
+     *     defaultedDateTo              date        Defaulted date to
+     *     rescheduledFrom              date        Rescheduled date from
+     *     rescheduledTo                date        Rescheduled date to
+     *     lastPaymentDateFrom          date        Last payment date from
+     *     lastPaymentDateTo            date        Last payment date to
      *     desiredDiscountRateMin       float       Minimal DesiredDiscountRate
      *     desiredDiscountRateMax       float       Maximal DesiredDiscountRate
      *     xirrMin                      float       Minimal Xirr
@@ -732,6 +762,16 @@ class Api {
             'loanIssuedDateTo',
             'listedOnDateFrom',
             'listedOnDateTo',
+            'debtOccuredOnFrom',
+            'debtOccuredOnTo',
+            'debtOccuredOnForSecondaryFrom',
+            'debtOccuredOnForSecondaryTo',
+            'defaultedDateFrom',
+            'defaultedDateTo',
+            'rescheduledFrom',
+            'rescheduledTo',
+            'lastPaymentDateFrom',
+            'lastPaymentDateTo',
         );
         $bool_fields = array(
             'hasDebt',

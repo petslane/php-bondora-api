@@ -88,7 +88,79 @@ class MyInvestmentsRequest extends Definition {
 
 
     /**
-     * Loan issued start date from
+     * Principal debt started date from
+     *
+     * @var \DateTime
+     */
+    public $DebtOccuredOnFrom;
+
+
+    /**
+     * Principal debt started date to
+     *
+     * @var \DateTime
+     */
+    public $DebtOccuredOnTo;
+
+
+    /**
+     * Interest debt started date from
+     *
+     * @var \DateTime
+     */
+    public $DebtOccuredOnForSecondaryFrom;
+
+
+    /**
+     * Interest debt started date to
+     *
+     * @var \DateTime
+     */
+    public $DebtOccuredOnForSecondaryTo;
+
+
+    /**
+     * Defaulted date from
+     *
+     * @var \DateTime
+     */
+    public $DefaultedDateFrom;
+
+
+    /**
+     * Defaulted date to
+     *
+     * @var \DateTime
+     */
+    public $DefaultedDateTo;
+
+
+    /**
+     * Defaulted date from
+     *
+     * @var \DateTime
+     */
+    public $RescheduledFrom;
+
+
+    /**
+     * Defaulted date to
+     *
+     * @var \DateTime
+     */
+    public $RescheduledTo;
+
+
+    /**
+     * Next payment date to
+     *
+     * @var \DateTime
+     */
+    public $NextPaymentDateTo;
+
+
+    /**
+     * Next payment date from
      *
      * @var \DateTime
      */
@@ -96,11 +168,19 @@ class MyInvestmentsRequest extends Definition {
 
 
     /**
-     * Loan issued start date to
+     * Last payment date from
      *
      * @var \DateTime
      */
-    public $NextPaymentDateTo;
+    public $LastPaymentDateFrom;
+
+
+    /**
+     * Last payment date to
+     *
+     * @var \DateTime
+     */
+    public $LastPaymentDateTo;
 
 
     /**

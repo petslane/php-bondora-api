@@ -84,6 +84,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.BidRequest.html">BidRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.BidResponse.html">BidResponse</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.BidSummary.html">BidSummary</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.BorrowerHistory.html">BorrowerHistory</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Debt.html">Debt</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.DebtManagementEvent.html">DebtManagementEvent</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Definition.html">Definition</a></li>
@@ -186,7 +187,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a>\<a href="namespace-Petslane.Bondora.Definition.html">Definition</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#5-414" title="Go to source code">src/Definition/MyInvestmentItem.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#5-430" title="Go to source code">src/Definition/MyInvestmentItem.php</a>
 		<br>
 	</div>
 
@@ -624,6 +625,31 @@
 			</div>
 		</td>
 	</tr>
+	<tr data-order="LoanStatusActiveFrom" id="$LoanStatusActiveFrom">
+		<td class="attributes"><code>
+			public  
+			DateTime
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#149-154" title="Go to source code"><var>$LoanStatusActiveFrom</var></a>
+
+			<div class="description short">
+				<p>Loan status active from</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Loan status active from</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$LoanStatusActiveFrom" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="UserName" id="$UserName">
 		<td class="attributes"><code>
 			public  
@@ -631,7 +657,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#149-154" title="Go to source code"><var>$UserName</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#157-162" title="Go to source code"><var>$UserName</var></a>
 
 			<div class="description short">
 				<p>Borrower's username</p>
@@ -656,7 +682,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#157-164" title="Go to source code"><var>$Gender</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#165-172" title="Go to source code"><var>$Gender</var></a>
 
 			<div class="description short">
 				<p>Borrower's Gender</p>
@@ -683,7 +709,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#167-172" title="Go to source code"><var>$DateOfBirth</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#175-180" title="Go to source code"><var>$DateOfBirth</var></a>
 
 			<div class="description short">
 				<p>Borrower's date of birth</p>
@@ -708,7 +734,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#175-180" title="Go to source code"><var>$SignedDate</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#183-188" title="Go to source code"><var>$SignedDate</var></a>
 
 			<div class="description short">
 				<p>Loan issued date</p>
@@ -733,7 +759,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#183-188" title="Go to source code"><var>$ReScheduledOn</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#191-196" title="Go to source code"><var>$ReScheduledOn</var></a>
 
 			<div class="description short">
 				<p>Last rescheduling date</p>
@@ -758,7 +784,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#191-196" title="Go to source code"><var>$DebtOccuredOn</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#199-204" title="Go to source code"><var>$DebtOccuredOn</var></a>
 
 			<div class="description short">
 				<p>Date and time when the principal part of the payment is overdue (PrincipalLateAmount is greater than zero).</p>
@@ -783,7 +809,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#199-204" title="Go to source code"><var>$DebtOccuredOnForSecondary</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#207-212" title="Go to source code"><var>$DebtOccuredOnForSecondary</var></a>
 
 			<div class="description short">
 				<p>Date and time when loan part payment is overdue (principal, interest or penalty) aka when the dept occured for the loan part (LateAmountTotal is greater than zero).</p>
@@ -808,7 +834,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#207-212" title="Go to source code"><var>$LoanDuration</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#215-220" title="Go to source code"><var>$LoanDuration</var></a>
 
 			<div class="description short">
 				<p>Loan original lenght</p>
@@ -833,7 +859,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#215-220" title="Go to source code"><var>$NextPaymentNr</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#223-228" title="Go to source code"><var>$NextPaymentNr</var></a>
 
 			<div class="description short">
 				<p>Next scheduled payment number</p>
@@ -858,7 +884,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#223-228" title="Go to source code"><var>$NextPaymentDate</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#231-236" title="Go to source code"><var>$NextPaymentDate</var></a>
 
 			<div class="description short">
 				<p>Next scheduled payment date</p>
@@ -883,7 +909,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#231-236" title="Go to source code"><var>$NextPaymentSum</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#239-244" title="Go to source code"><var>$NextPaymentSum</var></a>
 
 			<div class="description short">
 				<p>Next scheduled payment amount</p>
@@ -908,7 +934,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#239-244" title="Go to source code"><var>$NrOfScheduledPayments</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#247-252" title="Go to source code"><var>$NrOfScheduledPayments</var></a>
 
 			<div class="description short">
 				<p>Total number of scheduled payments</p>
@@ -926,6 +952,31 @@
 			</div>
 		</td>
 	</tr>
+	<tr data-order="LastPaymentDate" id="$LastPaymentDate">
+		<td class="attributes"><code>
+			public  
+			DateTime
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#255-260" title="Go to source code"><var>$LastPaymentDate</var></a>
+
+			<div class="description short">
+				<p>Last payment date</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Last payment date</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$LastPaymentDate" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="PrincipalRepaid" id="$PrincipalRepaid">
 		<td class="attributes"><code>
 			public  
@@ -933,7 +984,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#247-252" title="Go to source code"><var>$PrincipalRepaid</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#263-268" title="Go to source code"><var>$PrincipalRepaid</var></a>
 
 			<div class="description short">
 				<p>Total principal repaid amount</p>
@@ -958,7 +1009,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#255-260" title="Go to source code"><var>$InterestRepaid</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#271-276" title="Go to source code"><var>$InterestRepaid</var></a>
 
 			<div class="description short">
 				<p>Total interest repaid amount</p>
@@ -983,7 +1034,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#263-268" title="Go to source code"><var>$LateAmountPaid</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#279-284" title="Go to source code"><var>$LateAmountPaid</var></a>
 
 			<div class="description short">
 				<p>Total late charges paid amount</p>
@@ -1008,7 +1059,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#271-276" title="Go to source code"><var>$PrincipalRemaining</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#287-292" title="Go to source code"><var>$PrincipalRemaining</var></a>
 
 			<div class="description short">
 				<p>Remaining principal amount</p>
@@ -1033,7 +1084,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#279-284" title="Go to source code"><var>$PrincipalLateAmount</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#295-300" title="Go to source code"><var>$PrincipalLateAmount</var></a>
 
 			<div class="description short">
 				<p>Principal debt amount</p>
@@ -1058,7 +1109,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#287-292" title="Go to source code"><var>$InterestLateAmount</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#303-308" title="Go to source code"><var>$InterestLateAmount</var></a>
 
 			<div class="description short">
 				<p>Interest debt amount</p>
@@ -1083,7 +1134,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#295-300" title="Go to source code"><var>$PenaltyLateAmount</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#311-316" title="Go to source code"><var>$PenaltyLateAmount</var></a>
 
 			<div class="description short">
 				<p>Late charges debt amount</p>
@@ -1108,7 +1159,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#303-308" title="Go to source code"><var>$LateAmountTotal</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#319-324" title="Go to source code"><var>$LateAmountTotal</var></a>
 
 			<div class="description short">
 				<p>Late amount total</p>
@@ -1133,7 +1184,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#311-316" title="Go to source code"><var>$PurchaseDate</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#327-332" title="Go to source code"><var>$PurchaseDate</var></a>
 
 			<div class="description short">
 				<p>Date when investment was made or purchased from second market</p>
@@ -1158,7 +1209,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#319-324" title="Go to source code"><var>$SoldDate</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#335-340" title="Go to source code"><var>$SoldDate</var></a>
 
 			<div class="description short">
 				<p>Investment selling date</p>
@@ -1183,7 +1234,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#327-332" title="Go to source code"><var>$PurchasePrice</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#343-348" title="Go to source code"><var>$PurchasePrice</var></a>
 
 			<div class="description short">
 				<p>Investment amount or secondary market purchase price</p>
@@ -1208,7 +1259,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#335-340" title="Go to source code"><var>$SalePrice</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#351-356" title="Go to source code"><var>$SalePrice</var></a>
 
 			<div class="description short">
 				<p>SecondMarket sale price</p>
@@ -1233,7 +1284,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#343-348" title="Go to source code"><var>$ListedInSecondMarketOn</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#359-364" title="Go to source code"><var>$ListedInSecondMarketOn</var></a>
 
 			<div class="description short">
 				<p>Date when item was listed on secondary market</p>
@@ -1258,7 +1309,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#351-358" title="Go to source code"><var>$LatestDebtManagementStage</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#367-374" title="Go to source code"><var>$LatestDebtManagementStage</var></a>
 
 			<div class="description short">
 				<p>Latest debt management stage</p>
@@ -1285,7 +1336,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#361-366" title="Go to source code"><var>$LatestDebtManagementDate</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#377-382" title="Go to source code"><var>$LatestDebtManagementDate</var></a>
 
 			<div class="description short">
 				<p>Latest debt management date</p>
@@ -1310,7 +1361,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#369-374" title="Go to source code"><var>$NoteLoanTransfersMainAmount</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#385-390" title="Go to source code"><var>$NoteLoanTransfersMainAmount</var></a>
 
 			<div class="description short">
 				<p>Note owner received loan transfers principal amount</p>
@@ -1335,7 +1386,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#377-382" title="Go to source code"><var>$NoteLoanTransfersInterestAmount</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#393-398" title="Go to source code"><var>$NoteLoanTransfersInterestAmount</var></a>
 
 			<div class="description short">
 				<p>Note owner received loan transfers interest amount</p>
@@ -1360,7 +1411,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#385-390" title="Go to source code"><var>$NoteLoanLateChargesPaid</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#401-406" title="Go to source code"><var>$NoteLoanLateChargesPaid</var></a>
 
 			<div class="description short">
 				<p>Note owner received loan transfers penalties amount</p>
@@ -1385,7 +1436,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#393-398" title="Go to source code"><var>$NoteLoanTransfersEarningsAmount</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#409-414" title="Go to source code"><var>$NoteLoanTransfersEarningsAmount</var></a>
 
 			<div class="description short">
 				<p>Note owner received loan transfers earned interest, penalties total amount</p>
@@ -1410,7 +1461,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#401-406" title="Go to source code"><var>$NoteLoanTransfersTotalRepaimentsAmount</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#417-422" title="Go to source code"><var>$NoteLoanTransfersTotalRepaimentsAmount</var></a>
 
 			<div class="description short">
 				<p>Note owner received loan transfers total amount</p>
@@ -1435,7 +1486,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#409-412" title="Go to source code"><var>$BoughtFromId</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentItem.html#425-428" title="Go to source code"><var>$BoughtFromId</var></a>
 
 			<div class="description short">
 				

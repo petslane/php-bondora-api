@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Petslane\Bondora\Definition\ApiBidSummariesRequest</title>
+	<title>Class Petslane\Bondora\Definition\BorrowerHistory</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -58,7 +58,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.AccessTokenRequest.html">AccessTokenRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.AccessTokenResult.html">AccessTokenResult</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.AccountStatementReportLine.html">AccountStatementReportLine</a></li>
-				<li class="active"><a href="class-Petslane.Bondora.Definition.ApiBidSummariesRequest.html">ApiBidSummariesRequest</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.ApiBidSummariesRequest.html">ApiBidSummariesRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.ApiError.html">ApiError</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.ApiResult.html">ApiResult</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.ApiResultAuctions.html">ApiResultAuctions</a></li>
@@ -84,7 +84,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.BidRequest.html">BidRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.BidResponse.html">BidResponse</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.BidSummary.html">BidSummary</a></li>
-				<li><a href="class-Petslane.Bondora.Definition.BorrowerHistory.html">BorrowerHistory</a></li>
+				<li class="active"><a href="class-Petslane.Bondora.Definition.BorrowerHistory.html">BorrowerHistory</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Debt.html">Debt</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.DebtManagementEvent.html">DebtManagementEvent</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Definition.html">Definition</a></li>
@@ -152,11 +152,11 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class ApiBidSummariesRequest</h1>
+	<h1>Class BorrowerHistory</h1>
 
 
 	<div class="description">
-	<p>Request object for filtering api bids</p>
+	<p>Borrower's history</p>
 	</div>
 
 	<dl class="tree">
@@ -168,7 +168,7 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b><span>Petslane\Bondora\Definition\ApiBidSummariesRequest</span></b>			
+<b><span>Petslane\Bondora\Definition\BorrowerHistory</span></b>			
 			
 			
 		</dd>
@@ -187,7 +187,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a>\<a href="namespace-Petslane.Bondora.Definition.html">Definition</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.ApiBidSummariesRequest.html#5-57" title="Go to source code">src/Definition/ApiBidSummariesRequest.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.BorrowerHistory.html#5-65" title="Go to source code">src/Definition/BorrowerHistory.php</a>
 		<br>
 	</div>
 
@@ -216,135 +216,177 @@
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="BidStatusCode" id="$BidStatusCode">
+	<tr data-order="Overdue" id="$Overdue">
+		<td class="attributes"><code>
+			public  
+			float
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.BorrowerHistory.html#10-15" title="Go to source code"><var>$Overdue</var></a>
+
+			<div class="description short">
+				<p>Borrower's current overdue amount</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Borrower's current overdue amount</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$Overdue" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="PrincipalRepaid" id="$PrincipalRepaid">
+		<td class="attributes"><code>
+			public  
+			float
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.BorrowerHistory.html#18-23" title="Go to source code"><var>$PrincipalRepaid</var></a>
+
+			<div class="description short">
+				<p>Borrower's total principal repaid</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Borrower's total principal repaid</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$PrincipalRepaid" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="InterestRepaid" id="$InterestRepaid">
+		<td class="attributes"><code>
+			public  
+			float
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.BorrowerHistory.html#26-31" title="Go to source code"><var>$InterestRepaid</var></a>
+
+			<div class="description short">
+				<p>Borrower's total interest paid</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Borrower's total interest paid</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$InterestRepaid" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="LateChargesRepaid" id="$LateChargesRepaid">
+		<td class="attributes"><code>
+			public  
+			float
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.BorrowerHistory.html#34-39" title="Go to source code"><var>$LateChargesRepaid</var></a>
+
+			<div class="description short">
+				<p>Borrower's total late charges paid</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Borrower's total late charges paid</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$LateChargesRepaid" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="RepaimentsTotal" id="$RepaimentsTotal">
+		<td class="attributes"><code>
+			public  
+			float
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.BorrowerHistory.html#42-47" title="Go to source code"><var>$RepaimentsTotal</var></a>
+
+			<div class="description short">
+				<p>Borrower's total repaiments</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Borrower's total repaiments</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$RepaimentsTotal" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="IssuedLoans" id="$IssuedLoans">
 		<td class="attributes"><code>
 			public  
 			integer
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.ApiBidSummariesRequest.html#10-17" title="Go to source code"><var>$BidStatusCode</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.BorrowerHistory.html#50-55" title="Go to source code"><var>$IssuedLoans</var></a>
 
 			<div class="description short">
-				<p>Bid status code</p>
+				<p>Borrower's issued loans count</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Bid status code</p>
-
-<p>Enum: 0, 1, 2, 3, 4</p>
+				<p>Borrower's issued loans count</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$BidStatusCode" class="anchor">#</a>
+				<a href="#$IssuedLoans" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>
 	</tr>
-	<tr data-order="StartDate" id="$StartDate">
+	<tr data-order="IssuedLoanAmount" id="$IssuedLoanAmount">
 		<td class="attributes"><code>
 			public  
-			DateTime
+			float
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.ApiBidSummariesRequest.html#20-25" title="Go to source code"><var>$StartDate</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.BorrowerHistory.html#58-63" title="Go to source code"><var>$IssuedLoanAmount</var></a>
 
 			<div class="description short">
-				<p>Start date</p>
+				<p>Borrower's issued loans amount</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Start date</p>
+				<p>Borrower's issued loans amount</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$StartDate" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="EndDate" id="$EndDate">
-		<td class="attributes"><code>
-			public  
-			DateTime
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.ApiBidSummariesRequest.html#28-33" title="Go to source code"><var>$EndDate</var></a>
-
-			<div class="description short">
-				<p>End date</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>End date</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$EndDate" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="PageSize" id="$PageSize">
-		<td class="attributes"><code>
-			public  
-			integer
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.ApiBidSummariesRequest.html#36-44" title="Go to source code"><var>$PageSize</var></a>
-
-			<div class="description short">
-				<p>Max items in result, default is 1000</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Max items in result, default is 1000</p>
-
-<p>Minimum value: 1
-Maximum value: 1000</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$PageSize" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="PageNr" id="$PageNr">
-		<td class="attributes"><code>
-			public  
-			integer
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.ApiBidSummariesRequest.html#47-55" title="Go to source code"><var>$PageNr</var></a>
-
-			<div class="description short">
-				<p>Result page nr</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Result page nr</p>
-
-<p>Minimum value: 1
-Maximum value: 2147483647</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$PageNr" class="anchor">#</a>
+				<a href="#$IssuedLoanAmount" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>

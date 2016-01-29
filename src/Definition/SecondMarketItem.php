@@ -136,6 +136,14 @@ class SecondMarketItem extends Definition {
 
 
     /**
+     * Loan status active from
+     *
+     * @var \DateTime
+     */
+    public $LoanStatusActiveFrom;
+
+
+    /**
      * Borrower's username
      *
      * @var string
@@ -223,6 +231,14 @@ class SecondMarketItem extends Definition {
      * @var int
      */
     public $NrOfScheduledPayments;
+
+
+    /**
+     * Last payment date
+     *
+     * @var \DateTime
+     */
+    public $LastPaymentDate;
 
 
     /**

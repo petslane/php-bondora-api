@@ -24,6 +24,14 @@ class AuctionExtended extends Definition {
 
 
     /**
+     * Borrower's history
+     *
+     * @var BorrowerHistory
+     */
+    public $BorrowerHistory;
+
+
+    /**
      * Unique loan identificator
      *
      * @var string

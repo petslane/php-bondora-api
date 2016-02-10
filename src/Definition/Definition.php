@@ -36,7 +36,7 @@ class Definition {
                 if (!$valueDate == !!$value) {
                     throw new \Exception('Unable to parse date: ' . $value);
                 }
-                $this->{$field} = $valueDate;
+                $this->{$field} = $valueDate?:null;
             } else if ($type != 'Definition' && file_exists(__DIR__ . '/' . $type . '.php')) {
                 $ns_class = '\\' . __NAMESPACE__ . '\\' . $type;
                 if ($is_array) {

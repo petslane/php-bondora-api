@@ -1093,6 +1093,7 @@ class Api {
 
     /**
      * List of all reports
+     * If report is not ready (still generating), then GeneratedOn field in Definition\ReportItem is not set
      *
      * @return Definition\ReportItem[]
      * @throws ApiCriticalException
@@ -1110,6 +1111,7 @@ class Api {
 
     /**
      * Get report data for specified report identificator.
+     * If report is not ready (still generating), then GeneratedOn field in Definition\Report is not set
      *
      * @param string $id ReportId
      * @return Definition\Report

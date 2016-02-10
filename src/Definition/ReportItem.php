@@ -24,7 +24,7 @@ class ReportItem extends Definition {
 
 
     /**
-     * Report generated date
+     * Report generated date. null if report is still generating
      *
      * @var \DateTime
      */

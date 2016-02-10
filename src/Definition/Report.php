@@ -15,6 +15,8 @@ class Report extends Definition {
      *  ReportType::Investments -> InvestmentsListReportLine[]
      *  ReportType::PlannedFutureCashflows -> FutureCashflowsReportLine[]
      *
+     * Only set if report is generated. GeneratedOn field is null if report is not ready.
+     *
      * @var SecondMarketArchiveReportLine[]|AccountStatementReportLine[]|RepaymentsReportLine[]|InvestmentsListReportLine[]|FutureCashflowsReportLine[]
      */
     public $Result;
@@ -37,7 +39,7 @@ class Report extends Definition {
 
 
     /**
-     * Report generated date
+     * Report generated date. null if report is still generating
      *
      * @var \DateTime
      */

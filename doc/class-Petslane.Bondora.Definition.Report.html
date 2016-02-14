@@ -187,7 +187,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a>\<a href="namespace-Petslane.Bondora.Definition.html">Definition</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.Report.html#5-73" title="Go to source code">src/Definition/Report.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.Report.html#5-75" title="Go to source code">src/Definition/Report.php</a>
 		<br>
 	</div>
 
@@ -223,7 +223,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#10-20" title="Go to source code"><var>$Result</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#10-22" title="Go to source code"><var>$Result</var></a>
 
 			<div class="description short">
 				<p>List of Report items. Item type depends on ReportType value:
@@ -236,6 +236,8 @@
 
 			<div class="description detailed hidden">
 				<p>List of Report items. Item type depends on ReportType value: ReportType::SecondMarketArchive -> SecondMarketArchiveReportLine[] ReportType::AccountStatement -> AccountStatementReportLine[] ReportType::Repayments -> RepaymentsReportLine[] ReportType::Investments -> InvestmentsListReportLine[] ReportType::PlannedFutureCashflows -> FutureCashflowsReportLine[]</p>
+
+<p>Only set if report is generated. GeneratedOn field is null if report is not ready.</p>
 
 			</div>
 		</td>
@@ -253,7 +255,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#23-28" title="Go to source code"><var>$ReportId</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#25-30" title="Go to source code"><var>$ReportId</var></a>
 
 			<div class="description short">
 				<p>Reports unique identifier</p>
@@ -278,7 +280,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#31-36" title="Go to source code"><var>$CreatedOn</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#33-38" title="Go to source code"><var>$CreatedOn</var></a>
 
 			<div class="description short">
 				<p>Report created date</p>
@@ -303,14 +305,14 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#39-44" title="Go to source code"><var>$GeneratedOn</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#41-46" title="Go to source code"><var>$GeneratedOn</var></a>
 
 			<div class="description short">
-				<p>Report generated date</p>
+				<p>Report generated date. null if report is still generating</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Report generated date</p>
+				<p>Report generated date. null if report is still generating</p>
 
 			</div>
 		</td>
@@ -328,7 +330,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#47-52" title="Go to source code"><var>$PeriodStart</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#49-54" title="Go to source code"><var>$PeriodStart</var></a>
 
 			<div class="description short">
 				<p>Report period end date</p>
@@ -353,7 +355,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#55-60" title="Go to source code"><var>$PeriodEnd</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#57-62" title="Go to source code"><var>$PeriodEnd</var></a>
 
 			<div class="description short">
 				<p>Report period start date</p>
@@ -378,7 +380,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#63-71" title="Go to source code"><var>$ReportType</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#65-73" title="Go to source code"><var>$ReportType</var></a>
 
 			<div class="description short">
 				<p>Report's type</p>

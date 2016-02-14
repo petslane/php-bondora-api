@@ -212,7 +212,7 @@
 </span><span id="36" class="l"><a href="#36"> 36: </a>                <span class="php-keyword1">if</span> (!<span class="php-var">$valueDate</span> == !!<span class="php-var">$value</span>) {
 </span><span id="37" class="l"><a href="#37"> 37: </a>                    <span class="php-keyword1">throw</span> <span class="php-keyword1">new</span> \Exception(<span class="php-quote">'Unable to parse date: '</span> . <span class="php-var">$value</span>);
 </span><span id="38" class="l"><a href="#38"> 38: </a>                }
-</span><span id="39" class="l"><a href="#39"> 39: </a>                <span class="php-var">$this</span>-&gt;{<span class="php-var">$field</span>} = <span class="php-var">$valueDate</span>;
+</span><span id="39" class="l"><a href="#39"> 39: </a>                <span class="php-var">$this</span>-&gt;{<span class="php-var">$field</span>} = <span class="php-var">$valueDate</span>?:<span class="php-keyword1">null</span>;
 </span><span id="40" class="l"><a href="#40"> 40: </a>            } <span class="php-keyword1">else</span> <span class="php-keyword1">if</span> (<span class="php-var">$type</span> != <span class="php-quote">'Definition'</span> &amp;&amp; <span class="php-keyword2">file_exists</span>(__DIR__ . <span class="php-quote">'/'</span> . <span class="php-var">$type</span> . <span class="php-quote">'.php'</span>)) {
 </span><span id="41" class="l"><a href="#41"> 41: </a>                <span class="php-var">$ns_class</span> = <span class="php-quote">'\\'</span> . __NAMESPACE__ . <span class="php-quote">'\\'</span> . <span class="php-var">$type</span>;
 </span><span id="42" class="l"><a href="#42"> 42: </a>                <span class="php-keyword1">if</span> (<span class="php-var">$is_array</span>) {

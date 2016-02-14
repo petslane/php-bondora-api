@@ -65,7 +65,10 @@ class ApiTest extends PHPUnit_Framework_TestCase {
             try {
                 sleep(1);
                 $report = $this->api->report($reportResponse->ReportId);
-            } catch (Bondora\ApiException $e) {
+                if (!$report->GeneratedOn) {
+                    throw new Exception('Report still generating');
+                }
+            } catch (Exception $e) {
                 if (time() > $timeoutOn) {
                     throw new Exception("Waited too log to report {$type} with id {$reportResponse->ReportId} to generate");
                 }

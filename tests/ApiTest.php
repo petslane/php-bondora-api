@@ -52,23 +52,26 @@ class ApiTest extends PHPUnit_Framework_TestCase {
     /**
      * @dataProvider reportTypesProvider
      */
-    public function testReports($type, $resultType) {
+    public function testReports($type, $resultType, $periodStart, $periodEnd) {
         $resultType = '\\Petslane\\Bondora\\Definition\\' . $resultType;
         // sleep, to avoid API calls quota exceeded error
         sleep(1);
 
         // generate report
-        $reportResponse = $this->api->createReport($type);
+        $reportResponse = $this->api->createReport($type, $periodStart, $periodEnd);
 
-        $timeoutOn = time() + 30; // report should be generated within this time, if not, throw error
+        $timeoutOn = time() + 300; // report should be generated within this time, if not, throw error
         while (true) {
             try {
                 sleep(1);
                 $report = $this->api->report($reportResponse->ReportId);
                 if (!$report->GeneratedOn) {
-                    throw new Exception('Report still generating');
+                    if (time() > $timeoutOn) {
+                        throw new Exception("Waited too log to report {$type} with id {$reportResponse->ReportId} to generate");
+                    }
+                    continue;
                 }
-            } catch (Exception $e) {
+            } catch (Bondora\ApiException $e) {
                 if (time() > $timeoutOn) {
                     throw new Exception("Waited too log to report {$type} with id {$reportResponse->ReportId} to generate");
                 }
@@ -177,12 +180,15 @@ class ApiTest extends PHPUnit_Framework_TestCase {
     }
 
     public function reportTypesProvider() {
+        $date = new DateTime();
+        $date3 = new DateTime();
+        $date3->sub(DateInterval::createFromDateString('3 months'));
         return array(
-            array(Bondora\Enum\ReportType::AccountStatement, 'AccountStatementReportLine'),
-            array(Bondora\Enum\ReportType::Investments, 'InvestmentsListReportLine'),
-            array(Bondora\Enum\ReportType::PlannedFutureCashflows, 'FutureCashflowsReportLine'),
-            array(Bondora\Enum\ReportType::Repayments, 'RepaymentsReportLine'),
-            array(Bondora\Enum\ReportType::SecondMarketArchive, 'SecondMarketArchiveReportLine'),
+            array(Bondora\Enum\ReportType::AccountStatement, 'AccountStatementReportLine', $date3, $date),
+            array(Bondora\Enum\ReportType::Investments, 'InvestmentsListReportLine', $date3, $date),
+            array(Bondora\Enum\ReportType::PlannedFutureCashflows, 'FutureCashflowsReportLine', null, null),
+            array(Bondora\Enum\ReportType::Repayments, 'RepaymentsReportLine', $date3, $date),
+            array(Bondora\Enum\ReportType::SecondMarketArchive, 'SecondMarketArchiveReportLine', null, null),
         );
     }
 

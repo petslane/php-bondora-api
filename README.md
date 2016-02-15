@@ -113,6 +113,10 @@ $api->revokeToken();
 
 ## Current problems
 Please, let me know!
+- `report()` returns now `Report` object with empty `Result` and empty `GeneratedOn` properties if report is still generating.  
+Before it returned error with error-code 404 ("Report with Id ... is not found") when report was not ready.  
+If `GeneratedOn` property is set, then report is ready and all data is in `Result` property.  
+This behaviour is not documented by Bondora.  
 
 ## Bondora API support
 ~~Bondora API changelog - https://api-sandbox.bondora.com/ChangeLog (may be not updated!)~~  

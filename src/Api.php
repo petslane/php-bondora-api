@@ -257,6 +257,9 @@ class Api {
      * @throws ApiException
      */
     public function getToken($code) {
+        if (!$code) {
+            throw new \InvalidArgumentException('Authorization code must be set');
+        }
         $param = new Definition\AccessTokenRequest();
         $param->grant_type = 'authorization_code';
         $param->client_id = $this->config['auth']['client_id'];
@@ -303,6 +306,9 @@ class Api {
      * @throws ApiException
      */
     public function refreshToken($refresh_token) {
+        if (!$refresh_token) {
+            throw new \InvalidArgumentException('Refresh token must be set');
+        }
         $param = new Definition\AccessTokenRequest();
         $param->grant_type = 'refresh_token';
         $param->client_id = $this->config['auth']['client_id'];

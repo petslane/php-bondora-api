@@ -682,6 +682,9 @@ class Api {
      *     lengthMin                    int         Loan lenght max
      *     hasDebt                      bool        Is overdue
      *     loanStatusCode               int[]       Loan status code: 2 - Current; 100 - Overdue; 5 - 60+ days overdue;
+     *     loanDebtManagementStageType  int         Latest debt management stage type @see Petslane\Bondora\Enum\DebtManagementEventStageType
+     *     loanDebtManagementDateActiveFrom date    Latest debt management date active from
+     *     loanDebtManagementDateActiveTo   date    Latest debt management date active to
      *     latePrincipalAmountMin       float       Principal debt amount min
      *     latePrincipalAmountMax       float       Principal debt amount max
      *     priceMin                     float       Price amount min
@@ -734,6 +737,7 @@ class Api {
         $int_fields = array(
             'lengthMax',
             'lengthMin',
+            'loanDebtManagementStageType',
             'useOfLoan',
             'creditScoreMin',
             'creditScoreMax',
@@ -768,6 +772,8 @@ class Api {
         $date_fields = array(
             'loanIssuedDateFrom',
             'loanIssuedDateTo',
+            'loanDebtManagementDateActiveFrom',
+            'loanDebtManagementDateActiveTo',
             'listedOnDateFrom',
             'listedOnDateTo',
             'debtOccuredOnFrom',

@@ -91,6 +91,33 @@ class SecondMarketRequest extends Definition {
 
 
     /**
+     * Latest debt management stage type
+     *
+     * Enum: 1, 2, 3
+     * @see \Petslane\Bondora\Enum\DebtManagementEventStageType
+     *
+     * @var int
+     */
+    public $LoanDebtManagementStageType;
+
+
+    /**
+     * Latest debt management date active from
+     *
+     * @var \DateTime
+     */
+    public $LoanDebtManagementDateActiveFrom;
+
+
+    /**
+     * Latest debt management date active to
+     *
+     * @var \DateTime
+     */
+    public $LoanDebtManagementDateActiveTo;
+
+
+    /**
      * Principal debt amount min
      *
      * @var float

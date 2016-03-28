@@ -250,7 +250,8 @@ class MyInvestmentsRequest extends Definition {
     /**
      * Latest debt management stage
      *
-     * Enum: 1, 2, 7, 9, 14, 15, 16, 20, 22, 23, 24
+     * Enum: 1, 2, 7, 9, 14, 15, 16, 20, 22, 23, 24, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41
+     * @see \Petslane\Bondora\Enum\DebtManagementEventType
      *
      * @var int
      */

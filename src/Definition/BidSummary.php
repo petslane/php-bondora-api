@@ -73,9 +73,14 @@ class BidSummary extends Definition {
 
     /**
      * Status of bid
-     * <para>0 Pending</para><para>1 Open</para><para>2 Successful</para><para>3 Failed</para><para>4 Cancelled</para>
+     *     0 Pending
+     *     1 Open
+     *     2 Successful
+     *     3 Failed
+     *     4 Cancelled
+     *     5 Accepted
      *
-     * Enum: 0, 1, 2, 3, 4
+     * Enum: 0, 1, 2, 3, 4, 5
      *
      * @var int
      */

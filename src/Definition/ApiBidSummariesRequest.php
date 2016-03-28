@@ -10,7 +10,7 @@ class ApiBidSummariesRequest extends Definition {
     /**
      * Bid status code
      *
-     * Enum: 0, 1, 2, 3, 4
+     * Enum: 0, 1, 2, 3, 4, 5
      *
      * @var int
      */

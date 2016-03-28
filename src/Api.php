@@ -480,7 +480,8 @@ class Api {
      *     userName                            string              Borrower's username
      *     loanStatusCode                      int[]               Loan status code 2 Current, 100 Overdue, 5 60+ days overdue, 4 Repaid, 8 Released
      *     incomeVerificationStatus            int                 Income verification type @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus
-     *     loanDebtManagementStage             int                 Latest debt management stage @see Petslane\Bondora\Enum\LoanDebtManagementEventType
+     *     loanDebtManagementStage             int                 Latest debt management stage @see Petslane\Bondora\Enum\DebtManagementEventType
+     *     loanDebtManagementStageType         int                 Latest debt management stage @see Petslane\Bondora\Enum\DebtManagementEventStageType
      *     loanDebtManagementDateActiveFrom    string|\DateTime    Latest debt management date active from (string format YYYY-MM-DD hh:mm:ss)
      *     loanDebtManagementDateActiveTo      string|\DateTime    Latest debt management date active to (string format YYYY-MM-DD hh:mm:ss)
      *     auctionBidType                      int                 Auction bid type @see Petslane\Bondora\Enum\BidType
@@ -512,6 +513,7 @@ class Api {
             'loanStatusCode',
             'incomeVerificationStatus',
             'loanDebtManagementStage',
+            'loanDebtManagementStageType',
             'auctionBidType',
             'salesStatus',
             'pageSize',

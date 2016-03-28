@@ -2,7 +2,7 @@
 
 namespace Petslane\Bondora\Enum;
 
-class LoanDebtManagementEventType {
+class DebtManagementEventType {
 
     const Message = 1;
 
@@ -25,4 +25,29 @@ class LoanDebtManagementEventType {
     const CallMade = 23;
 
     const DebtNotificationSmsSent = 24;
+
+    const InHouseCollection = 30;
+
+    const DCA1 = 31;
+
+    const CurePeriod = 32;
+
+    const DCA2 = 33;
+
+    const DCA3 = 34;
+
+    const PaymentOrder = 35;
+
+    const CivilCase = 36;
+
+    const Bailiff = 37;
+
+    const Deceased = 38;
+
+    const DebtRestructuring = 39;
+
+    const Bankruptcy = 40;
+
+    const CriminalCase = 41;
+
 }

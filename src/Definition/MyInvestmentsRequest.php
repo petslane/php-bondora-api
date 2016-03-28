@@ -258,6 +258,17 @@ class MyInvestmentsRequest extends Definition {
 
 
     /**
+     * Latest debt management stage type
+     *
+     * Enum: 1, 2, 3
+     * @see \Petslane\Bondora\Enum\DebtManagementEventStageType
+     *
+     * @var int
+     */
+    public $LoanDebtManagementStageType;
+
+
+    /**
      * Latest debt management date active from
      *
      * @var \DateTime

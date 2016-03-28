@@ -119,7 +119,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Api.html#7-1220" title="Go to source code">src/Api.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Api.html#7-1234" title="Go to source code">src/Api.php</a>
 		<br>
 	</div>
 
@@ -238,7 +238,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getToken">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#251-291" title="Go to source code">getToken</a>( <span>string <var>$code</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#251-294" title="Go to source code">getToken</a>( <span>string <var>$code</var></span> )</code>
 
 		<div class="description short">
 			<p>Redeem access token from code</p>
@@ -282,7 +282,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_refreshToken">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#297-337" title="Go to source code">refreshToken</a>( <span>string <var>$refresh_token</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#300-343" title="Go to source code">refreshToken</a>( <span>string <var>$refresh_token</var></span> )</code>
 
 		<div class="description short">
 			<p>Redeem access token from refresh_token</p>
@@ -326,7 +326,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_revokeToken">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#339-373" title="Go to source code">revokeToken</a>( )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#345-379" title="Go to source code">revokeToken</a>( )</code>
 
 		<div class="description short">
 			<p>Revoke authorization token. Call to the endpoint revokes the same Token that the request is using</p>
@@ -365,7 +365,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getEventlog">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#375-425" title="Go to source code">getEventlog</a>( <span>null <var>$eventDateFrom</var> = <span class="php-keyword1">null</span></span>, <span>null <var>$eventDateTo</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$eventType</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$ipAddress</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageSize</var> = <span class="php-num">1000</span></span>, <span>integer <var>$pageNr</var> = <span class="php-num">0</span></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#381-431" title="Go to source code">getEventlog</a>( <span>null <var>$eventDateFrom</var> = <span class="php-keyword1">null</span></span>, <span>null <var>$eventDateTo</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$eventType</var> = <span class="php-keyword1">null</span></span>, <span>string <var>$ipAddress</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageSize</var> = <span class="php-num">1000</span></span>, <span>integer <var>$pageNr</var> = <span class="php-num">0</span></span> )</code>
 
 		<div class="description short">
 			<p>Gets events that have been made with the application related to current access token</p>
@@ -420,7 +420,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_accountBalance">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#427-442" title="Go to source code">accountBalance</a>( )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#433-448" title="Go to source code">accountBalance</a>( )</code>
 
 		<div class="description short">
 			<p>Gets your account balance information</p>
@@ -459,7 +459,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_accountInvestments">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#444-556" title="Go to source code">accountInvestments</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#450-564" title="Go to source code">accountInvestments</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>Gets list of your investments</p>
@@ -468,7 +468,7 @@
 		<div class="description detailed hidden">
 			<p>Gets list of your investments</p>
 
-<p>$request array supported keys: loanIssuedDateFrom                  string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss) loanIssuedDateTo                    string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss) principalMin                        float               Remaining principal amount min principalMax                        float               Remaining principal amount max interestMin                         float               Interest rate min interestMax                         float               Interest rate max lengthMax                           int                 Loan lenght min lengthMin                           int                 Loan lenght max latePrincipalAmountMin              float               Principal debt amount min latePrincipalAmountMax              float               Principal debt amount max debtOccuredOnFrom                   date                Principal debt started date from debtOccuredOnTo                     date                Principal debt started date to debtOccuredOnForSecondaryFrom       date                Interest debt started date from debtOccuredOnForSecondaryTo         date                Interest debt started date to defaultedDateFrom                   date                Defaulted date from defaultedDateTo                     date                Defaulted date to rescheduledFrom                     date                Defaulted date from rescheduledTo                       date                Defaulted date to nextPaymentDateFrom                 string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss) nextPaymentDateTo                   string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss) lastPaymentDateFrom                 date                Last payment date from lastPaymentDateTo                   date                Last payment date to countries                           string[]            Two letter iso code for country of origin: EE, ES, FI ratings                             string[]            Bondora's rating: AA, A, B, C, D, E, F, HR creditScoreMin                      int                 Minimum credit score creditScoreMax                      int                 Maximum credit score userName                            string              Borrower's username loanStatusCode                      int[]               Loan status code 2 Current, 100 Overdue, 5 60+ days overdue, 4 Repaid, 8 Released incomeVerificationStatus            int                 Income verification type @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus loanDebtManagementStage             int                 Latest debt management stage @see Petslane\Bondora\Enum\LoanDebtManagementEventType loanDebtManagementDateActiveFrom    string|\DateTime    Latest debt management date active from (string format YYYY-MM-DD hh:mm:ss) loanDebtManagementDateActiveTo      string|\DateTime    Latest debt management date active to (string format YYYY-MM-DD hh:mm:ss) auctionBidType                      int                 Auction bid type @see Petslane\Bondora\Enum\BidType salesStatus                         int                 Second market sale status NULL All, 0 Sold investments, 1 Bought investments isInRepayment                       bool                Search only active in repayment loans, StatusCodes (2, 5, 100) pageSize                            int                 Max returned results, default is 1000 pageNr                              int                 Result page nr</p>
+<p>$request array supported keys: loanIssuedDateFrom                  string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss) loanIssuedDateTo                    string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss) principalMin                        float               Remaining principal amount min principalMax                        float               Remaining principal amount max interestMin                         float               Interest rate min interestMax                         float               Interest rate max lengthMax                           int                 Loan lenght min lengthMin                           int                 Loan lenght max latePrincipalAmountMin              float               Principal debt amount min latePrincipalAmountMax              float               Principal debt amount max debtOccuredOnFrom                   date                Principal debt started date from debtOccuredOnTo                     date                Principal debt started date to debtOccuredOnForSecondaryFrom       date                Interest debt started date from debtOccuredOnForSecondaryTo         date                Interest debt started date to defaultedDateFrom                   date                Defaulted date from defaultedDateTo                     date                Defaulted date to rescheduledFrom                     date                Defaulted date from rescheduledTo                       date                Defaulted date to nextPaymentDateFrom                 string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss) nextPaymentDateTo                   string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss) lastPaymentDateFrom                 date                Last payment date from lastPaymentDateTo                   date                Last payment date to countries                           string[]            Two letter iso code for country of origin: EE, ES, FI ratings                             string[]            Bondora's rating: AA, A, B, C, D, E, F, HR creditScoreMin                      int                 Minimum credit score creditScoreMax                      int                 Maximum credit score userName                            string              Borrower's username loanStatusCode                      int[]               Loan status code 2 Current, 100 Overdue, 5 60+ days overdue, 4 Repaid, 8 Released incomeVerificationStatus            int                 Income verification type @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus loanDebtManagementStage             int                 Latest debt management stage @see Petslane\Bondora\Enum\DebtManagementEventType loanDebtManagementStageType         int                 Latest debt management stage @see Petslane\Bondora\Enum\DebtManagementEventStageType loanDebtManagementDateActiveFrom    string|\DateTime    Latest debt management date active from (string format YYYY-MM-DD hh:mm:ss) loanDebtManagementDateActiveTo      string|\DateTime    Latest debt management date active to (string format YYYY-MM-DD hh:mm:ss) auctionBidType                      int                 Auction bid type @see Petslane\Bondora\Enum\BidType salesStatus                         int                 Second market sale status NULL All, 0 Sold investments, 1 Bought investments isInRepayment                       bool                Search only active in repayment loans, StatusCodes (2, 5, 100) pageSize                            int                 Max returned results, default is 1000 pageNr                              int                 Result page nr</p>
 
 
 				<h4>Parameters</h4>
@@ -506,7 +506,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_auctions">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#558-642" title="Go to source code">auctions</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#566-650" title="Go to source code">auctions</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>Gets list of active Auctions</p>
@@ -552,7 +552,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_auction">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#644-661" title="Go to source code">auction</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#652-669" title="Go to source code">auction</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets Auction info by auction identifier</p>
@@ -597,7 +597,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_secondaryMarket">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#663-789" title="Go to source code">secondaryMarket</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#671-803" title="Go to source code">secondaryMarket</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>Gets list of active secondary market items</p>
@@ -606,7 +606,7 @@
 		<div class="description detailed hidden">
 			<p>Gets list of active secondary market items</p>
 
-<p>$request array supported keys: loanIssuedDateFrom           date        Loan issued start date from loanIssuedDateTo             date        Loan issued start date to principalMin                 float       Remaining principal amount min principalMax                 float       Remaining principal amount max interestMin                  float       Interest rate min interestMax                  float       Interest rate max lengthMax                    int         Loan lenght min lengthMin                    int         Loan lenght max hasDebt                      bool        Is overdue loanStatusCode               int[]       Loan status code: 2 - Current; 100 - Overdue; 5 - 60+ days overdue; latePrincipalAmountMin       float       Principal debt amount min latePrincipalAmountMax       float       Principal debt amount max priceMin                     float       Price amount min priceMax                     float       Price amount max useOfLoan                    int         Use of loan. @see Petslane\Bondora\Enum\AuctionPurpose hasNewSchedule               bool        Has been rescheduled countries                    string[]    Two letter iso code for country of origin: EE, ES, FI ratings                      string[]    Bondora's rating: AA, A, B, C, D, E, F, HR creditScoreMin               int         Minimum credit score creditScoreMax               int         Maximum credit score userName                     string      Borrower's username gender                       int         Borrower's gender: Male 0, Female 1, Unknown 2 ageMin                       int         Minimal age ageMax                       int         Maximum age incomeVerificationStatus     int         Income verification type. @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus showMyItems                  bool        Can find your own items from market: Value Null = ALL, True = only your items, False = other user items auctionId                    string      Can find specific auction from market listedOnDateFrom             date        Date when item was published from listedOnDateTo               date        Date when item was published to debtOccuredOnFrom            date        Principal debt started date from debtOccuredOnTo              date        Principal debt started date to debtOccuredOnForSecondaryFrom date       Interest debt started date from debtOccuredOnForSecondaryTo  date        Interest debt started date to defaultedDateFrom            date        Defaulted date from defaultedDateTo              date        Defaulted date to rescheduledFrom              date        Rescheduled date from rescheduledTo                date        Rescheduled date to lastPaymentDateFrom          date        Last payment date from lastPaymentDateTo            date        Last payment date to desiredDiscountRateMin       float       Minimal DesiredDiscountRate desiredDiscountRateMax       float       Maximal DesiredDiscountRate xirrMin                      float       Minimal Xirr xirrMax                      float       Maximal Xirr pageSize                     int         Max returned results, default is 1000. Range: inclusive between 1 and 1000 pageNr                       int         Result page nr. Range: inclusive between 1 and 2147483647</p>
+<p>$request array supported keys: loanIssuedDateFrom           date        Loan issued start date from loanIssuedDateTo             date        Loan issued start date to principalMin                 float       Remaining principal amount min principalMax                 float       Remaining principal amount max interestMin                  float       Interest rate min interestMax                  float       Interest rate max lengthMax                    int         Loan lenght min lengthMin                    int         Loan lenght max hasDebt                      bool        Is overdue loanStatusCode               int[]       Loan status code: 2 - Current; 100 - Overdue; 5 - 60+ days overdue; loanDebtManagementStageType  int         Latest debt management stage type @see Petslane\Bondora\Enum\DebtManagementEventStageType loanDebtManagementDateActiveFrom date    Latest debt management date active from loanDebtManagementDateActiveTo   date    Latest debt management date active to latePrincipalAmountMin       float       Principal debt amount min latePrincipalAmountMax       float       Principal debt amount max priceMin                     float       Price amount min priceMax                     float       Price amount max useOfLoan                    int         Use of loan. @see Petslane\Bondora\Enum\AuctionPurpose hasNewSchedule               bool        Has been rescheduled countries                    string[]    Two letter iso code for country of origin: EE, ES, FI ratings                      string[]    Bondora's rating: AA, A, B, C, D, E, F, HR creditScoreMin               int         Minimum credit score creditScoreMax               int         Maximum credit score userName                     string      Borrower's username gender                       int         Borrower's gender: Male 0, Female 1, Unknown 2 ageMin                       int         Minimal age ageMax                       int         Maximum age incomeVerificationStatus     int         Income verification type. @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus showMyItems                  bool        Can find your own items from market: Value Null = ALL, True = only your items, False = other user items auctionId                    string      Can find specific auction from market listedOnDateFrom             date        Date when item was published from listedOnDateTo               date        Date when item was published to debtOccuredOnFrom            date        Principal debt started date from debtOccuredOnTo              date        Principal debt started date to debtOccuredOnForSecondaryFrom date       Interest debt started date from debtOccuredOnForSecondaryTo  date        Interest debt started date to defaultedDateFrom            date        Defaulted date from defaultedDateTo              date        Defaulted date to rescheduledFrom              date        Rescheduled date from rescheduledTo                date        Rescheduled date to lastPaymentDateFrom          date        Last payment date from lastPaymentDateTo            date        Last payment date to desiredDiscountRateMin       float       Minimal DesiredDiscountRate desiredDiscountRateMax       float       Maximal DesiredDiscountRate xirrMin                      float       Minimal Xirr xirrMax                      float       Maximal Xirr pageSize                     int         Max returned results, default is 1000. Range: inclusive between 1 and 1000 pageNr                       int         Result page nr. Range: inclusive between 1 and 2147483647</p>
 
 
 				<h4>Parameters</h4>
@@ -643,7 +643,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loanpart">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#791-805" title="Go to source code">loanpart</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#805-819" title="Go to source code">loanpart</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Gets LoanPartDetails info by identifier</p>
@@ -682,7 +682,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_secondaryMarketById">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#807-823" title="Go to source code">secondaryMarketById</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#821-837" title="Go to source code">secondaryMarketById</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Get the secondary market item summary</p>
@@ -726,7 +726,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_secondaryMarketBuy">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#825-847" title="Go to source code">secondaryMarketBuy</a>( <span>string[] <var>$ids</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#839-861" title="Go to source code">secondaryMarketBuy</a>( <span>string[] <var>$ids</var></span> )</code>
 
 		<div class="description short">
 			<p>Buy loans from secondary market</p>
@@ -770,7 +770,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_secondaryMarketSell">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#849-871" title="Go to source code">secondaryMarketSell</a>( <span><code><a href="class-Petslane.Bondora.Definition.SecondMarketSell.html">Petslane\Bondora\Definition\SecondMarketSell</a>[]</code> <var>$sellParts</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#863-885" title="Go to source code">secondaryMarketSell</a>( <span><code><a href="class-Petslane.Bondora.Definition.SecondMarketSell.html">Petslane\Bondora\Definition\SecondMarketSell</a>[]</code> <var>$sellParts</var></span> )</code>
 
 		<div class="description short">
 			<p>Sell your loans to secondary market</p>
@@ -814,7 +814,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_secondaryMarketCancel">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#873-892" title="Go to source code">secondaryMarketCancel</a>( <span>string[]|string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#887-906" title="Go to source code">secondaryMarketCancel</a>( <span>string[]|string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Remove your loans from secondary market.</p>
@@ -858,7 +858,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bids">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#940-981" title="Go to source code">bids</a>( <span>integer <var>$bidStatusCode</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$startDate</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$endDate</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageSize</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageNr</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#954-995" title="Go to source code">bids</a>( <span>integer <var>$bidStatusCode</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$startDate</var> = <span class="php-keyword1">null</span></span>, <span>string|DateTime <var>$endDate</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageSize</var> = <span class="php-keyword1">null</span></span>, <span>integer <var>$pageNr</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Gets list of bids the investor has made.</p>
@@ -910,7 +910,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bidPost">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#983-1005" title="Go to source code">bidPost</a>( <span><code><a href="class-Petslane.Bondora.Definition.Bid.html">Petslane\Bondora\Definition\Bid</a>[]</code> <var>$bids</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#997-1019" title="Go to source code">bidPost</a>( <span><code><a href="class-Petslane.Bondora.Definition.Bid.html">Petslane\Bondora\Definition\Bid</a>[]</code> <var>$bids</var></span> )</code>
 
 		<div class="description short">
 			<p>Makes bid(s) into specified auction(s).</p>
@@ -954,7 +954,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bid">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#1007-1021" title="Go to source code">bid</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#1021-1035" title="Go to source code">bid</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Get the Bid</p>
@@ -993,7 +993,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_bidCancel">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#1023-1039" title="Go to source code">bidCancel</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#1037-1053" title="Go to source code">bidCancel</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Cancel the Bid</p>
@@ -1037,7 +1037,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_loandataset">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#1041-1092" title="Go to source code">loandataset</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#1055-1106" title="Go to source code">loandataset</a>( <span>array <var>$request</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 		<div class="description short">
 			<p>Provides daily dataset of all loan data that is not covered by the data protection laws.</p>
@@ -1083,7 +1083,7 @@
 
 		<td class="name"><div>
 		<a class="anchor" href="#_reports">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#1094-1110" title="Go to source code">reports</a>( )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#1108-1124" title="Go to source code">reports</a>( )</code>
 
 		<div class="description short">
 			<p>List of all reports
@@ -1124,7 +1124,7 @@ If report is not ready (still generating), then GeneratedOn field in Definition\
 
 		<td class="name"><div>
 		<a class="anchor" href="#_report">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#1112-1129" title="Go to source code">report</a>( <span>string <var>$id</var></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#1126-1143" title="Go to source code">report</a>( <span>string <var>$id</var></span> )</code>
 
 		<div class="description short">
 			<p>Get report data for specified report identificator.
@@ -1170,7 +1170,7 @@ If report is not ready (still generating), then GeneratedOn field in Definition\
 
 		<td class="name"><div>
 		<a class="anchor" href="#_createReport">#</a>
-		<code><a href="source-class-Petslane.Bondora.Api.html#1131-1162" title="Go to source code">createReport</a>( <span>integer <var>$reportType</var></span>, <span>DateTime <var>$periodStart</var> = <span class="php-keyword1">null</span></span>, <span>DateTime <var>$periodEnd</var> = <span class="php-keyword1">null</span></span> )</code>
+		<code><a href="source-class-Petslane.Bondora.Api.html#1145-1176" title="Go to source code">createReport</a>( <span>integer <var>$reportType</var></span>, <span>DateTime <var>$periodStart</var> = <span class="php-keyword1">null</span></span>, <span>DateTime <var>$periodEnd</var> = <span class="php-keyword1">null</span></span> )</code>
 
 		<div class="description short">
 			<p>Request to generate specified report type for set period.</p>

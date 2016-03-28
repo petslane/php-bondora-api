@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class Petslane\Bondora\Definition\Debt</title>
+	<title>Class Petslane\Bondora\Definition\LoanDatasetRequest</title>
 
 	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
 
@@ -85,7 +85,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.BidResponse.html">BidResponse</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.BidSummary.html">BidSummary</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.BorrowerHistory.html">BorrowerHistory</a></li>
-				<li class="active"><a href="class-Petslane.Bondora.Definition.Debt.html">Debt</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.Debt.html">Debt</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.DebtManagementEvent.html">DebtManagementEvent</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Definition.html">Definition</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.EventLogItem.html">EventLogItem</a></li>
@@ -94,7 +94,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLine.html">InvestmentsListReportLine</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Liability.html">Liability</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetItem.html">LoanDatasetItem</a></li>
-				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetRequest.html">LoanDatasetRequest</a></li>
+				<li class="active"><a href="class-Petslane.Bondora.Definition.LoanDatasetRequest.html">LoanDatasetRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanPartDetails.html">LoanPartDetails</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanTransfer.html">LoanTransfer</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.MyAccountBalance.html">MyAccountBalance</a></li>
@@ -153,11 +153,11 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class Debt</h1>
+	<h1>Class LoanDatasetRequest</h1>
 
 
 	<div class="description">
-	<p>Borrower's debt</p>
+	<p>Request parameters for getting loan data</p>
 	</div>
 
 	<dl class="tree">
@@ -169,7 +169,7 @@
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b><span>Petslane\Bondora\Definition\Debt</span></b>			
+<b><span>Petslane\Bondora\Definition\LoanDatasetRequest</span></b>			
 			
 			
 		</dd>
@@ -188,7 +188,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a>\<a href="namespace-Petslane.Bondora.Definition.html">Definition</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.Debt.html#5-57" title="Go to source code">src/Definition/Debt.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.LoanDatasetRequest.html#5-79" title="Go to source code">src/Definition/LoanDatasetRequest.php</a>
 		<br>
 	</div>
 
@@ -217,152 +217,208 @@
 
 	<table class="summary properties" id="properties">
 	<caption>Properties summary</caption>
-	<tr data-order="StartDate" id="$StartDate">
+	<tr data-order="LoanIds" id="$LoanIds">
+		<td class="attributes"><code>
+			public  
+			string[]
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.LoanDatasetRequest.html#10-15" title="Go to source code"><var>$LoanIds</var></a>
+
+			<div class="description short">
+				<p>Specific loans to search</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Specific loans to search</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$LoanIds" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="Countries" id="$Countries">
+		<td class="attributes"><code>
+			public  
+			string[]
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.LoanDatasetRequest.html#18-23" title="Go to source code"><var>$Countries</var></a>
+
+			<div class="description short">
+				<p>Two letter iso code for country of origin: EE, ES, FI</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Two letter iso code for country of origin: EE, ES, FI</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$Countries" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="Ratings" id="$Ratings">
+		<td class="attributes"><code>
+			public  
+			string[]
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.LoanDatasetRequest.html#26-31" title="Go to source code"><var>$Ratings</var></a>
+
+			<div class="description short">
+				<p>Bondora's rating: AA, A, B, C, D, E, F, HR</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Bondora's rating: AA, A, B, C, D, E, F, HR</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$Ratings" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="WasFunded" id="$WasFunded">
+		<td class="attributes"><code>
+			public  
+			boolean
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.LoanDatasetRequest.html#34-39" title="Go to source code"><var>$WasFunded</var></a>
+
+			<div class="description short">
+				<p>Loan was funded</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Loan was funded</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$WasFunded" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="LoanDateFrom" id="$LoanDateFrom">
 		<td class="attributes"><code>
 			public  
 			DateTime
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Debt.html#10-15" title="Go to source code"><var>$StartDate</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.LoanDatasetRequest.html#42-47" title="Go to source code"><var>$LoanDateFrom</var></a>
 
 			<div class="description short">
-				<p>Start</p>
+				<p>Loan start date from</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Start</p>
+				<p>Loan start date from</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$StartDate" class="anchor">#</a>
+				<a href="#$LoanDateFrom" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>
 	</tr>
-	<tr data-order="EndDate" id="$EndDate">
+	<tr data-order="LoanDateTo" id="$LoanDateTo">
 		<td class="attributes"><code>
 			public  
 			DateTime
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Debt.html#18-23" title="Go to source code"><var>$EndDate</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.LoanDatasetRequest.html#50-55" title="Go to source code"><var>$LoanDateTo</var></a>
 
 			<div class="description short">
-				<p>End</p>
+				<p>Loan start date to</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>End</p>
+				<p>Loan start date to</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$EndDate" class="anchor">#</a>
+				<a href="#$LoanDateTo" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>
 	</tr>
-	<tr data-order="Amount" id="$Amount">
+	<tr data-order="PageSize" id="$PageSize">
 		<td class="attributes"><code>
 			public  
-			string
+			integer
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Debt.html#26-31" title="Go to source code"><var>$Amount</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.LoanDatasetRequest.html#58-66" title="Go to source code"><var>$PageSize</var></a>
 
 			<div class="description short">
-				<p>Amount</p>
+				<p>Max items in result, default is 1000</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Amount</p>
+				<p>Max items in result, default is 1000</p>
+
+<p>Minimum value: 1
+Maximum value: 10000</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$Amount" class="anchor">#</a>
+				<a href="#$PageSize" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>
 	</tr>
-	<tr data-order="MaxAmount" id="$MaxAmount">
+	<tr data-order="PageNr" id="$PageNr">
 		<td class="attributes"><code>
 			public  
-			string
+			integer
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Debt.html#34-39" title="Go to source code"><var>$MaxAmount</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.LoanDatasetRequest.html#69-77" title="Go to source code"><var>$PageNr</var></a>
 
 			<div class="description short">
-				<p>Max amount</p>
+				<p>Result page nr</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Max amount</p>
+				<p>Result page nr</p>
+
+<p>Minimum value: 1
+Maximum value: 2147483647</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$MaxAmount" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="Industry" id="$Industry">
-		<td class="attributes"><code>
-			public  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Debt.html#42-47" title="Go to source code"><var>$Industry</var></a>
-
-			<div class="description short">
-				<p>Industry</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Industry</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$Industry" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
-	<tr data-order="Reporter" id="$Reporter">
-		<td class="attributes"><code>
-			public  
-			string
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Debt.html#50-55" title="Go to source code"><var>$Reporter</var></a>
-
-			<div class="description short">
-				<p>Reporter</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Reporter</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$Reporter" class="anchor">#</a>
+				<a href="#$PageNr" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>

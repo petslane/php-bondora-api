@@ -94,6 +94,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLine.html">InvestmentsListReportLine</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Liability.html">Liability</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetItem.html">LoanDatasetItem</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetRequest.html">LoanDatasetRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanPartDetails.html">LoanPartDetails</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanTransfer.html">LoanTransfer</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.MyAccountBalance.html">MyAccountBalance</a></li>
@@ -187,7 +188,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a>\<a href="namespace-Petslane.Bondora.Definition.html">Definition</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#5-320" title="Go to source code">src/Definition/MyInvestmentsRequest.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#5-341" title="Go to source code">src/Definition/MyInvestmentsRequest.php</a>
 		<br>
 	</div>
 
@@ -898,16 +899,20 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#226-232" title="Go to source code"><var>$LoanStatusCode</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#226-237" title="Go to source code"><var>$LoanStatusCode</var></a>
 
 			<div class="description short">
 				<p>Loan status code
-<para>2 Current</para><para>100 Overdue</para><para>5 60+ days overdue</para><para>4 Repaid</para><para>8 Released</para></p>
+    2 Current
+    3 Cancelled
+    100 Overdue
+    5 60+ days overdue
+    4 Repaid
+    8 Released</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Loan status code
-<para>2 Current</para><para>100 Overdue</para><para>5 60+ days overdue</para><para>4 Repaid</para><para>8 Released</para></p>
+				<p>Loan status code 2 Current 3 Cancelled 100 Overdue 5 60+ days overdue 4 Repaid 8 Released</p>
 
 			</div>
 		</td>
@@ -925,7 +930,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#235-242" title="Go to source code"><var>$IncomeVerificationStatus</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#240-247" title="Go to source code"><var>$IncomeVerificationStatus</var></a>
 
 			<div class="description short">
 				<p>Income verification type</p>
@@ -952,7 +957,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#245-252" title="Go to source code"><var>$LoanDebtManagementStage</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#250-258" title="Go to source code"><var>$LoanDebtManagementStage</var></a>
 
 			<div class="description short">
 				<p>Latest debt management stage</p>
@@ -961,13 +966,48 @@
 			<div class="description detailed hidden">
 				<p>Latest debt management stage</p>
 
-<p>Enum: 1, 2, 7, 9, 14, 15, 16, 20, 22, 23, 24</p>
+<p>Enum: 1, 2, 7, 9, 14, 15, 16, 20, 22, 23, 24, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41</p>
 
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-Petslane.Bondora.Enum.DebtManagementEventType.html">Petslane\Bondora\Enum\DebtManagementEventType</a></code><br>
+					</div>
 			</div>
 		</td>
 		<td class="value">
 			<div>
 				<a href="#$LoanDebtManagementStage" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="LoanDebtManagementStageType" id="$LoanDebtManagementStageType">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#261-269" title="Go to source code"><var>$LoanDebtManagementStageType</var></a>
+
+			<div class="description short">
+				<p>Latest debt management stage type</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Latest debt management stage type</p>
+
+<p>Enum: 1, 2, 3</p>
+
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-Petslane.Bondora.Enum.DebtManagementEventStageType.html">Petslane\Bondora\Enum\DebtManagementEventStageType</a></code><br>
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$LoanDebtManagementStageType" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>
@@ -979,7 +1019,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#255-260" title="Go to source code"><var>$LoanDebtManagementDateActiveFrom</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#272-277" title="Go to source code"><var>$LoanDebtManagementDateActiveFrom</var></a>
 
 			<div class="description short">
 				<p>Latest debt management date active from</p>
@@ -1004,7 +1044,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#263-268" title="Go to source code"><var>$LoanDebtManagementDateActiveTo</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#280-285" title="Go to source code"><var>$LoanDebtManagementDateActiveTo</var></a>
 
 			<div class="description short">
 				<p>Latest debt management date active to</p>
@@ -1029,7 +1069,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#271-279" title="Go to source code"><var>$AuctionBidType</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#288-296" title="Go to source code"><var>$AuctionBidType</var></a>
 
 			<div class="description short">
 				<p>Auction bid type</p>
@@ -1060,16 +1100,19 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#282-288" title="Go to source code"><var>$SalesStatus</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#299-309" title="Go to source code"><var>$SalesStatus</var></a>
 
 			<div class="description short">
 				<p>Second market sale status
-<para>NULL All</para><para>0 Bought investments</para><para>1 Sold investments</para><para>2 Investment is on sale</para><para>3 Investment is not on sale</para></p>
+    NULL All active
+    0 Bought investments
+    1 Sold investments
+    2 Investment is on sale
+    3 Investment is not on sale</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Second market sale status
-<para>NULL All</para><para>0 Bought investments</para><para>1 Sold investments</para><para>2 Investment is on sale</para><para>3 Investment is not on sale</para></p>
+				<p>Second market sale status NULL All active 0 Bought investments 1 Sold investments 2 Investment is on sale 3 Investment is not on sale</p>
 
 			</div>
 		</td>
@@ -1087,7 +1130,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#291-296" title="Go to source code"><var>$IsInRepayment</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#312-317" title="Go to source code"><var>$IsInRepayment</var></a>
 
 			<div class="description short">
 				<p>Search only active in repayment loans, StatusCodes (2, 5, 100)</p>
@@ -1112,7 +1155,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#299-307" title="Go to source code"><var>$PageSize</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#320-328" title="Go to source code"><var>$PageSize</var></a>
 
 			<div class="description short">
 				<p>Max items in result, default is 1000</p>
@@ -1140,7 +1183,7 @@ Maximum value: 1000</p>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#310-318" title="Go to source code"><var>$PageNr</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.MyInvestmentsRequest.html#331-339" title="Go to source code"><var>$PageNr</var></a>
 
 			<div class="description short">
 				<p>Result page nr</p>

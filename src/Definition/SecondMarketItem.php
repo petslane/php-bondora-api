@@ -72,18 +72,12 @@ class SecondMarketItem extends Definition {
 
 
     /**
-     * <para>
-     * 1000 No previous payments problems</para>
-     * <para>
-     * 900 Payments problems finished 24-36 months ago</para>
-     * <para>
-     * 800 Payments problems finished 12-24 months ago</para>
-     * <para>
-     * 700 Payments problems finished 6-12 months ago</para>
-     * <para>
-     * 600 Payment problems finished &lt;6 months ago</para>
-     * <para>
-     * 500 Active payment problems</para>
+     *     1000 No previous payments problems
+     *     900 Payments problems finished 24-36 months ago
+     *     800 Payments problems finished 12-24 months ago
+     *     700 Payments problems finished 6-12 months ago
+     *     600 Payment problems finished &lt;6 months ago
+     *     500 Active payment problems
      *
      * @var float
      */
@@ -128,7 +122,11 @@ class SecondMarketItem extends Definition {
 
     /**
      * Loan status code
-     * <para>2 Current</para><para>100 Overdue</para><para>5 60+ days overdue</para><para>4 Repaid</para><para>8 Released</para>
+     *     2 Current
+     *     100 Overdue
+     *     5 60+ days overdue
+     *     4 Repaid
+     *     8 Released
      *
      * @var int
      */
@@ -346,6 +344,11 @@ class SecondMarketItem extends Definition {
 
 
     /**
+     * XIRR (extended internal rate of return) is a methodology to calculate the net return using the loan issued date and amount,
+     * loan repayment dates and amounts and the principal balance according to the original repayment date.
+     * All overdue principal payments are written off immediately. No provisions for future losses are made and only received (not accrued or scheduled)
+     * interest payments are taken into account.
+     *
      * @var float
      */
     public $Xirr;

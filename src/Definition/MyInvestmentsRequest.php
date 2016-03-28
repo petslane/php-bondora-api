@@ -225,7 +225,12 @@ class MyInvestmentsRequest extends Definition {
 
     /**
      * Loan status code
-     * <para>2 Current</para><para>100 Overdue</para><para>5 60+ days overdue</para><para>4 Repaid</para><para>8 Released</para>
+     *     2 Current
+     *     3 Cancelled
+     *     100 Overdue
+     *     5 60+ days overdue
+     *     4 Repaid
+     *     8 Released
      *
      * @var int[]
      */
@@ -281,7 +286,11 @@ class MyInvestmentsRequest extends Definition {
 
     /**
      * Second market sale status
-     * <para>NULL All</para><para>0 Bought investments</para><para>1 Sold investments</para><para>2 Investment is on sale</para><para>3 Investment is not on sale</para>
+     *     NULL All active
+     *     0 Bought investments
+     *     1 Sold investments
+     *     2 Investment is on sale
+     *     3 Investment is not on sale
      *
      * @var int
      */

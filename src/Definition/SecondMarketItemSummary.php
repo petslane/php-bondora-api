@@ -78,7 +78,10 @@ class SecondMarketItemSummary extends Definition {
 
     /**
      * Current status code
-     * <para>0 Created</para><para>1 Open in marketplace</para><para>2 Successfully sold</para><para>3 Failed</para>
+     *     0 Created
+     *     1 Open in marketplace
+     *     2 Successfully sold
+     *     3 Failed
      *
      * Enum: 0, 1, 2, 3
      *

@@ -81,7 +81,9 @@ class SecondMarketRequest extends Definition {
 
     /**
      * Loan status code
-     * <para>2 Current</para><para>100 Overdue</para><para>5 60+ days overdue</para>
+     *     2 Current
+     *     100 Overdue
+     *     5 60+ days overdue
      *
      * @var int[]
      */

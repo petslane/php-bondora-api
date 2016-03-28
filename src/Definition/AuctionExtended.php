@@ -65,7 +65,8 @@ class AuctionExtended extends Definition {
 
     /**
      * Did the customer have prior credit history in Bondora
-     * <para>0 Customer had at least 3 months of credit history in Bondora</para><para>1 No prior credit history in Bondora</para>
+     *     0 Customer had at least 3 months of credit history in Bondora
+     *     1 No prior credit history in Bondora
      *
      * @var int
      */
@@ -146,18 +147,12 @@ class AuctionExtended extends Definition {
 
 
     /**
-     * <para>
-     * 1000 No previous payments problems</para>
-     * <para>
-     * 900 Payments problems finished 24-36 months ago</para>
-     * <para>
-     * 800 Payments problems finished 12-24 months ago</para>
-     * <para>
-     * 700 Payments problems finished 6-12 months ago</para>
-     * <para>
-     * 600 Payment problems finished &lt;6 months ago</para>
-     * <para>
-     * 500 Active payment problems</para>
+     *     1000 No previous payments problems
+     *     900 Payments problems finished 24-36 months ago
+     *     800 Payments problems finished 12-24 months ago
+     *     700 Payments problems finished 6-12 months ago
+     *     600 Payment problems finished &lt;6 months ago
+     *     500 Active payment problems
      *
      * @var int
      */

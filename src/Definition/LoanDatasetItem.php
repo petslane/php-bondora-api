@@ -567,7 +567,7 @@ class LoanDatasetItem extends Definition {
     /**
      * Total monthly liabilities
      *
-     * @var int
+     * @var float
      */
     public $TotalMonthlyLiabilities;
 

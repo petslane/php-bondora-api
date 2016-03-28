@@ -14,4 +14,6 @@ class ApiAuctionBidRequestStatus {
 
     const Cancelled = 4;
 
+    const Accepted = 5;
+
 }

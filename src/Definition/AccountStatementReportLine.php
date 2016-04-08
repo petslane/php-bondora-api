@@ -32,6 +32,11 @@ class AccountStatementReportLine extends Definition {
     /**
      * @var string
      */
+    public $LoanNumber;
+
+    /**
+     * @var string
+     */
     public $Counterparty;
 
     /**

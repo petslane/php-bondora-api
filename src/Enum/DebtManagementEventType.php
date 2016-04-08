@@ -50,4 +50,6 @@ class DebtManagementEventType {
 
     const CriminalCase = 41;
 
+    const WriteOff = 42;
+
 }

@@ -907,7 +907,7 @@ class LoanDatasetItem extends Definition {
     /**
      * Number of debt days of the loan at the time of the dataset update
      *
-     * @var bool
+     * @var int
      */
     public $CurrentDebtDays;
 

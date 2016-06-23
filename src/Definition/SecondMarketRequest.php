@@ -354,6 +354,22 @@ class SecondMarketRequest extends Definition {
 
 
     /**
+     * Next payment date from
+     *
+     * @var \DateTime
+     */
+    public $NextPaymentDateFrom;
+
+
+    /**
+     * Next payment date to
+     *
+     * @var \DateTime
+     */
+    public $NextPaymentDateTo;
+
+
+    /**
      * Minimal DesiredDiscountRate
      *
      * @var float

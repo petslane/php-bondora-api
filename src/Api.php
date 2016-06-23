@@ -714,6 +714,8 @@ class Api {
      *     rescheduledTo                date        Rescheduled date to
      *     lastPaymentDateFrom          date        Last payment date from
      *     lastPaymentDateTo            date        Last payment date to
+     *     nextPaymentDateFrom          date        Next payment date from
+     *     nextPaymentDateTo            date        Next payment date to
      *     desiredDiscountRateMin       float       Minimal DesiredDiscountRate
      *     desiredDiscountRateMax       float       Maximal DesiredDiscountRate
      *     xirrMin                      float       Minimal Xirr
@@ -786,6 +788,8 @@ class Api {
             'rescheduledTo',
             'lastPaymentDateFrom',
             'lastPaymentDateTo',
+            'nextPaymentDateFrom',
+            'nextPaymentDateTo',
         );
         $bool_fields = array(
             'hasDebt',

@@ -324,6 +324,30 @@ class MyInvestmentItem extends Definition {
 
 
     /**
+     * Total amount of principal written off
+     *
+     * @var float
+     */
+    public $PrincipalWriteOffAmount;
+
+
+    /**
+     * Total amount of interest written off
+     *
+     * @var float
+     */
+    public $InterestWriteOffAmount;
+
+
+    /**
+     * Total amount of penalty written off
+     *
+     * @var float
+     */
+    public $PenaltyWriteOffAmount;
+
+
+    /**
      * Date when investment was made or purchased from second market
      *
      * @var \DateTime

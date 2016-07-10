@@ -323,6 +323,30 @@ class SecondMarketItem extends Definition {
 
 
     /**
+     * Total amount of principal written off
+     *
+     * @var float
+     */
+    public $PrincipalWriteOffAmount;
+
+
+    /**
+     * Total amount of interest written off
+     *
+     * @var float
+     */
+    public $InterestWriteOffAmount;
+
+
+    /**
+     * Total amount of penalty written off
+     *
+     * @var float
+     */
+    public $PenaltyWriteOffAmount;
+
+
+    /**
      * Outstanding principal balance +/- discount or mark-up
      *
      * @var float

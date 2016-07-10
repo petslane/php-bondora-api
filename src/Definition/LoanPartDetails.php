@@ -312,6 +312,38 @@ class LoanPartDetails extends Definition {
 
 
     /**
+     * Total amount of principal written off
+     *
+     * @var float
+     */
+    public $PrincipalWriteOffAmount;
+
+
+    /**
+     * Total amount of interest written off
+     *
+     * @var float
+     */
+    public $InterestWriteOffAmount;
+
+
+    /**
+     * Total amount of penalty written off
+     *
+     * @var float
+     */
+    public $PenaltyWriteOffAmount;
+
+
+    /**
+     * Write off total
+     *
+     * @var float
+     */
+    public $WriteOffTotal;
+
+
+    /**
      * Total principal repaid amount to current note owner
      *
      * @var float

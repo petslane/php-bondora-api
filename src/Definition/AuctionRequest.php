@@ -106,6 +106,7 @@ class AuctionRequest extends Definition {
     /**
      * Minimum credit score
      *
+     * @deprecated
      * @var int
      */
     public $CreditScoreMin;
@@ -114,9 +115,18 @@ class AuctionRequest extends Definition {
     /**
      * Maximum credit score
      *
+     * @deprecated
      * @var int
      */
     public $CreditScoreMax;
+
+
+    /**
+     * Credit score for EE loans
+     *
+     * @var string[]
+     */
+    public $CreditScoresEeMini;
 
 
     /**

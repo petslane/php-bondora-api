@@ -4,6 +4,7 @@ namespace Petslane\Bondora\Enum;
 
 class DebtManagementEventType {
 
+    /** @deprecated */
     const Message = 1;
 
     const SentToBailiff = 2;

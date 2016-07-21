@@ -86,7 +86,7 @@ $bids = $api->bids();
 $sm_deals = $api->secondaryMarket(array(
     'countries' => array('EE', 'FI'),
     'interestMin' => 12,
-    'incomeVerificationStatus' => Petslane\Bondora\Enum\AuctionIncomeVerificationStatus::VerifiedByPhone,
+    'incomeVerificationStatus' => Petslane\Bondora\Enum\IncomeVerificationStatus::VerifiedByPhone,
 ));
 
 // Gets events that have been made with current access token
@@ -122,6 +122,14 @@ This behaviour is not documented by Bondora.
 ~~Bondora API changelog - https://api-sandbox.bondora.com/ChangeLog (may be not updated!)~~  
 Bondora API changelog - https://api.bondora.com/ChangeLog  
 ##### Supported versions:
+- v1.0.1.5 (15.07.2016)  
+    - Renamed enum classes:
+        - AuctionQuestionEducation -> Education
+        - AuctionQuestionEmploymentStatus -> EmploymentStatus
+        - AuctionQuestionHomeOwnershipType -> HomeOwnershipType
+        - AuctionIncomeVerificationStatus -> IncomeVerificationStatus
+        - AuctionQuestionMaritalStatus -> MaritalStatus
+        - AuctionQuestionOccupationArea -> OccupationArea
 - v1.0.1.4 (09.07.2016)  
 - v1.0.1.3 (25.05.2016)  
 - v1.0.1.2 (22.03.2016)  

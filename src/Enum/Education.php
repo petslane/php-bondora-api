@@ -2,7 +2,7 @@
 
 namespace Petslane\Bondora\Enum;
 
-class AuctionQuestionEducation {
+class Education {
 
     const Primary = 1;
 

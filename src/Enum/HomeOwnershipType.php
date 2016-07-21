@@ -2,7 +2,7 @@
 
 namespace Petslane\Bondora\Enum;
 
-class AuctionQuestionHomeOwnershipType {
+class HomeOwnershipType {
 
     const Homeless = 0;
 

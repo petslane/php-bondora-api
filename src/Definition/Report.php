@@ -14,10 +14,11 @@ class Report extends Definition {
      *  ReportType::Repayments -> RepaymentsReportLine[]
      *  ReportType::Investments -> InvestmentsListReportLine[]
      *  ReportType::PlannedFutureCashflows -> FutureCashflowsReportLine[]
+     *  ReportType::InvestmentsV2 -> InvestmentsListReportLineV2[]
      *
      * Only set if report is generated. GeneratedOn field is null if report is not ready.
      *
-     * @var SecondMarketArchiveReportLine[]|AccountStatementReportLine[]|RepaymentsReportLine[]|InvestmentsListReportLine[]|FutureCashflowsReportLine[]
+     * @var SecondMarketArchiveReportLine[]|AccountStatementReportLine[]|RepaymentsReportLine[]|InvestmentsListReportLine[]|FutureCashflowsReportLine[]|InvestmentsListReportLineV2[]
      */
     public $Result;
 
@@ -65,7 +66,7 @@ class Report extends Definition {
     /**
      * Report's type
      *
-     * Enum: 1, 2, 3, 4, 5, 6, 7
+     * Enum: 1, 2, 3, 4, 5, 6, 7, 8
      * @see \Petslane\Bondora\Enum\ReportType
      *
      * @var int

@@ -2,7 +2,7 @@
 
 namespace Petslane\Bondora\Enum;
 
-class AuctionIncomeVerificationStatus {
+class IncomeVerificationStatus {
 
     const NotVerified = 1;
 

@@ -21,4 +21,16 @@ class AuctionPurpose {
     const Other = 7;
 
     const Health = 8;
+
+    /** @deprecated */
+    const WorkingCapitalFinancing = 101;
+
+    /** @deprecated */
+    const PurchaseOfMachineryEquipment = 102;
+
+    /** @deprecated */
+    const AcquisitionOfRealEstate = 108;
+
+    /** @deprecated */
+    const OtherBusiness = 110;
 }

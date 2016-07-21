@@ -4,7 +4,10 @@ namespace Petslane\Bondora\Enum;
 
 class ReportType {
 
-    /** Investments report */
+    /**
+     * Investments report
+     * @deprecated
+     */
     const Investments = 2;
 
     /** Planned future cashflows report */
@@ -18,5 +21,8 @@ class ReportType {
 
     /** Account Statement */
     const AccountStatement = 7;
+
+    /** Investments report V2 */
+    const InvestmentsV2 = 8;
 }
 

@@ -5,7 +5,7 @@ namespace Petslane\Bondora\Definition;
 class ReportCreateRequest extends Definition {
 
     /**
-     * Enum: 1, 2, 3, 4, 5, 6, 7
+     * Enum: 1, 2, 3, 4, 5, 6, 7, 8
      * @see \Petslane\Bondora\Enum\ReportType
      *
      * @required

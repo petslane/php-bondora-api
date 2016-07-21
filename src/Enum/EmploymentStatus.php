@@ -2,7 +2,7 @@
 
 namespace Petslane\Bondora\Enum;
 
-class AuctionQuestionEmploymentStatus {
+class EmploymentStatus {
 
     const UnEmployed = 1;
 

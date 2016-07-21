@@ -2,7 +2,7 @@
 
 namespace Petslane\Bondora\Enum;
 
-class AuctionQuestionMaritalStatus {
+class MaritalStatus {
 
     const Married = 1;
 

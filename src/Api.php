@@ -479,7 +479,7 @@ class Api {
      *     creditScoreMax                      int                 Maximum credit score
      *     userName                            string              Borrower's username
      *     loanStatusCode                      int[]               Loan status code 2 Current, 100 Overdue, 5 60+ days overdue, 4 Repaid, 8 Released
-     *     incomeVerificationStatus            int                 Income verification type @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus
+     *     incomeVerificationStatus            int                 Income verification type @see Petslane\Bondora\Enum\IncomeVerificationStatus
      *     loanDebtManagementStage             int                 Latest debt management stage @see Petslane\Bondora\Enum\DebtManagementEventType
      *     loanDebtManagementStageType         int                 Latest debt management stage @see Petslane\Bondora\Enum\DebtManagementEventStageType
      *     loanDebtManagementDateActiveFrom    string|\DateTime    Latest debt management date active from (string format YYYY-MM-DD hh:mm:ss)
@@ -581,8 +581,8 @@ class Api {
      *     userName               string            Username
      *     applicationDateFrom    string|DateTime   Loan application started date from. (string format YYYY-MM-DD hh:mm:ss)
      *     applicationDateTo      string|DateTime   Loan application started date to. (string format YYYY-MM-DD hh:mm:ss)
-     *     creditScoreMin         int               Minimum credit score
-     *     creditScoreMax         int               Maximum credit score
+     *     creditScoreMin         int               Minimum credit score (deprecated)
+     *     creditScoreMax         int               Maximum credit score (deprecated)
      *     interestMin            float             Minimum interest
      *     interestMax            float             Maximum interest
      *     incomeTotalMin         float             Minimal total income
@@ -699,7 +699,7 @@ class Api {
      *     gender                       int         Borrower's gender: Male 0, Female 1, Unknown 2
      *     ageMin                       int         Minimal age
      *     ageMax                       int         Maximum age
-     *     incomeVerificationStatus     int         Income verification type. @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus
+     *     incomeVerificationStatus     int         Income verification type. @see Petslane\Bondora\Enum\IncomeVerificationStatus
      *     showMyItems                  bool        Can find your own items from market: Value Null = ALL, True = only your items, False = other user items
      *     auctionId                    string      Can find specific auction from market
      *     listedOnDateFrom             date        Date when item was published from

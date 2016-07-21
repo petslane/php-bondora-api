@@ -77,7 +77,7 @@ class Auction extends Definition {
      * Verification type
      *
      * Enum: 1, 2, 3, 4
-     * @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus
+     * @see Petslane\Bondora\Enum\IncomeVerificationStatus
      *
      * @var int
      */
@@ -104,6 +104,14 @@ class Auction extends Definition {
 
 
     /**
+     * Borrower's date of birth
+     *
+     * @var \DateTime
+     */
+    public $DateOfBirth;
+
+
+    /**
      * Gender
      *
      * Enum: 0, 1, 2
@@ -123,16 +131,35 @@ class Auction extends Definition {
 
 
     /**
-     *     1000 No previous payments problems
-     *     900 Payments problems finished 24-36 months ago
-     *     800 Payments problems finished 12-24 months ago
-     *     700 Payments problems finished 6-12 months ago
-     *     600 Payment problems finished &lt;6 months ago
-     *     500 Active payment problems
+     * Credit scoring for ES loans
      *
-     * @var int
+     * @var string
      */
-    public $CreditScore;
+    public $CreditScoreEsMicroL;
+
+
+    /**
+     * Credit scoring for ES loans from Equifax
+     *
+     * @var string
+     */
+    public $CreditScoreEsEquifaxRisk;
+
+
+    /**
+     * Credit scoring for FI loans
+     *
+     * @var string
+     */
+    public $CreditScoreFiAsiakasTietoRiskGrade;
+
+
+    /**
+     * Credit scoring for EE loans
+     *
+     * @var string
+     */
+    public $CreditScoreEeMini;
 
 
     /**
@@ -190,7 +217,7 @@ class Auction extends Definition {
      * Education
      *
      * Enum: 1, 2, 3, 4, 5, -1
-     * @see Petslane\Bondora\Enum\AuctionQuestionEducation
+     * @see Petslane\Bondora\Enum\Education
      *
      * @var int
      */
@@ -201,7 +228,7 @@ class Auction extends Definition {
      * Marital status
      *
      * Enum: 1, 2, 3, 4, 5, -1
-     * @see Petslane\Bondora\Enum\AuctionQuestionMaritalStatus
+     * @see Petslane\Bondora\Enum\MaritalStatus
      *
      * @var int
      */
@@ -220,7 +247,7 @@ class Auction extends Definition {
      * Employment status
      *
      * Enum: 1, 2, 3, 4, 5, 6, -1
-     * @see Petslane\Bondora\Enum\AuctionQuestionEmploymentStatus
+     * @see Petslane\Bondora\Enum\EmploymentStatus
      *
      * @var int
      */
@@ -255,7 +282,7 @@ class Auction extends Definition {
      * Occupation area
      *
      * Enum: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1
-     * @see Petslane\Bondora\Enum\AuctionQuestionOccupationArea
+     * @see Petslane\Bondora\Enum\OccupationArea
      *
      * @var int
      */
@@ -266,7 +293,7 @@ class Auction extends Definition {
      * Type of home ownership
      *
      * Enum: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1
-     * @see Petslane\Bondora\Enum\AuctionQuestionHomeOwnershipType
+     * @see Petslane\Bondora\Enum\HomeOwnershipType
      *
      * @var int
      */
@@ -372,14 +399,6 @@ class Auction extends Definition {
 
 
     /**
-     * Date when the Rating was calculated for this loan
-     *
-     * @var \DateTime
-     */
-    public $ScoringDate;
-
-
-    /**
      * The version of the Rating model used for issuing the Bondora Rating
      *
      * @var int
@@ -404,14 +423,6 @@ class Auction extends Definition {
 
 
     /**
-     * Exposure at Default (expressed as a percentage of the original loan amount), indicates outstanding investor exposure at the time of default, including outstanding principal amount plus accrued but unpaid interests.
-     *
-     * @var float
-     */
-    public $EADRate;
-
-
-    /**
      * Gives the percentage of outstanding exposure at the time of default that an investor is likely to lose if a loan actually defaults.
      * This means the proportion of funds lost for the investor after all expected recovery and accounting for the time value of the money recovered.
      * In general, LGD parameter is intended to be estimated based on the historical recoveries. However, in new markets where limited experience does not allow us more precise loss given default estimates, a LGD of 90% is assumed.
@@ -419,14 +430,6 @@ class Auction extends Definition {
      * @var float
      */
     public $LossGivenDefault;
-
-
-    /**
-     * Maturity Factor M of 1.3 is assumed for loans with duration exceeding one year.
-     *
-     * @var float
-     */
-    public $MaturityFactor;
 
 
     /**
@@ -446,14 +449,6 @@ class Auction extends Definition {
 
 
     /**
-     * Interest rate alpha
-     *
-     * @var float
-     */
-    public $InterestRateAlpha;
-
-
-    /**
      * Total liabilities
      *
      * @var float
@@ -467,6 +462,56 @@ class Auction extends Definition {
      * @var \DateTime
      */
     public $ListedOnUTC;
+
+
+    /**
+     *     1000 No previous payments problems
+     *     900 Payments problems finished 24-36 months ago
+     *     800 Payments problems finished 12-24 months ago
+     *     700 Payments problems finished 6-12 months ago
+     *     600 Payment problems finished &lt;6 months ago
+     *     500 Active payment problems
+     *
+     * @deprecated
+     * @var int
+     */
+    public $CreditScore;
+
+
+    /**
+     * Date when the Rating was calculated for this loan
+     *
+     * @deprecated
+     * @var \DateTime
+     */
+    public $ScoringDate;
+
+
+    /**
+     * Exposure at Default (expressed as a percentage of the original loan amount), indicates outstanding investor exposure at the time of default, including outstanding principal amount plus accrued but unpaid interests.
+     *
+     * @deprecated
+     * @var float
+     */
+    public $EADRate;
+
+
+    /**
+     * Maturity Factor M of 1.3 is assumed for loans with duration exceeding one year.
+     *
+     * @deprecated
+     * @var float
+     */
+    public $MaturityFactor;
+
+
+    /**
+     * Interest rate alpha
+     *
+     * @deprecated
+     * @var float
+     */
+    public $InterestRateAlpha;
 
 }
 

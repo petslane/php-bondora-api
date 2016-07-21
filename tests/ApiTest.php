@@ -185,10 +185,10 @@ class ApiTest extends PHPUnit_Framework_TestCase {
         $date3->sub(DateInterval::createFromDateString('3 months'));
         return array(
             array(Bondora\Enum\ReportType::AccountStatement, 'AccountStatementReportLine', $date3, $date),
-            array(Bondora\Enum\ReportType::Investments, 'InvestmentsListReportLine', $date3, $date),
             array(Bondora\Enum\ReportType::PlannedFutureCashflows, 'FutureCashflowsReportLine', null, null),
             array(Bondora\Enum\ReportType::Repayments, 'RepaymentsReportLine', $date3, $date),
             array(Bondora\Enum\ReportType::SecondMarketArchive, 'SecondMarketArchiveReportLine', null, null),
+            array(Bondora\Enum\ReportType::InvestmentsV2, 'InvestmentsListReportLineV2', $date3, $date),
         );
     }
 
@@ -197,7 +197,6 @@ class ApiTest extends PHPUnit_Framework_TestCase {
             array(0),
             array(1),
             array(5),
-            array(8),
             array(9),
             array(10),
             array(11),
@@ -205,6 +204,7 @@ class ApiTest extends PHPUnit_Framework_TestCase {
             array(13),
             array(14),
             array(15),
+            array(Bondora\Enum\ReportType::Investments),
         );
     }
 

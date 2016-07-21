@@ -96,6 +96,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.EventLogRequest.html">Petslane\Bondora\Definition\EventLogRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.FutureCashflowsReportLine.html">Petslane\Bondora\Definition\FutureCashflowsReportLine</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLine.html">Petslane\Bondora\Definition\InvestmentsListReportLine</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLineV2.html">Petslane\Bondora\Definition\InvestmentsListReportLineV2</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Liability.html">Petslane\Bondora\Definition\Liability</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetItem.html">Petslane\Bondora\Definition\LoanDatasetItem</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetRequest.html">Petslane\Bondora\Definition\LoanDatasetRequest</a></li>
@@ -121,17 +122,17 @@
 				<li><a href="class-Petslane.Bondora.Definition.SecondMarketSell.html">Petslane\Bondora\Definition\SecondMarketSell</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.ApiAuctionBidRequestStatus.html">Petslane\Bondora\Enum\ApiAuctionBidRequestStatus</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.ApiRequestLogEventType.html">Petslane\Bondora\Enum\ApiRequestLogEventType</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionIncomeVerificationStatus.html">Petslane\Bondora\Enum\AuctionIncomeVerificationStatus</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.AuctionPurpose.html">Petslane\Bondora\Enum\AuctionPurpose</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionQuestionEducation.html">Petslane\Bondora\Enum\AuctionQuestionEducation</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionQuestionEmploymentStatus.html">Petslane\Bondora\Enum\AuctionQuestionEmploymentStatus</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionQuestionHomeOwnershipType.html">Petslane\Bondora\Enum\AuctionQuestionHomeOwnershipType</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionQuestionMaritalStatus.html">Petslane\Bondora\Enum\AuctionQuestionMaritalStatus</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionQuestionOccupationArea.html">Petslane\Bondora\Enum\AuctionQuestionOccupationArea</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.BidType.html">Petslane\Bondora\Enum\BidType</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.DebtManagementEventStageType.html">Petslane\Bondora\Enum\DebtManagementEventStageType</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.DebtManagementEventType.html">Petslane\Bondora\Enum\DebtManagementEventType</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.Education.html">Petslane\Bondora\Enum\Education</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.EmploymentStatus.html">Petslane\Bondora\Enum\EmploymentStatus</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.HomeOwnershipType.html">Petslane\Bondora\Enum\HomeOwnershipType</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.IncomeVerificationStatus.html">Petslane\Bondora\Enum\IncomeVerificationStatus</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.LanguageCode.html">Petslane\Bondora\Enum\LanguageCode</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.MaritalStatus.html">Petslane\Bondora\Enum\MaritalStatus</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.OccupationArea.html">Petslane\Bondora\Enum\OccupationArea</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.ReportType.html">Petslane\Bondora\Enum\ReportType</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.Sex.html">Petslane\Bondora\Enum\Sex</a></li>
 			</ul>
@@ -199,8 +200,20 @@
 </span><span id="21" class="l"><a href="#21">21: </a>    <span class="php-keyword1">const</span> Other = <span class="php-num">7</span>;
 </span><span id="22" class="l"><a href="#22">22: </a>
 </span><span id="23" class="l"><a href="#23">23: </a>    <span class="php-keyword1">const</span> Health = <span class="php-num">8</span>;
-</span><span id="24" class="l"><a href="#24">24: </a>}
-</span><span id="25" class="l"><a href="#25">25: </a></span></code></pre>
+</span><span id="24" class="l"><a href="#24">24: </a>
+</span><span id="25" class="l"><a href="#25">25: </a>    <span class="php-comment">/** @deprecated */</span>
+</span><span id="26" class="l"><a href="#26">26: </a>    <span class="php-keyword1">const</span> WorkingCapitalFinancing = <span class="php-num">101</span>;
+</span><span id="27" class="l"><a href="#27">27: </a>
+</span><span id="28" class="l"><a href="#28">28: </a>    <span class="php-comment">/** @deprecated */</span>
+</span><span id="29" class="l"><a href="#29">29: </a>    <span class="php-keyword1">const</span> PurchaseOfMachineryEquipment = <span class="php-num">102</span>;
+</span><span id="30" class="l"><a href="#30">30: </a>
+</span><span id="31" class="l"><a href="#31">31: </a>    <span class="php-comment">/** @deprecated */</span>
+</span><span id="32" class="l"><a href="#32">32: </a>    <span class="php-keyword1">const</span> AcquisitionOfRealEstate = <span class="php-num">108</span>;
+</span><span id="33" class="l"><a href="#33">33: </a>
+</span><span id="34" class="l"><a href="#34">34: </a>    <span class="php-comment">/** @deprecated */</span>
+</span><span id="35" class="l"><a href="#35">35: </a>    <span class="php-keyword1">const</span> OtherBusiness = <span class="php-num">110</span>;
+</span><span id="36" class="l"><a href="#36">36: </a>}
+</span><span id="37" class="l"><a href="#37">37: </a></span></code></pre>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
@@ -208,6 +221,6 @@
 </div>
 </div>
 <script src="resources/combined.js?083febcda85b346cdb99ac4920e1b3b9ead45f47"></script>
-<script src="elementlist.js?b20fc01b395912c9603699aa7704178ada5f95e5"></script>
+<script src="elementlist.js?654a4df9a06865cc447ce5cb77a438d9f181228d"></script>
 </body>
 </html>

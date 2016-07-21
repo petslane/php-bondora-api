@@ -96,6 +96,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.EventLogRequest.html">Petslane\Bondora\Definition\EventLogRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.FutureCashflowsReportLine.html">Petslane\Bondora\Definition\FutureCashflowsReportLine</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLine.html">Petslane\Bondora\Definition\InvestmentsListReportLine</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLineV2.html">Petslane\Bondora\Definition\InvestmentsListReportLineV2</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Liability.html">Petslane\Bondora\Definition\Liability</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetItem.html">Petslane\Bondora\Definition\LoanDatasetItem</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetRequest.html">Petslane\Bondora\Definition\LoanDatasetRequest</a></li>
@@ -121,17 +122,17 @@
 				<li><a href="class-Petslane.Bondora.Definition.SecondMarketSell.html">Petslane\Bondora\Definition\SecondMarketSell</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.ApiAuctionBidRequestStatus.html">Petslane\Bondora\Enum\ApiAuctionBidRequestStatus</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.ApiRequestLogEventType.html">Petslane\Bondora\Enum\ApiRequestLogEventType</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionIncomeVerificationStatus.html">Petslane\Bondora\Enum\AuctionIncomeVerificationStatus</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.AuctionPurpose.html">Petslane\Bondora\Enum\AuctionPurpose</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionQuestionEducation.html">Petslane\Bondora\Enum\AuctionQuestionEducation</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionQuestionEmploymentStatus.html">Petslane\Bondora\Enum\AuctionQuestionEmploymentStatus</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionQuestionHomeOwnershipType.html">Petslane\Bondora\Enum\AuctionQuestionHomeOwnershipType</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionQuestionMaritalStatus.html">Petslane\Bondora\Enum\AuctionQuestionMaritalStatus</a></li>
-				<li><a href="class-Petslane.Bondora.Enum.AuctionQuestionOccupationArea.html">Petslane\Bondora\Enum\AuctionQuestionOccupationArea</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.BidType.html">Petslane\Bondora\Enum\BidType</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.DebtManagementEventStageType.html">Petslane\Bondora\Enum\DebtManagementEventStageType</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.DebtManagementEventType.html">Petslane\Bondora\Enum\DebtManagementEventType</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.Education.html">Petslane\Bondora\Enum\Education</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.EmploymentStatus.html">Petslane\Bondora\Enum\EmploymentStatus</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.HomeOwnershipType.html">Petslane\Bondora\Enum\HomeOwnershipType</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.IncomeVerificationStatus.html">Petslane\Bondora\Enum\IncomeVerificationStatus</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.LanguageCode.html">Petslane\Bondora\Enum\LanguageCode</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.MaritalStatus.html">Petslane\Bondora\Enum\MaritalStatus</a></li>
+				<li><a href="class-Petslane.Bondora.Enum.OccupationArea.html">Petslane\Bondora\Enum\OccupationArea</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.ReportType.html">Petslane\Bondora\Enum\ReportType</a></li>
 				<li><a href="class-Petslane.Bondora.Enum.Sex.html">Petslane\Bondora\Enum\Sex</a></li>
 			</ul>
@@ -657,7 +658,7 @@
 </span></span><span id="479" class="l"><a href="#479"> 479: </a><span class="php-comment">     *     creditScoreMax                      int                 Maximum credit score
 </span></span><span id="480" class="l"><a href="#480"> 480: </a><span class="php-comment">     *     userName                            string              Borrower's username
 </span></span><span id="481" class="l"><a href="#481"> 481: </a><span class="php-comment">     *     loanStatusCode                      int[]               Loan status code 2 Current, 100 Overdue, 5 60+ days overdue, 4 Repaid, 8 Released
-</span></span><span id="482" class="l"><a href="#482"> 482: </a><span class="php-comment">     *     incomeVerificationStatus            int                 Income verification type @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus
+</span></span><span id="482" class="l"><a href="#482"> 482: </a><span class="php-comment">     *     incomeVerificationStatus            int                 Income verification type @see Petslane\Bondora\Enum\IncomeVerificationStatus
 </span></span><span id="483" class="l"><a href="#483"> 483: </a><span class="php-comment">     *     loanDebtManagementStage             int                 Latest debt management stage @see Petslane\Bondora\Enum\DebtManagementEventType
 </span></span><span id="484" class="l"><a href="#484"> 484: </a><span class="php-comment">     *     loanDebtManagementStageType         int                 Latest debt management stage @see Petslane\Bondora\Enum\DebtManagementEventStageType
 </span></span><span id="485" class="l"><a href="#485"> 485: </a><span class="php-comment">     *     loanDebtManagementDateActiveFrom    string|\DateTime    Latest debt management date active from (string format YYYY-MM-DD hh:mm:ss)
@@ -759,8 +760,8 @@
 </span></span><span id="581" class="l"><a href="#581"> 581: </a><span class="php-comment">     *     userName               string            Username
 </span></span><span id="582" class="l"><a href="#582"> 582: </a><span class="php-comment">     *     applicationDateFrom    string|DateTime   Loan application started date from. (string format YYYY-MM-DD hh:mm:ss)
 </span></span><span id="583" class="l"><a href="#583"> 583: </a><span class="php-comment">     *     applicationDateTo      string|DateTime   Loan application started date to. (string format YYYY-MM-DD hh:mm:ss)
-</span></span><span id="584" class="l"><a href="#584"> 584: </a><span class="php-comment">     *     creditScoreMin         int               Minimum credit score
-</span></span><span id="585" class="l"><a href="#585"> 585: </a><span class="php-comment">     *     creditScoreMax         int               Maximum credit score
+</span></span><span id="584" class="l"><a href="#584"> 584: </a><span class="php-comment">     *     creditScoreMin         int               Minimum credit score (deprecated)
+</span></span><span id="585" class="l"><a href="#585"> 585: </a><span class="php-comment">     *     creditScoreMax         int               Maximum credit score (deprecated)
 </span></span><span id="586" class="l"><a href="#586"> 586: </a><span class="php-comment">     *     interestMin            float             Minimum interest
 </span></span><span id="587" class="l"><a href="#587"> 587: </a><span class="php-comment">     *     interestMax            float             Maximum interest
 </span></span><span id="588" class="l"><a href="#588"> 588: </a><span class="php-comment">     *     incomeTotalMin         float             Minimal total income
@@ -877,7 +878,7 @@
 </span></span><span id="699" class="l"><a href="#699"> 699: </a><span class="php-comment">     *     gender                       int         Borrower's gender: Male 0, Female 1, Unknown 2
 </span></span><span id="700" class="l"><a href="#700"> 700: </a><span class="php-comment">     *     ageMin                       int         Minimal age
 </span></span><span id="701" class="l"><a href="#701"> 701: </a><span class="php-comment">     *     ageMax                       int         Maximum age
-</span></span><span id="702" class="l"><a href="#702"> 702: </a><span class="php-comment">     *     incomeVerificationStatus     int         Income verification type. @see Petslane\Bondora\Enum\AuctionIncomeVerificationStatus
+</span></span><span id="702" class="l"><a href="#702"> 702: </a><span class="php-comment">     *     incomeVerificationStatus     int         Income verification type. @see Petslane\Bondora\Enum\IncomeVerificationStatus
 </span></span><span id="703" class="l"><a href="#703"> 703: </a><span class="php-comment">     *     showMyItems                  bool        Can find your own items from market: Value Null = ALL, True = only your items, False = other user items
 </span></span><span id="704" class="l"><a href="#704"> 704: </a><span class="php-comment">     *     auctionId                    string      Can find specific auction from market
 </span></span><span id="705" class="l"><a href="#705"> 705: </a><span class="php-comment">     *     listedOnDateFrom             date        Date when item was published from
@@ -1423,6 +1424,6 @@
 </div>
 </div>
 <script src="resources/combined.js?083febcda85b346cdb99ac4920e1b3b9ead45f47"></script>
-<script src="elementlist.js?b20fc01b395912c9603699aa7704178ada5f95e5"></script>
+<script src="elementlist.js?654a4df9a06865cc447ce5cb77a438d9f181228d"></script>
 </body>
 </html>

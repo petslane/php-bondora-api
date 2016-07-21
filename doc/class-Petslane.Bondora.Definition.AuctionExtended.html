@@ -92,6 +92,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.EventLogRequest.html">EventLogRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.FutureCashflowsReportLine.html">FutureCashflowsReportLine</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLine.html">InvestmentsListReportLine</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLineV2.html">InvestmentsListReportLineV2</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Liability.html">Liability</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetItem.html">LoanDatasetItem</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetRequest.html">LoanDatasetRequest</a></li>
@@ -188,7 +189,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a>\<a href="namespace-Petslane.Bondora.Definition.html">Definition</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#5-495" title="Go to source code">src/Definition/AuctionExtended.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#5-540" title="Go to source code">src/Definition/AuctionExtended.php</a>
 		<br>
 	</div>
 
@@ -514,7 +515,7 @@
 
 					<h4>See</h4>
 					<div class="list">
-							<code><a href="class-Petslane.Bondora.Enum.AuctionIncomeVerificationStatus.html">Petslane\Bondora\Enum\AuctionIncomeVerificationStatus</a></code><br>
+							<code><a href="class-Petslane.Bondora.Enum.IncomeVerificationStatus.html">Petslane\Bondora\Enum\IncomeVerificationStatus</a></code><br>
 					</div>
 			</div>
 		</td>
@@ -581,6 +582,31 @@
 			</div>
 		</td>
 	</tr>
+	<tr data-order="DateOfBirth" id="$DateOfBirth">
+		<td class="attributes"><code>
+			public  
+			DateTime
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#130-135" title="Go to source code"><var>$DateOfBirth</var></a>
+
+			<div class="description short">
+				<p>Borrower's date of birth</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Borrower's date of birth</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$DateOfBirth" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
 	<tr data-order="Gender" id="$Gender">
 		<td class="attributes"><code>
 			public  
@@ -588,7 +614,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#130-138" title="Go to source code"><var>$Gender</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#138-146" title="Go to source code"><var>$Gender</var></a>
 
 			<div class="description short">
 				<p>Gender</p>
@@ -619,7 +645,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#141-146" title="Go to source code"><var>$Country</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#149-154" title="Go to source code"><var>$Country</var></a>
 
 			<div class="description short">
 				<p>Residency of the borrower</p>
@@ -637,32 +663,105 @@
 			</div>
 		</td>
 	</tr>
-	<tr data-order="CreditScore" id="$CreditScore">
+	<tr data-order="CreditScoreEsMicroL" id="$CreditScoreEsMicroL">
 		<td class="attributes"><code>
 			public  
-			integer
+			string
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#149-159" title="Go to source code"><var>$CreditScore</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#157-163" title="Go to source code"><var>$CreditScoreEsMicroL</var></a>
 
 			<div class="description short">
-				<p>1000 No previous payments problems
-    900 Payments problems finished 24-36 months ago
-    800 Payments problems finished 12-24 months ago
-    700 Payments problems finished 6-12 months ago
-    600 Payment problems finished &lt;6 months ago
-    500 Active payment problems</p>
+				<p>Credit scoring for ES loans</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>1000 No previous payments problems 900 Payments problems finished 24-36 months ago 800 Payments problems finished 12-24 months ago 700 Payments problems finished 6-12 months ago 600 Payment problems finished &lt;6 months ago 500 Active payment problems</p>
+				<p>Credit scoring for ES loans</p>
+
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$CreditScoreEsMicroL" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="CreditScoreEsEquifaxRisk" id="$CreditScoreEsEquifaxRisk">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#166-171" title="Go to source code"><var>$CreditScoreEsEquifaxRisk</var></a>
+
+			<div class="description short">
+				<p>Credit scoring for ES loans from Equifax</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Credit scoring for ES loans from Equifax</p>
 
 			</div>
 		</td>
 		<td class="value">
 			<div>
-				<a href="#$CreditScore" class="anchor">#</a>
+				<a href="#$CreditScoreEsEquifaxRisk" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="CreditScoreFiAsiakasTietoRiskGrade" id="$CreditScoreFiAsiakasTietoRiskGrade">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#174-179" title="Go to source code"><var>$CreditScoreFiAsiakasTietoRiskGrade</var></a>
+
+			<div class="description short">
+				<p>Credit scoring for FI loans</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Credit scoring for FI loans</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$CreditScoreFiAsiakasTietoRiskGrade" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="CreditScoreEeMini" id="$CreditScoreEeMini">
+		<td class="attributes"><code>
+			public  
+			string
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#182-187" title="Go to source code"><var>$CreditScoreEeMini</var></a>
+
+			<div class="description short">
+				<p>Credit scoring for EE loans</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Credit scoring for EE loans</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$CreditScoreEeMini" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>
@@ -674,7 +773,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#162-167" title="Go to source code"><var>$AppliedAmount</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#190-195" title="Go to source code"><var>$AppliedAmount</var></a>
 
 			<div class="description short">
 				<p>Amount applied</p>
@@ -699,7 +798,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#170-175" title="Go to source code"><var>$Interest</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#198-203" title="Go to source code"><var>$Interest</var></a>
 
 			<div class="description short">
 				<p>Maximum interest rate accepted in the loan application</p>
@@ -724,7 +823,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#178-183" title="Go to source code"><var>$LoanDuration</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#206-211" title="Go to source code"><var>$LoanDuration</var></a>
 
 			<div class="description short">
 				<p>The loan term</p>
@@ -749,7 +848,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#186-191" title="Go to source code"><var>$County</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#214-219" title="Go to source code"><var>$County</var></a>
 
 			<div class="description short">
 				<p>County of the borrower</p>
@@ -774,7 +873,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#194-199" title="Go to source code"><var>$City</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#222-227" title="Go to source code"><var>$City</var></a>
 
 			<div class="description short">
 				<p>City of the borrower</p>
@@ -799,7 +898,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#202-210" title="Go to source code"><var>$UseOfLoan</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#230-238" title="Go to source code"><var>$UseOfLoan</var></a>
 
 			<div class="description short">
 				<p>Use of loan</p>
@@ -830,7 +929,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#213-221" title="Go to source code"><var>$Education</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#241-249" title="Go to source code"><var>$Education</var></a>
 
 			<div class="description short">
 				<p>Education</p>
@@ -843,7 +942,7 @@
 
 					<h4>See</h4>
 					<div class="list">
-							<code><a href="class-Petslane.Bondora.Enum.AuctionQuestionEducation.html">Petslane\Bondora\Enum\AuctionQuestionEducation</a></code><br>
+							<code><a href="class-Petslane.Bondora.Enum.Education.html">Petslane\Bondora\Enum\Education</a></code><br>
 					</div>
 			</div>
 		</td>
@@ -861,7 +960,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#224-232" title="Go to source code"><var>$MaritalStatus</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#252-260" title="Go to source code"><var>$MaritalStatus</var></a>
 
 			<div class="description short">
 				<p>Marital status</p>
@@ -874,7 +973,7 @@
 
 					<h4>See</h4>
 					<div class="list">
-							<code><a href="class-Petslane.Bondora.Enum.AuctionQuestionMaritalStatus.html">Petslane\Bondora\Enum\AuctionQuestionMaritalStatus</a></code><br>
+							<code><a href="class-Petslane.Bondora.Enum.MaritalStatus.html">Petslane\Bondora\Enum\MaritalStatus</a></code><br>
 					</div>
 			</div>
 		</td>
@@ -892,7 +991,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#235-240" title="Go to source code"><var>$NrOfDependants</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#263-268" title="Go to source code"><var>$NrOfDependants</var></a>
 
 			<div class="description short">
 				<p>Number of children or other dependants</p>
@@ -917,7 +1016,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#243-251" title="Go to source code"><var>$EmploymentStatus</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#271-279" title="Go to source code"><var>$EmploymentStatus</var></a>
 
 			<div class="description short">
 				<p>Employment status</p>
@@ -930,7 +1029,7 @@
 
 					<h4>See</h4>
 					<div class="list">
-							<code><a href="class-Petslane.Bondora.Enum.AuctionQuestionEmploymentStatus.html">Petslane\Bondora\Enum\AuctionQuestionEmploymentStatus</a></code><br>
+							<code><a href="class-Petslane.Bondora.Enum.EmploymentStatus.html">Petslane\Bondora\Enum\EmploymentStatus</a></code><br>
 					</div>
 			</div>
 		</td>
@@ -948,7 +1047,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#254-259" title="Go to source code"><var>$EmploymentDurationCurrentEmployer</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#282-287" title="Go to source code"><var>$EmploymentDurationCurrentEmployer</var></a>
 
 			<div class="description short">
 				<p>Employment time with the current employer</p>
@@ -973,7 +1072,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#262-267" title="Go to source code"><var>$EmploymentPosition</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#290-295" title="Go to source code"><var>$EmploymentPosition</var></a>
 
 			<div class="description short">
 				<p>Employment position</p>
@@ -998,7 +1097,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#270-275" title="Go to source code"><var>$WorkExperience</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#298-303" title="Go to source code"><var>$WorkExperience</var></a>
 
 			<div class="description short">
 				<p>Work experience in total</p>
@@ -1023,7 +1122,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#278-286" title="Go to source code"><var>$OccupationArea</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#306-314" title="Go to source code"><var>$OccupationArea</var></a>
 
 			<div class="description short">
 				<p>Occupation area</p>
@@ -1036,7 +1135,7 @@
 
 					<h4>See</h4>
 					<div class="list">
-							<code><a href="class-Petslane.Bondora.Enum.AuctionQuestionOccupationArea.html">Petslane\Bondora\Enum\AuctionQuestionOccupationArea</a></code><br>
+							<code><a href="class-Petslane.Bondora.Enum.OccupationArea.html">Petslane\Bondora\Enum\OccupationArea</a></code><br>
 					</div>
 			</div>
 		</td>
@@ -1054,7 +1153,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#289-297" title="Go to source code"><var>$HomeOwnershipType</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#317-325" title="Go to source code"><var>$HomeOwnershipType</var></a>
 
 			<div class="description short">
 				<p>Type of home ownership</p>
@@ -1067,7 +1166,7 @@
 
 					<h4>See</h4>
 					<div class="list">
-							<code><a href="class-Petslane.Bondora.Enum.AuctionQuestionHomeOwnershipType.html">Petslane\Bondora\Enum\AuctionQuestionHomeOwnershipType</a></code><br>
+							<code><a href="class-Petslane.Bondora.Enum.HomeOwnershipType.html">Petslane\Bondora\Enum\HomeOwnershipType</a></code><br>
 					</div>
 			</div>
 		</td>
@@ -1085,7 +1184,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#300-305" title="Go to source code"><var>$IncomeFromPrincipalEmployer</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#328-333" title="Go to source code"><var>$IncomeFromPrincipalEmployer</var></a>
 
 			<div class="description short">
 				<p>Salary</p>
@@ -1110,7 +1209,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#308-313" title="Go to source code"><var>$IncomeFromPension</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#336-341" title="Go to source code"><var>$IncomeFromPension</var></a>
 
 			<div class="description short">
 				<p>Pension</p>
@@ -1135,7 +1234,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#316-321" title="Go to source code"><var>$IncomeFromFamilyAllowance</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#344-349" title="Go to source code"><var>$IncomeFromFamilyAllowance</var></a>
 
 			<div class="description short">
 				<p>Family allowance</p>
@@ -1160,7 +1259,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#324-329" title="Go to source code"><var>$IncomeFromSocialWelfare</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#352-357" title="Go to source code"><var>$IncomeFromSocialWelfare</var></a>
 
 			<div class="description short">
 				<p>Social welfare</p>
@@ -1185,7 +1284,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#332-337" title="Go to source code"><var>$IncomeFromLeavePay</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#360-365" title="Go to source code"><var>$IncomeFromLeavePay</var></a>
 
 			<div class="description short">
 				<p>Leave pay</p>
@@ -1210,7 +1309,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#340-345" title="Go to source code"><var>$IncomeFromChildSupport</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#368-373" title="Go to source code"><var>$IncomeFromChildSupport</var></a>
 
 			<div class="description short">
 				<p>Child support</p>
@@ -1235,7 +1334,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#348-353" title="Go to source code"><var>$IncomeOther</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#376-381" title="Go to source code"><var>$IncomeOther</var></a>
 
 			<div class="description short">
 				<p>Other income</p>
@@ -1260,7 +1359,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#356-361" title="Go to source code"><var>$IncomeTotal</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#384-389" title="Go to source code"><var>$IncomeTotal</var></a>
 
 			<div class="description short">
 				<p>Total income</p>
@@ -1285,7 +1384,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#364-369" title="Go to source code"><var>$FreeCash</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#392-397" title="Go to source code"><var>$FreeCash</var></a>
 
 			<div class="description short">
 				<p>Discretionary Income</p>
@@ -1310,7 +1409,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#372-377" title="Go to source code"><var>$DebtToIncome</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#400-405" title="Go to source code"><var>$DebtToIncome</var></a>
 
 			<div class="description short">
 				<p>Debt to income ratio</p>
@@ -1335,7 +1434,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#380-385" title="Go to source code"><var>$MonthlyPayment</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#408-413" title="Go to source code"><var>$MonthlyPayment</var></a>
 
 			<div class="description short">
 				<p>Loan monthly payment amount.</p>
@@ -1360,7 +1459,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#388-395" title="Go to source code"><var>$MonthlyPaymentDay</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#416-423" title="Go to source code"><var>$MonthlyPaymentDay</var></a>
 
 			<div class="description short">
 				<p>The day of the month the loan payments are scheduled for.
@@ -1382,31 +1481,6 @@ E.g. if 10th is a Sunday then the payment will be made on the 11th in that month
 			</div>
 		</td>
 	</tr>
-	<tr data-order="ScoringDate" id="$ScoringDate">
-		<td class="attributes"><code>
-			public  
-			DateTime
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#398-403" title="Go to source code"><var>$ScoringDate</var></a>
-
-			<div class="description short">
-				<p>Date when the Rating was calculated for this loan</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Date when the Rating was calculated for this loan</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$ScoringDate" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="ModelVersion" id="$ModelVersion">
 		<td class="attributes"><code>
 			public  
@@ -1414,7 +1488,7 @@ E.g. if 10th is a Sunday then the payment will be made on the 11th in that month
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#406-411" title="Go to source code"><var>$ModelVersion</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#426-431" title="Go to source code"><var>$ModelVersion</var></a>
 
 			<div class="description short">
 				<p>The version of the Rating model used for issuing the Bondora Rating</p>
@@ -1439,7 +1513,7 @@ E.g. if 10th is a Sunday then the payment will be made on the 11th in that month
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#414-419" title="Go to source code"><var>$ExpectedLoss</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#434-439" title="Go to source code"><var>$ExpectedLoss</var></a>
 
 			<div class="description short">
 				<p>Expected Loss calculated by the Rating model</p>
@@ -1464,7 +1538,7 @@ E.g. if 10th is a Sunday then the payment will be made on the 11th in that month
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#422-427" title="Go to source code"><var>$Rating</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#442-447" title="Go to source code"><var>$Rating</var></a>
 
 			<div class="description short">
 				<p>Bondora Rating issued by the Rating model</p>
@@ -1482,31 +1556,6 @@ E.g. if 10th is a Sunday then the payment will be made on the 11th in that month
 			</div>
 		</td>
 	</tr>
-	<tr data-order="EADRate" id="$EADRate">
-		<td class="attributes"><code>
-			public  
-			float
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#430-435" title="Go to source code"><var>$EADRate</var></a>
-
-			<div class="description short">
-				<p>Exposure at Default (expressed as a percentage of the original loan amount), indicates outstanding investor exposure at the time of default, including outstanding principal amount plus accrued but unpaid interests.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Exposure at Default (expressed as a percentage of the original loan amount), indicates outstanding investor exposure at the time of default, including outstanding principal amount plus accrued but unpaid interests.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$EADRate" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="LossGivenDefault" id="$LossGivenDefault">
 		<td class="attributes"><code>
 			public  
@@ -1514,7 +1563,7 @@ E.g. if 10th is a Sunday then the payment will be made on the 11th in that month
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#438-445" title="Go to source code"><var>$LossGivenDefault</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#450-457" title="Go to source code"><var>$LossGivenDefault</var></a>
 
 			<div class="description short">
 				<p>Gives the percentage of outstanding exposure at the time of default that an investor is likely to lose if a loan actually defaults.
@@ -1536,31 +1585,6 @@ In general, LGD parameter is intended to be estimated based on the historical re
 			</div>
 		</td>
 	</tr>
-	<tr data-order="MaturityFactor" id="$MaturityFactor">
-		<td class="attributes"><code>
-			public  
-			float
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#448-453" title="Go to source code"><var>$MaturityFactor</var></a>
-
-			<div class="description short">
-				<p>Maturity Factor M of 1.3 is assumed for loans with duration exceeding one year.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Maturity Factor M of 1.3 is assumed for loans with duration exceeding one year.</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$MaturityFactor" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="ProbabilityOfDefault" id="$ProbabilityOfDefault">
 		<td class="attributes"><code>
 			public  
@@ -1568,7 +1592,7 @@ In general, LGD parameter is intended to be estimated based on the historical re
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#456-461" title="Go to source code"><var>$ProbabilityOfDefault</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#460-465" title="Go to source code"><var>$ProbabilityOfDefault</var></a>
 
 			<div class="description short">
 				<p>Probability of Default, refers to a loan’s probability of default within one year horizon.</p>
@@ -1593,7 +1617,7 @@ In general, LGD parameter is intended to be estimated based on the historical re
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#464-469" title="Go to source code"><var>$ExpectedReturnAlpha</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#468-473" title="Go to source code"><var>$ExpectedReturnAlpha</var></a>
 
 			<div class="description short">
 				<p>Expected return alpha</p>
@@ -1611,31 +1635,6 @@ In general, LGD parameter is intended to be estimated based on the historical re
 			</div>
 		</td>
 	</tr>
-	<tr data-order="InterestRateAlpha" id="$InterestRateAlpha">
-		<td class="attributes"><code>
-			public  
-			float
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#472-477" title="Go to source code"><var>$InterestRateAlpha</var></a>
-
-			<div class="description short">
-				<p>Interest rate alpha</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Interest rate alpha</p>
-
-			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$InterestRateAlpha" class="anchor">#</a>
-				<code></code>
-			</div>
-		</td>
-	</tr>
 	<tr data-order="LiabilitiesTotal" id="$LiabilitiesTotal">
 		<td class="attributes"><code>
 			public  
@@ -1643,7 +1642,7 @@ In general, LGD parameter is intended to be estimated based on the historical re
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#480-485" title="Go to source code"><var>$LiabilitiesTotal</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#476-481" title="Go to source code"><var>$LiabilitiesTotal</var></a>
 
 			<div class="description short">
 				<p>Total liabilities</p>
@@ -1668,7 +1667,7 @@ In general, LGD parameter is intended to be estimated based on the historical re
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#488-493" title="Go to source code"><var>$ListedOnUTC</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#484-489" title="Go to source code"><var>$ListedOnUTC</var></a>
 
 			<div class="description short">
 				<p>Date when auction was published</p>
@@ -1682,6 +1681,148 @@ In general, LGD parameter is intended to be estimated based on the historical re
 		<td class="value">
 			<div>
 				<a href="#$ListedOnUTC" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="CreditScore" id="$CreditScore">
+		<td class="attributes"><code>
+			public  
+			integer
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#492-502" title="Go to source code"><var>$CreditScore</var></a>
+
+			<div class="description short">
+				<p>1000 No previous payments problems
+    900 Payments problems finished 24-36 months ago
+    800 Payments problems finished 12-24 months ago
+    700 Payments problems finished 6-12 months ago
+    600 Payment problems finished &lt;6 months ago
+    500 Active payment problems</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>1000 No previous payments problems 900 Payments problems finished 24-36 months ago 800 Payments problems finished 12-24 months ago 700 Payments problems finished 6-12 months ago 600 Payment problems finished &lt;6 months ago 500 Active payment problems</p>
+
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$CreditScore" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="ScoringDate" id="$ScoringDate">
+		<td class="attributes"><code>
+			public  
+			DateTime
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#505-511" title="Go to source code"><var>$ScoringDate</var></a>
+
+			<div class="description short">
+				<p>Date when the Rating was calculated for this loan</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Date when the Rating was calculated for this loan</p>
+
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$ScoringDate" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="EADRate" id="$EADRate">
+		<td class="attributes"><code>
+			public  
+			float
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#514-520" title="Go to source code"><var>$EADRate</var></a>
+
+			<div class="description short">
+				<p>Exposure at Default (expressed as a percentage of the original loan amount), indicates outstanding investor exposure at the time of default, including outstanding principal amount plus accrued but unpaid interests.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Exposure at Default (expressed as a percentage of the original loan amount), indicates outstanding investor exposure at the time of default, including outstanding principal amount plus accrued but unpaid interests.</p>
+
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$EADRate" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="MaturityFactor" id="$MaturityFactor">
+		<td class="attributes"><code>
+			public  
+			float
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#523-529" title="Go to source code"><var>$MaturityFactor</var></a>
+
+			<div class="description short">
+				<p>Maturity Factor M of 1.3 is assumed for loans with duration exceeding one year.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Maturity Factor M of 1.3 is assumed for loans with duration exceeding one year.</p>
+
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$MaturityFactor" class="anchor">#</a>
+				<code></code>
+			</div>
+		</td>
+	</tr>
+	<tr data-order="InterestRateAlpha" id="$InterestRateAlpha">
+		<td class="attributes"><code>
+			public  
+			float
+		</code></td>
+
+		<td class="name">
+				<a href="source-class-Petslane.Bondora.Definition.AuctionExtended.html#532-538" title="Go to source code"><var>$InterestRateAlpha</var></a>
+
+			<div class="description short">
+				<p>Interest rate alpha</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Interest rate alpha</p>
+
+					<h4>Deprecated</h4>
+					<div class="list">
+					</div>
+			</div>
+		</td>
+		<td class="value">
+			<div>
+				<a href="#$InterestRateAlpha" class="anchor">#</a>
 				<code></code>
 			</div>
 		</td>

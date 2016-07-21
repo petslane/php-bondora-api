@@ -92,6 +92,7 @@
 				<li><a href="class-Petslane.Bondora.Definition.EventLogRequest.html">EventLogRequest</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.FutureCashflowsReportLine.html">FutureCashflowsReportLine</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLine.html">InvestmentsListReportLine</a></li>
+				<li><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLineV2.html">InvestmentsListReportLineV2</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.Liability.html">Liability</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetItem.html">LoanDatasetItem</a></li>
 				<li><a href="class-Petslane.Bondora.Definition.LoanDatasetRequest.html">LoanDatasetRequest</a></li>
@@ -188,7 +189,7 @@
 		<b>Namespace:</b> <a href="namespace-Petslane.html">Petslane</a>\<a href="namespace-Petslane.Bondora.html">Bondora</a>\<a href="namespace-Petslane.Bondora.Definition.html">Definition</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.Report.html#5-75" title="Go to source code">src/Definition/Report.php</a>
+			<b>Located at</b> <a href="source-class-Petslane.Bondora.Definition.Report.html#5-76" title="Go to source code">src/Definition/Report.php</a>
 		<br>
 	</div>
 
@@ -220,11 +221,11 @@
 	<tr data-order="Result" id="$Result">
 		<td class="attributes"><code>
 			public  
-			<code><a href="class-Petslane.Bondora.Definition.SecondMarketArchiveReportLine.html">Petslane\Bondora\Definition\SecondMarketArchiveReportLine</a>[]</code>|<code><a href="class-Petslane.Bondora.Definition.AccountStatementReportLine.html">Petslane\Bondora\Definition\AccountStatementReportLine</a>[]</code>|<code><a href="class-Petslane.Bondora.Definition.RepaymentsReportLine.html">Petslane\Bondora\Definition\RepaymentsReportLine</a>[]</code>|<code><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLine.html">Petslane\Bondora\Definition\InvestmentsListReportLine</a>[]</code>|<code><a href="class-Petslane.Bondora.Definition.FutureCashflowsReportLine.html">Petslane\Bondora\Definition\FutureCashflowsReportLine</a>[]</code>
+			<code><a href="class-Petslane.Bondora.Definition.SecondMarketArchiveReportLine.html">Petslane\Bondora\Definition\SecondMarketArchiveReportLine</a>[]</code>|<code><a href="class-Petslane.Bondora.Definition.AccountStatementReportLine.html">Petslane\Bondora\Definition\AccountStatementReportLine</a>[]</code>|<code><a href="class-Petslane.Bondora.Definition.RepaymentsReportLine.html">Petslane\Bondora\Definition\RepaymentsReportLine</a>[]</code>|<code><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLine.html">Petslane\Bondora\Definition\InvestmentsListReportLine</a>[]</code>|<code><a href="class-Petslane.Bondora.Definition.FutureCashflowsReportLine.html">Petslane\Bondora\Definition\FutureCashflowsReportLine</a>[]</code>|<code><a href="class-Petslane.Bondora.Definition.InvestmentsListReportLineV2.html">Petslane\Bondora\Definition\InvestmentsListReportLineV2</a>[]</code>
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#10-22" title="Go to source code"><var>$Result</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#10-23" title="Go to source code"><var>$Result</var></a>
 
 			<div class="description short">
 				<p>List of Report items. Item type depends on ReportType value:
@@ -232,11 +233,12 @@
  ReportType::AccountStatement -> AccountStatementReportLine[]
  ReportType::Repayments -> RepaymentsReportLine[]
  ReportType::Investments -> InvestmentsListReportLine[]
- ReportType::PlannedFutureCashflows -> FutureCashflowsReportLine[]</p>
+ ReportType::PlannedFutureCashflows -> FutureCashflowsReportLine[]
+ ReportType::InvestmentsV2 -> InvestmentsListReportLineV2[]</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>List of Report items. Item type depends on ReportType value: ReportType::SecondMarketArchive -> SecondMarketArchiveReportLine[] ReportType::AccountStatement -> AccountStatementReportLine[] ReportType::Repayments -> RepaymentsReportLine[] ReportType::Investments -> InvestmentsListReportLine[] ReportType::PlannedFutureCashflows -> FutureCashflowsReportLine[]</p>
+				<p>List of Report items. Item type depends on ReportType value: ReportType::SecondMarketArchive -> SecondMarketArchiveReportLine[] ReportType::AccountStatement -> AccountStatementReportLine[] ReportType::Repayments -> RepaymentsReportLine[] ReportType::Investments -> InvestmentsListReportLine[] ReportType::PlannedFutureCashflows -> FutureCashflowsReportLine[] ReportType::InvestmentsV2 -> InvestmentsListReportLineV2[]</p>
 
 <p>Only set if report is generated. GeneratedOn field is null if report is not ready.</p>
 
@@ -256,7 +258,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#25-30" title="Go to source code"><var>$ReportId</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#26-31" title="Go to source code"><var>$ReportId</var></a>
 
 			<div class="description short">
 				<p>Reports unique identifier</p>
@@ -281,7 +283,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#33-38" title="Go to source code"><var>$CreatedOn</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#34-39" title="Go to source code"><var>$CreatedOn</var></a>
 
 			<div class="description short">
 				<p>Report created date</p>
@@ -306,7 +308,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#41-46" title="Go to source code"><var>$GeneratedOn</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#42-47" title="Go to source code"><var>$GeneratedOn</var></a>
 
 			<div class="description short">
 				<p>Report generated date. null if report is still generating</p>
@@ -331,7 +333,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#49-54" title="Go to source code"><var>$PeriodStart</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#50-55" title="Go to source code"><var>$PeriodStart</var></a>
 
 			<div class="description short">
 				<p>Report period end date</p>
@@ -356,7 +358,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#57-62" title="Go to source code"><var>$PeriodEnd</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#58-63" title="Go to source code"><var>$PeriodEnd</var></a>
 
 			<div class="description short">
 				<p>Report period start date</p>
@@ -381,7 +383,7 @@
 		</code></td>
 
 		<td class="name">
-				<a href="source-class-Petslane.Bondora.Definition.Report.html#65-73" title="Go to source code"><var>$ReportType</var></a>
+				<a href="source-class-Petslane.Bondora.Definition.Report.html#66-74" title="Go to source code"><var>$ReportType</var></a>
 
 			<div class="description short">
 				<p>Report's type</p>
@@ -390,7 +392,7 @@
 			<div class="description detailed hidden">
 				<p>Report's type</p>
 
-<p>Enum: 1, 2, 3, 4, 5, 6, 7</p>
+<p>Enum: 1, 2, 3, 4, 5, 6, 7, 8</p>
 
 					<h4>See</h4>
 					<div class="list">

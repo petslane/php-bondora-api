@@ -49,35 +49,56 @@ class ApiTest extends PHPUnit_Framework_TestCase {
         $this->api->createReport($wrongType);
     }
 
-    /**
-     * @dataProvider reportTypesProvider
-     */
-    public function testReports($type, $resultType, $periodStart, $periodEnd) {
-        $resultType = '\\Petslane\\Bondora\\Definition\\' . $resultType;
-        // sleep, to avoid API calls quota exceeded error
-        sleep(1);
+    public function testGenerateReports() {
+        $reports = array();
+        $dataprovider = $this->reportTypesProvider();
+        foreach ($dataprovider as $data) {
+            list($type, $resultType, $periodStart, $periodEnd) = $data;
+            // sleep, to avoid API calls quota exceeded error
+            sleep(1);
 
-        // generate report
-        $reportResponse = $this->api->createReport($type, $periodStart, $periodEnd);
+            // generate report
+            $reportResponse = $this->api->createReport($type, $periodStart, $periodEnd);
+
+            $this->assertEquals(36, strlen($reportResponse->ReportId), 'Report id is not what it is expected');
+
+            $reports[] = array($reportResponse->ReportId, $type, $resultType);
+        }
+
+        return $reports;
+    }
+
+    /**
+     * @depends testGenerateReports
+     */
+    public function testReportResults($data) {
+        foreach ($data as $d) {
+            list($reportId, $type, $resultType) = $d;
+            $this->reportResult($reportId, $type, $resultType);
+        }
+    }
+
+    public function reportResult($reportId, $type, $resultType) {
+        $resultType = '\\Petslane\\Bondora\\Definition\\' . $resultType;
 
         $timeoutOn = time() + 300; // report should be generated within this time, if not, throw error
         while (true) {
             try {
                 sleep(1);
-                $report = $this->api->report($reportResponse->ReportId);
+                $report = $this->api->report($reportId);
                 if (!$report->GeneratedOn) {
                     if (time() > $timeoutOn) {
-                        throw new Exception("Waited too log to report {$type} with id {$reportResponse->ReportId} to generate");
+                        throw new Exception("Waited too log to report {$type} with id {$reportId} to generate");
                     }
                     continue;
                 }
             } catch (Bondora\ApiException $e) {
                 if (time() > $timeoutOn) {
-                    throw new Exception("Waited too log to report {$type} with id {$reportResponse->ReportId} to generate");
+                    throw new Exception("Waited too log to report {$type} with id {$reportId} to generate");
                 }
                 // if we get report not fount error, then wait a little until report is generated
                 foreach ($e->getErrors() as $error) {
-                    if ($error->Code == 404 && $error->Message == 'Report with Id ' . $reportResponse->ReportId . ' is not found') {
+                    if ($error->Code == 404 && $error->Message == 'Report with Id ' . $reportId . ' is not found') {
                         continue 2;
                     }
                 }

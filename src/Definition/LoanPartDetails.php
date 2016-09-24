@@ -77,6 +77,30 @@ class LoanPartDetails extends Definition {
 
 
     /**
+     * @var string
+     */
+    public $CreditScoreEsMicroL;
+
+
+    /**
+     * @var string
+     */
+    public $CreditScoreEsEquifaxRisk;
+
+
+    /**
+     * @var string
+     */
+    public $CreditScoreFiAsiakasTietoRiskGrade;
+
+
+    /**
+     * @var string
+     */
+    public $CreditScoreEeMini;
+
+
+    /**
      * Bondora Rating issued by the Rating model
      *
      * @var string
@@ -341,6 +365,30 @@ class LoanPartDetails extends Definition {
      * @var float
      */
     public $WriteOffTotal;
+
+
+    /**
+     * @var float
+     */
+    public $DebtServicingCostMainAmount;
+
+
+    /**
+     * @var float
+     */
+    public $DebtServicingCostInterestAmount;
+
+
+    /**
+     * @var float
+     */
+    public $DebtServicingCostPenaltyAmount;
+
+
+    /**
+     * @var float
+     */
+    public $DebtServicingCostTotal;
 
 
     /**

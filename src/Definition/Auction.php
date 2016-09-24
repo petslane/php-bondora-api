@@ -58,6 +58,15 @@ class Auction extends Definition {
 
 
     /**
+     * Date and time when the auction is closed, if it's not funded 100% before that.
+     * Auction will be closed before that, if auction is funded 100%.
+     *
+     * @var \DateTime
+     */
+    public $PlannedCloseDate;
+
+
+    /**
      * Hour of signing the loan application
      *
      * @var int
@@ -131,7 +140,10 @@ class Auction extends Definition {
 
 
     /**
-     * Credit scoring for ES loans
+     * A score that is specifically designed for risk classifying subprime borrowers (defined by Equifax as borrowers that do not have access to bank loans).
+     * A measure of the probability of default one month ahead.
+     *     The score is given on a 10-grade scale, from the best score to the worst:
+     *     M1, M2, M3, M4, M5, M6, M7, M8, M9, M10
      *
      * @var string
      */
@@ -139,7 +151,15 @@ class Auction extends Definition {
 
 
     /**
-     * Credit scoring for ES loans from Equifax
+     * Generic score for the loan applicants that do not have active past due operations in ASNEF.
+     * A measure of the probability of default one year ahead.
+     * The score is given on a 6-grade scale.
+     *     AAA Very low
+     *     AA Low
+     *     A Average
+     *     B Average High
+     *     C High
+     *     D Very High
      *
      * @var string
      */
@@ -147,7 +167,12 @@ class Auction extends Definition {
 
 
     /**
-     * Credit scoring for FI loans
+     * Credit Scoring model for Finnish Asiakastieto
+     *     RL1 Very low risk 01-20
+     *     RL2 Low risk 21-40
+     *     RL3 Average risk 41-60
+     *     RL4 Big risk 61-80
+     *     RL5 Huge risk 81-100
      *
      * @var string
      */
@@ -155,7 +180,13 @@ class Auction extends Definition {
 
 
     /**
-     * Credit scoring for EE loans
+     * Credit scoring for Estonian loans
+     *     1000 No previous payments problems
+     *     900 Payments problems finished 24-36 months ago
+     *     800 Payments problems finished 12-24 months ago
+     *     700 Payments problems finished 6-12 months ago
+     *     600 Payment problems finished &lt;6 months ago
+     *     500 Active payment problems
      *
      * @var string
      */
@@ -163,7 +194,7 @@ class Auction extends Definition {
 
 
     /**
-     * Amount applied
+     * The amount borrower applied for originally
      *
      * @var float
      */
@@ -462,6 +493,55 @@ class Auction extends Definition {
      * @var \DateTime
      */
     public $ListedOnUTC;
+
+
+    /**
+     * Date and time when the auction was actually closed. Is null, if auction is active.
+     *
+     * @var \DateTime
+     */
+    public $ActualCloseDate;
+
+
+    /**
+     * The amount that auction is fulfilled, taken amount only bids where investors have enough funds.
+     * This is preliminary calculated amount and can change when trying to close auction (auction is closed, when auction is funded 100% or PlannedCloseDate is reached) and specific investor(s) do not have enough funds.
+     *
+     * @var float
+     */
+    public $WinningBidsAmount;
+
+
+    /**
+     * The amount that is remaining to be funded (AppliedAmount - WinningBidsAmount).
+     *
+     * @var float
+     */
+    public $RemainingAmount;
+
+
+    /**
+     * How many bids current user has bidden into the auction
+     *
+     * @var int
+     */
+    public $UserBids;
+
+
+    /**
+     * How much current user has bidden into the auction
+     *
+     * @var float
+     */
+    public $UserBidAmount;
+
+
+    /**
+     * Precentage, how much the auction is fulfilled. Can be more than 100%, if overfunded.
+     *
+     * @var float
+     */
+    public $Fullfilled;
 
 
     /**

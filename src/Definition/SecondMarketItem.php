@@ -347,6 +347,24 @@ class SecondMarketItem extends Definition {
 
 
     /**
+     * @var float
+     */
+    public $DebtServicingCostMainAmount;
+
+
+    /**
+     * @var float
+     */
+    public $DebtServicingCostInterestAmount;
+
+
+    /**
+     * @var float
+     */
+    public $DebtServicingCostPenaltyAmount;
+
+
+    /**
      * Outstanding principal balance +/- discount or mark-up
      *
      * @var float

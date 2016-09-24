@@ -88,6 +88,30 @@ class MyInvestmentItem extends Definition {
 
 
     /**
+     * @var string
+     */
+    public $CreditScoreEsMicroL;
+
+
+    /**
+     * @var string
+     */
+    public $CreditScoreEsEquifaxRisk;
+
+
+    /**
+     * @var string
+     */
+    public $CreditScoreFiAsiakasTietoRiskGrade;
+
+
+    /**
+     * @var string
+     */
+    public $CreditScoreEeMini;
+
+
+    /**
      * Bondora Rating issued by the Rating model
      *
      * @var string
@@ -345,6 +369,24 @@ class MyInvestmentItem extends Definition {
      * @var float
      */
     public $PenaltyWriteOffAmount;
+
+
+    /**
+     * @var float
+     */
+    public $DebtServicingCostMainAmount;
+
+
+    /**
+     * @var float
+     */
+    public $DebtServicingCostInterestAmount;
+
+
+    /**
+     * @var float
+     */
+    public $DebtServicingCostPenaltyAmount;
 
 
     /**

@@ -25,6 +25,11 @@ class InvestmentsListReportLineV2 extends Definition {
     public $AppliedAmount;
 
     /**
+     * @var float
+     */
+    public $Amount;
+
+    /**
      * @var \DateTime
      */
     public $BiddingStartedOn;
@@ -73,6 +78,21 @@ class InvestmentsListReportLineV2 extends Definition {
      * @var int
      */
     public $LoanNumber;
+
+    /**
+     * @var int
+     */
+    public $AuctionNumber;
+
+    /**
+     * @var int
+     */
+    public $AuctionBidNumber;
+
+    /**
+     * @var string
+     */
+    public $AuctionName;
 
     /**
      * @var string
@@ -340,6 +360,11 @@ class InvestmentsListReportLineV2 extends Definition {
     public $DefaultDate;
 
     /**
+     * @var \DateTime
+     */
+    public $LoanStatusActiveFrom;
+
+    /**
      * @var string
      */
     public $Status;
@@ -365,7 +390,7 @@ class InvestmentsListReportLineV2 extends Definition {
     public $LoanCancelled;
 
     /**
-     * @var float
+     * @var bool
      */
     public $Restructured;
 
@@ -473,4 +498,149 @@ class InvestmentsListReportLineV2 extends Definition {
      * @var float
      */
     public $PrincipalOverdueBySchedule;
+
+    /**
+     * @var float
+     */
+    public $PrincipalPaymentsMade;
+
+    /**
+     * @var float
+     */
+    public $InterestAndPenaltyPaymentsMade;
+
+    /**
+     * @var float
+     */
+    public $PrincipalWriteOffs;
+
+    /**
+     * @var float
+     */
+    public $InterestAndPenaltyWriteOffs;
+
+    /**
+     * @var float
+     */
+    public $PrincipalDebtServicingCost;
+
+    /**
+     * @var float
+     */
+    public $InterestAndPenaltyDebtServicingCost;
+
+    /**
+     * @var float
+     */
+    public $PrincipalBalance;
+
+    /**
+     * @var float
+     */
+    public $InterestAndPenaltyBalance;
+
+    /**
+     * @var float
+     */
+    public $InterestLateAmount;
+
+    /**
+     * @var float
+     */
+    public $PenaltyLateAmount;
+
+    /**
+     * @var float
+     */
+    public $NoteLoanTransfersMainAmount;
+
+    /**
+     * @var float
+     */
+    public $NoteLoanTransfersInterestAmount;
+
+    /**
+     * @var float
+     */
+    public $NoteLoanLateChargesPaid;
+
+    /**
+     * @var int
+     */
+    public $NoOfPreviousLoans;
+
+    /**
+     * @var float
+     */
+    public $AmountOfPreviousLoans;
+
+    /**
+     * @var float
+     */
+    public $PreviousRepayments;
+
+    /**
+     * @var float
+     */
+    public $PreviousEarlyRepayments;
+
+    /**
+     * @var int
+     */
+    public $PreviousEarlyRepaymentsCount;
+
+    /**
+     * @var \DateTime
+     */
+    public $GracePeriodStart;
+
+    /**
+     * @var \DateTime
+     */
+    public $GracePeriodEnd;
+
+    /**
+     * @var \DateTime
+     */
+    public $ReScheduledOn;
+
+    /**
+     * @var \DateTime
+     */
+    public $NextPaymentDate;
+
+    /**
+     * @var int
+     */
+    public $NextPaymentNr;
+
+    /**
+     * @var int
+     */
+    public $NrOfScheduledPayments;
+
+    /**
+     * @var float
+     */
+    public $NextPaymentSum;
+
+    /**
+     * @var \DateTime
+     */
+    public $LastPaymentOn;
+
+    /**
+     * @var \DateTime
+     */
+    public $LoanDate;
+
+    /**
+     * @var float
+     */
+    public $EAD1;
+
+    /**
+     * @var float
+     */
+    public $EAD2;
 }

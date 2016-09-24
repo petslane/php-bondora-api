@@ -122,6 +122,7 @@ This behaviour is not documented by Bondora.
 ~~Bondora API changelog - https://api-sandbox.bondora.com/ChangeLog (may be not updated!)~~  
 Bondora API changelog - https://api.bondora.com/ChangeLog  
 ##### Supported versions:
+- v1.0.1.6 (08.09.2016)  
 - v1.0.1.5 (15.07.2016)  
     - Renamed enum classes:
         - AuctionQuestionEducation -> Education

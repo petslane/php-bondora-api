@@ -28,12 +28,12 @@ use Petslane\Bondora;
 
 $config = array(
     'auth' => array(
-        'url_base' => 'https://www-sandbox.bondora.com',
+        'url_base' => 'https://www.bondora.com',
         'client_id' => 'client_id_123',
         'secret' => 'secret_123',
         'scope' => 'BidsEdit BidsRead Investments SmBuy SmSell',
     ),
-    'api_base' => 'https://api-sandbox.bondora.com',
+    'api_base' => 'https://api.bondora.com',
 );
 $api = new Bondora\Api($config);
 
@@ -119,7 +119,6 @@ If `GeneratedOn` property is set, then report is ready and all data is in `Resul
 This behaviour is not documented by Bondora.  
 
 ## Bondora API support
-~~Bondora API changelog - https://api-sandbox.bondora.com/ChangeLog (may be not updated!)~~  
 Bondora API changelog - https://api.bondora.com/ChangeLog  
 ##### Supported versions:
 - v1.0.1.6 (08.09.2016)  
@@ -146,4 +145,4 @@ Bondora API changelog - https://api.bondora.com/ChangeLog
 - v1.0 Beta (03.09.2015)  
 
 ## Bondora API documentation
-https://api-sandbox.bondora.com/doc?v=1  
+https://api.bondora.com/doc?v=1  

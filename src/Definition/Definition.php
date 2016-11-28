@@ -33,6 +33,10 @@ class Definition {
                 if ($valueDate === false) {
                     $valueDate = \DateTime::createFromFormat('Y-m-d\TH:i:s', $value);
                 }
+                if ($valueDate === false) {
+                    // Parse date with fraction of seconds 2016-11-16T02:02:55.623
+                    $valueDate = \DateTime::createFromFormat('Y-m-d\TH:i:s.u', $value);
+                }
                 if (!$valueDate == !!$value) {
                     throw new \Exception('Unable to parse date: ' . $value);
                 }

@@ -202,13 +202,17 @@ class ApiTest extends PHPUnit_Framework_TestCase {
 
     public function reportTypesProvider() {
         $date = new DateTime();
+        $date2 = new DateTime();
+        $date2->add(DateInterval::createFromDateString('3 months'));
         $date3 = new DateTime();
         $date3->sub(DateInterval::createFromDateString('3 months'));
+        $date4 = new DateTime();
+        $date4->sub(DateInterval::createFromDateString('12 months'));
         return array(
             array(Bondora\Enum\ReportType::AccountStatement, 'AccountStatementReportLine', $date3, $date),
-            array(Bondora\Enum\ReportType::PlannedFutureCashflows, 'FutureCashflowsReportLine', null, null),
+            array(Bondora\Enum\ReportType::PlannedFutureCashflows, 'FutureCashflowsReportLine', $date, $date2),
             array(Bondora\Enum\ReportType::Repayments, 'RepaymentsReportLine', $date3, $date),
-            array(Bondora\Enum\ReportType::SecondMarketArchive, 'SecondMarketArchiveReportLine', null, null),
+            array(Bondora\Enum\ReportType::SecondMarketArchive, 'SecondMarketArchiveReportLine', $date4, $date),
             array(Bondora\Enum\ReportType::InvestmentsV2, 'InvestmentsListReportLineV2', $date3, $date),
         );
     }

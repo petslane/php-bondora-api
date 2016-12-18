@@ -3,7 +3,7 @@
 namespace Petslane\Bondora\Definition;
 
 /**
- * Secondary market sale request
+ * Cancel secondary market sale request
  */
 class SecondMarketCancelRequest extends Definition {
 

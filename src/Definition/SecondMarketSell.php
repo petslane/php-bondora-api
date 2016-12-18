@@ -3,7 +3,7 @@
 namespace Petslane\Bondora\Definition;
 
 /**
- * Sell loan from secondary market.
+ * Sell loan on secondary market.
  */
 class SecondMarketSell extends Definition {
 

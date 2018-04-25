@@ -1209,7 +1209,6 @@ class Api {
         for ($i=0; $i < self::THROTTLING_RETRIES; $i++) {
             // query
             $client = $this->getClient($url, $params, $method, $headers);
-            $last_run_time = microtime(true);
 
             // check http code
             $this->validateResponseCode($resource, $client, $method);
@@ -1224,8 +1223,12 @@ class Api {
                 $errors = $e->getErrors();
                 foreach ($errors as $error) {
                     if ($error->Code == 429) {
+                        $sleepTime = 1;
+                        if ($error->Details && preg_match('/Retry after (\d+)/', $error->Details, $matches)) {
+                            $sleepTime = (int) $matches[1];
+                        }
                         // got throttling error, sleep and retry
-                        usleep(1000000 - (microtime(true) - $last_run_time));
+                        usleep($sleepTime * 1000000);
                         continue 2;
                     }
                 }
@@ -1234,6 +1237,8 @@ class Api {
                 throw $e;
             }
         }
+
+        throw new \Exception('Unable to query');
     }
 }
 

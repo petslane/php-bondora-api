@@ -21,6 +21,7 @@ class DebtManagementEvent extends Definition {
 
     /**
      * @var string
+     * @deprecated 1.0.2.0 Obsolete: Not used actively anymore
      */
     public $Description;
 

@@ -43,6 +43,7 @@ class BidSummary extends Definition {
      * Minimum amount that was specified for auction
      *
      * @var float
+     * @deprecated 1.0.2.1 Obsolete: Not used actively anymore
      */
     public $RequestedBidMinimumLimit;
 

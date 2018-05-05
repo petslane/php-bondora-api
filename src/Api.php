@@ -470,7 +470,9 @@ class Api {
      *     rescheduledFrom                     date                Defaulted date from
      *     rescheduledTo                       date                Defaulted date to
      *     soldDateFrom                        date                When it was sold on Secondary market from
-     *     soldDateTo                          date                When it was sold on Secondary market to
+     *     rescheduledTo                       date                Defaulted date to
+     *     purchaseDateFrom                    date                When you received the investment Auctions/Secondary market from
+     *     purchaseDateTo                      date                When you received the investment Auctions/Secondary market to
      *     nextPaymentDateFrom                 string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss)
      *     nextPaymentDateTo                   string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss)
      *     lastPaymentDateFrom                 date                Last payment date from
@@ -545,6 +547,8 @@ class Api {
             'rescheduledFrom',
             'rescheduledTo',
             'soldDateFrom',
+            'purchaseDateFrom',
+            'purchaseDateT',
             'soldDateTo',
             'lastPaymentDateFrom',
             'lastPaymentDateTo',

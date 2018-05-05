@@ -469,6 +469,8 @@ class Api {
      *     defaultedDateTo                     date                Defaulted date to
      *     rescheduledFrom                     date                Defaulted date from
      *     rescheduledTo                       date                Defaulted date to
+     *     soldDateFrom                        date                When it was sold on Secondary market from
+     *     soldDateTo                          date                When it was sold on Secondary market to
      *     nextPaymentDateFrom                 string|\DateTime    Loan issued start date from (string format YYYY-MM-DD hh:mm:ss)
      *     nextPaymentDateTo                   string|\DateTime    Loan issued start date to (string format YYYY-MM-DD hh:mm:ss)
      *     lastPaymentDateFrom                 date                Last payment date from
@@ -542,6 +544,8 @@ class Api {
             'defaultedDateTo',
             'rescheduledFrom',
             'rescheduledTo',
+            'soldDateFrom',
+            'soldDateTo',
             'lastPaymentDateFrom',
             'lastPaymentDateTo',
         );

@@ -240,6 +240,7 @@ class Auction extends Definition {
      * @see Petslane\Bondora\Enum\AuctionPurpose
      *
      * @var int
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $UseOfLoan;
 
@@ -262,6 +263,7 @@ class Auction extends Definition {
      * @see Petslane\Bondora\Enum\MaritalStatus
      *
      * @var int
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $MaritalStatus;
 
@@ -270,6 +272,7 @@ class Auction extends Definition {
      * Number of children or other dependants
      *
      * @var string
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $NrOfDependants;
 
@@ -281,6 +284,7 @@ class Auction extends Definition {
      * @see Petslane\Bondora\Enum\EmploymentStatus
      *
      * @var int
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $EmploymentStatus;
 
@@ -297,6 +301,7 @@ class Auction extends Definition {
      * Employment position
      *
      * @var string
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $EmploymentPosition;
 
@@ -305,6 +310,7 @@ class Auction extends Definition {
      * Work experience in total
      *
      * @var string
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $WorkExperience;
 
@@ -315,6 +321,7 @@ class Auction extends Definition {
      * Enum: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, -1
      * @see Petslane\Bondora\Enum\OccupationArea
      *
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      * @var int
      */
     public $OccupationArea;
@@ -335,6 +342,7 @@ class Auction extends Definition {
      * Salary
      *
      * @var float
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $IncomeFromPrincipalEmployer;
 
@@ -343,6 +351,7 @@ class Auction extends Definition {
      * Pension
      *
      * @var float
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $IncomeFromPension;
 
@@ -351,6 +360,7 @@ class Auction extends Definition {
      * Family allowance
      *
      * @var float
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $IncomeFromFamilyAllowance;
 
@@ -359,6 +369,7 @@ class Auction extends Definition {
      * Social welfare
      *
      * @var float
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $IncomeFromSocialWelfare;
 
@@ -367,6 +378,7 @@ class Auction extends Definition {
      * Leave pay
      *
      * @var float
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $IncomeFromLeavePay;
 
@@ -375,6 +387,7 @@ class Auction extends Definition {
      * Child support
      *
      * @var float
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $IncomeFromChildSupport;
 
@@ -383,6 +396,7 @@ class Auction extends Definition {
      * Other income
      *
      * @var float
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $IncomeOther;
 
@@ -399,6 +413,7 @@ class Auction extends Definition {
      * Discretionary Income
      *
      * @var float
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $FreeCash;
 
@@ -407,6 +422,7 @@ class Auction extends Definition {
      * Debt to income ratio
      *
      * @var float
+     * @deprecated 1.0.2.2 Obsolete: Not used actively anymore
      */
     public $DebtToIncome;
 

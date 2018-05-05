@@ -121,6 +121,7 @@ This behaviour is not documented by Bondora.
 ## Bondora API support
 Bondora API changelog - https://api.bondora.com/ChangeLog  
 ##### Supported versions:
+- v1.0.2.2 (14.06.2017)  
 - v1.0.2.1 (20.04.2017)  
 - v1.0.2.0 (16.03.2017)  
 - v1.0.1.9 (02.02.2017)  

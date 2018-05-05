@@ -34,6 +34,7 @@ class BidResponse extends Definition {
      * the investment into the auction's loan is not made.
      *
      * @var float
+     * @deprecated 1.0.2.1 Obsolete: Not used actively anymore
      */
     public $MinAmount;
 
